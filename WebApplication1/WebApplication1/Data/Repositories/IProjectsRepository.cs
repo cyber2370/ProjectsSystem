@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,5 @@ namespace WebApplication1.Data.Repositories
 {
     public interface IProjectsRepository : ICrudRepositoryBase<Project, int>
     {
-        
     }
 }
