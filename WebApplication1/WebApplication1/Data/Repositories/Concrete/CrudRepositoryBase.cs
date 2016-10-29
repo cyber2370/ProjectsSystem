@@ -41,14 +41,6 @@ namespace WebApplication1.Data.Repositories.Concrete
             return item;
         }
 
-        public virtual async Task<TEntity> UpdateItemAsync(TEntity item)
-        {
-            throw new NotImplementedException();
-            //DbSet.Update(item);
-            await SaveChangesAsync();
-            return item;
-        }
-
         public virtual Task RemoveItemAsync(TEntity item)
         {
             DbSet.Remove(item);

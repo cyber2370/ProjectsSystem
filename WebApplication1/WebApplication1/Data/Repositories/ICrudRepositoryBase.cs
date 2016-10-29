@@ -14,7 +14,7 @@ namespace WebApplication1.Data.Repositories
         Task<TEntity> GetItemAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>> convertQuery);
 
         Task<TEntity> AddItemAsync(TEntity item);
-        Task<TEntity> UpdateItemAsync(TEntity item);
+        //Task<TEntity> UpdateItemAsync(TEntity item);
         Task RemoveItemAsync(TEntity item);
     }
 

@@ -46,6 +46,8 @@ namespace WebApplication1
             container.RegisterType<ISubtasksRepository, SubtasksRepository>();
 
             container.RegisterType<IProjectsManager, ProjectsManager>();
+            container.RegisterType<ITasksManager, TasksManager>();
+            container.RegisterType<ISubtasksManager, SubtasksManager>();
 
             //RegisterTypes(container);
             return container;
