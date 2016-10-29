@@ -27,7 +27,7 @@ namespace WebApplication1.Controllers
         }
 
         // GET api/tasks/project/{id}
-        [System.Web.Http.Route("api/tasks/project/{id}")]
+        [System.Web.Http.Route("api/projects/{id}/tasks")]
         public Task<IEnumerable<TaskModel>> GetTasksByProjectId(int id)
         {
             return _tasksManager.GetTasksByProjectIdAsync(id);

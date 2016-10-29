@@ -28,7 +28,7 @@ namespace WebApplication1.Controllers
         }
 
         // GET api/tasks/project/{id}
-        [System.Web.Http.Route("api/task/{id}/subtasks/")]
+        [System.Web.Http.Route("api/tasks/{id}/subtasks/")]
         public Task<IEnumerable<Subtask>> GetSubtasksByTaskId(int id)
         {
             return _subtasksManager.GetSubtasksByTaskIdAsync(id);
