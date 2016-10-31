@@ -61,25 +61,42 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _About = __webpack_require__(/*! ./modules/About */ 228);
+	var _TopNavBar = __webpack_require__(/*! ./modules/TopNavBar */ 228);
 	
-	var _About2 = _interopRequireDefault(_About);
-	
-	var _Repos = __webpack_require__(/*! ./modules/Repos */ 229);
-	
-	var _Repos2 = _interopRequireDefault(_Repos);
+	var _TopNavBar2 = _interopRequireDefault(_TopNavBar);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	(0, _reactDom.render)(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
+	var navBarItems = [{
+	    id: 1,
+	    name: "Main Page",
+	    link: "/main",
+	    component: _App2.default
+	}, {
+	    id: 2,
+	    name: "Projects",
+	    link: "/projects",
+	    component: _App2.default
+	}, {
+	    id: 3,
+	    name: "Tasks",
+	    link: "/tasks",
+	    component: _App2.default
+	}];
 	
 	(0, _reactDom.render)(_react2.default.createElement(
-	  _reactRouter.Router,
-	  { history: _reactRouter.hashHistory },
-	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _App2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/repos', component: _Repos2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default })
+	    _reactRouter.Router,
+	    { history: _reactRouter.hashHistory },
+	    _react2.default.createElement(
+	        _reactRouter.Route,
+	        { path: '/', component: _App2.default },
+	        navBarItems.map(function (el) {
+	            _react2.default.createElement(_reactRouter.Route, { path: el.link, component: el.component });
+	        })
+	    )
 	), document.getElementById('app'));
+	
+	(0, _reactDom.render)(_react2.default.createElement(_TopNavBar2.default, { elements: navBarItems }), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -27091,63 +27108,73 @@
 
 /***/ },
 /* 228 */
-/*!****************************************!*\
-  !*** ./Content/React/modules/About.js ***!
-  \****************************************/
+/*!********************************************!*\
+  !*** ./Content/React/modules/TopNavBar.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _react2.default.createClass({
-	  displayName: 'About',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      'About'
-	    );
-	  }
-	});
-
-/***/ },
-/* 229 */
-/*!****************************************!*\
-  !*** ./Content/React/modules/Repos.js ***!
-  \****************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
+	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = _react2.default.createClass({
-	  displayName: 'Repos',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      'Repos'
-	    );
-	  }
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var TopNavBar = function (_React$Component) {
+	    _inherits(TopNavBar, _React$Component);
+	
+	    function TopNavBar(props) {
+	        _classCallCheck(this, TopNavBar);
+	
+	        return _possibleConstructorReturn(this, (TopNavBar.__proto__ || Object.getPrototypeOf(TopNavBar)).call(this, props));
+	    }
+	
+	    _createClass(TopNavBar, [{
+	        key: 'render',
+	        value: function render() {
+	            var navBarItems = this.props.elements;
+	
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'headerMenu' },
+	                _react2.default.createElement(
+	                    'ul',
+	                    { role: 'nav' },
+	                    navBarItems.map(function (el) {
+	                        return _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { key: el.id, to: el.link },
+	                                el.name
+	                            )
+	                        );
+	                    })
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return TopNavBar;
+	}(_react2.default.Component);
+	
+	exports.default = TopNavBar;
 
 /***/ }
 /******/ ]);
