@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>ReactJS.NET Sample</title>
-    <link rel="stylesheet" href="~/Content/React/Sample.css"/>
+    <link rel="stylesheet" href="~/Content/React/Styles/Sample.css"/>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -16,8 +16,9 @@
 
 </head>
 <body>
-<!-- Render the component server-side, passing initial props -->
-@Html.React("ReactApp", new {})
+<div id="app"></div>
+
+<script src="~/dist/bundle.js"></script>
 
 <!-- Load all required scripts (React + the site's scripts) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>

@@ -24,9 +24,8 @@ namespace WebApplication1
             //	.SetLoadBabel(false)
             //	.AddScriptWithoutTransform("~/Scripts/bundle.server.js")
 
-            ReactSiteConfiguration.Configuration
-                .SetReuseJavaScriptEngines(true)
-                .AddScript("~/Content/React/JSX/Sample.jsx");
-        }
+		    ReactSiteConfiguration.Configuration
+		        .SetReuseJavaScriptEngines(true);
+		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿var HorizontalMenu = React.createClass({
+﻿
+
+var TopNavBar = React.createClass({
     getInitialState: function() {
         return {
             menuItems: [{
@@ -72,7 +74,7 @@ var Table = React.createClass({
 var AppHeader = React.createClass({
     render: function() {
         return <div className="app-header">
-                    <HorizontalMenu />
+                    <TopNavBar />
                 </div>;
     }
 });
