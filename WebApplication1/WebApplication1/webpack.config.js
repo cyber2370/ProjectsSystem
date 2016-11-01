@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
     entry: "./Content/React/Index.js",
@@ -24,5 +24,9 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    
+    plugins: [
+      new WebpackNotifierPlugin() 
+    ]
 };
