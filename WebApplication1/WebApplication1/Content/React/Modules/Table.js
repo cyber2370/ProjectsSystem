@@ -1,6 +1,6 @@
 ﻿import React from 'react'
 
-export default React.createClass({
+const Table = React.createClass({
     render: function() {
         var data = this.props.columns;
 
@@ -17,3 +17,5 @@ export default React.createClass({
         </table>;
     }
 });
+
+export default Table;

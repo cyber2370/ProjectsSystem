@@ -3,14 +3,14 @@ import { Link } from 'react-router'
 import Table from './Table'
 
 var cols = [{
-    name: "Task Name"
+    name: "Subtask Name"
 }, {
-    name: "Description"
+    name: "Duration"
 }, {
     name: "Actions"
 }];
 
-const Tasks = React.createClass({
+const Subtasks = React.createClass({
     render: function () {
         var self = this;
 
@@ -20,4 +20,4 @@ const Tasks = React.createClass({
     }
 });
 
-export default Tasks;
+export default Subtasks;

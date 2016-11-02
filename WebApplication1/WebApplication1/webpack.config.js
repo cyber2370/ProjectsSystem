@@ -27,6 +27,6 @@ module.exports = {
     },
     
     plugins: [
-      new WebpackNotifierPlugin() 
+        new WebpackNotifierPlugin()
     ]
 };

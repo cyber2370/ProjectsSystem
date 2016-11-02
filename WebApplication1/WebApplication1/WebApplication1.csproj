@@ -333,9 +333,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\React\Modules\App.js" />
     <Content Include="Content\React\Modules\Projects.js" />
+    <Content Include="Content\React\Modules\Subtasks.js" />
     <Content Include="Content\React\Modules\Table.js" />
     <Content Include="Content\React\Modules\Tasks.js" />
     <Content Include="Content\React\Modules\TopNavBar.js" />
+    <Content Include="Content\React\Redux\Actions\actionCreators.js" />
+    <Content Include="Content\React\Redux\Reducers\index.js" />
+    <Content Include="Content\React\Redux\Reducers\projects.js" />
+    <Content Include="Content\React\Redux\Reducers\subtasks.js" />
+    <Content Include="Content\React\Redux\Reducers\tasks.js" />
+    <Content Include="Content\React\Redux\store.js" />
     <Content Include="Content\React\Styles\Sample.css" />
     <Content Include="dist\bundle.js" />
     <Content Include="favicon.ico" />

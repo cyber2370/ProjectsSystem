@@ -3,34 +3,35 @@ import { Link } from 'react-router'
 import TopNavBar from './TopNavBar'
 import Projects from './Projects'
 import Tasks from './Tasks'
+import Subtasks from './Subtasks'
 
 var navBarItems = [{
             id: 1,
-            name: "Main Page",
-            link: "/main",
-            component: TopNavBar
-        }, {
-            id: 2,
             name: "Projects",
             link: "/projects",
             component: Projects
         }, {
-            id: 3,
+            id: 2,
             name: "Tasks",
             link: "/tasks",
             component: Tasks
+        }, {
+            id: 3,
+            name: "Subtasks",
+            link: "/subtasks",
+            component: Subtasks
         }
     ];
 
-export default React.createClass({
+const App = React.createClass({
   render() {
     return (
-      <div>
+      <div className="page">
         <TopNavBar elements={navBarItems} />
-        <div className="content">
-          {this.props.children}
-        </div>
+        {this.props.children}
       </div>
     );
   }
-})
+});
+
+export default App;

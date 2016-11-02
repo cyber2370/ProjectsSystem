@@ -13,7 +13,9 @@ export default class TopNavBar extends React.Component {
                 <ul role="nav">
                     {
                         navBarItems.map(function (el) {
-                            return <li key={el.id}><Link to={el.link}>{el.name}</Link></li>;
+                            return <li key={el.id}>
+                            	<Link to={el.link} activeClassName="active">{el.name}</Link>
+                            </li>;
                         })
                     }
                 </ul>

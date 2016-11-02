@@ -1,5 +1,4 @@
 ﻿import React from 'react'
-import { Link } from 'react-router'
 import Table from './Table'
 
 var cols = [{
@@ -10,7 +9,7 @@ var cols = [{
     name: "Actions"
 }];
 
-export default React.createClass({
+const Projects = React.createClass({
     render: function () {
         var self = this;
 
@@ -20,3 +19,4 @@ export default React.createClass({
     }
 });
 
+export default Projects;
