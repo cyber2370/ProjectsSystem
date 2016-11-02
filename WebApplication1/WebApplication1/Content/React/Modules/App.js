@@ -1,37 +1,20 @@
-﻿import React from 'react'
-import { Link } from 'react-router'
-import TopNavBar from './TopNavBar'
-import Projects from './Projects'
-import Tasks from './Tasks'
-import Subtasks from './Subtasks'
+﻿import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../redux/actions/actionCreators';
+import Main from './Main';
 
-var navBarItems = [{
-            id: 1,
-            name: "Projects",
-            link: "/projects",
-            component: Projects
-        }, {
-            id: 2,
-            name: "Tasks",
-            link: "/tasks",
-            component: Tasks
-        }, {
-            id: 3,
-            name: "Subtasks",
-            link: "/subtasks",
-            component: Subtasks
-        }
-    ];
+function mapStateToProps(state){
+	return {
+		projects: state.projects,
+		tasks: state.tasks,
+		subtasks: state.subtasks
+	};
+}
 
-const App = React.createClass({
-  render() {
-    return (
-      <div className="page">
-        <TopNavBar elements={navBarItems} />
-        {this.props.children}
-      </div>
-    );
-  }
-});
+function mapDispatchToProps(dispatch){
+	return bindActionCreators(actionCreators, dispatch);
+}
+
+const App = connect(mapStateToProps, mapDispatchToProps)(Main);
 
 export default App;

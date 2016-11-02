@@ -8,7 +8,7 @@
 
 export function removeProject(projectId) {
 	return {
-		type: 'ADD_PROJECT',
+		type: 'REMOVE_PROJECT',
 		projectId
 	}
 }

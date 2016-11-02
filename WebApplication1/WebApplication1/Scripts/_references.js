@@ -1,6 +1,7 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="../content/react/index.js" />
 /// <reference path="../content/react/modules/app.js" />
+/// <reference path="../content/react/modules/main.js" />
 /// <reference path="../content/react/modules/projects.js" />
 /// <reference path="../content/react/modules/subtasks.js" />
 /// <reference path="../content/react/modules/table.js" />

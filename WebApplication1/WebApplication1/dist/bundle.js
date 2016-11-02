@@ -67,19 +67,19 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _TopNavBar = __webpack_require__(/*! ./modules/TopNavBar */ 266);
+	var _TopNavBar = __webpack_require__(/*! ./modules/TopNavBar */ 268);
 	
 	var _TopNavBar2 = _interopRequireDefault(_TopNavBar);
 	
-	var _Projects = __webpack_require__(/*! ./modules/Projects */ 267);
+	var _Projects = __webpack_require__(/*! ./modules/Projects */ 269);
 	
 	var _Projects2 = _interopRequireDefault(_Projects);
 	
-	var _Tasks = __webpack_require__(/*! ./modules/Tasks */ 269);
+	var _Tasks = __webpack_require__(/*! ./modules/Tasks */ 271);
 	
 	var _Tasks2 = _interopRequireDefault(_Tasks);
 	
-	var _Subtasks = __webpack_require__(/*! ./modules/Subtasks */ 270);
+	var _Subtasks = __webpack_require__(/*! ./modules/Subtasks */ 272);
 	
 	var _Subtasks2 = _interopRequireDefault(_Subtasks);
 	
@@ -28822,7 +28822,7 @@
 	};
 	
 	var store = (0, _redux.createStore)(_index2.default, defaultState);
-	var history = exports.history = (0, _reactRouterRedux.syncHistoryWithStore)(_reactRouter.browserHistory, store);
+	var history = exports.history = (0, _reactRouterRedux.syncHistoryWithStore)(_reactRouter.hashHistory, store);
 	
 	exports.default = store;
 
@@ -29322,7 +29322,81 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
+	});
+	
+	var _redux = __webpack_require__(/*! redux */ 234);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 227);
+	
+	var _actionCreators = __webpack_require__(/*! ../redux/actions/actionCreators */ 266);
+	
+	var actionCreators = _interopRequireWildcard(_actionCreators);
+	
+	var _Main = __webpack_require__(/*! ./Main */ 267);
+	
+	var _Main2 = _interopRequireDefault(_Main);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function mapStateToProps(state) {
+		return {
+			projects: state.projects,
+			tasks: state.tasks,
+			subtasks: state.subtasks
+		};
+	}
+	
+	function mapDispatchToProps(dispatch) {
+		return (0, _redux.bindActionCreators)(actionCreators, dispatch);
+	}
+	
+	var App = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Main2.default);
+	
+	exports.default = App;
+
+/***/ },
+/* 266 */
+/*!*******************************************************!*\
+  !*** ./Content/React/redux/actions/actionCreators.js ***!
+  \*******************************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.addProject = addProject;
+	exports.removeProject = removeProject;
+	function addProject(projectName, ownerName) {
+		return {
+			type: 'ADD_PROJECT',
+			projectName: projectName,
+			ownerName: ownerName
+		};
+	}
+	
+	function removeProject(projectId) {
+		return {
+			type: 'REMOVE_PROJECT',
+			projectId: projectId
+		};
+	}
+
+/***/ },
+/* 267 */
+/*!***************************************!*\
+  !*** ./Content/React/modules/Main.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
 	});
 	
 	var _react = __webpack_require__(/*! react */ 1);
@@ -29331,57 +29405,57 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
-	var _TopNavBar = __webpack_require__(/*! ./TopNavBar */ 266);
+	var _TopNavBar = __webpack_require__(/*! ./TopNavBar */ 268);
 	
 	var _TopNavBar2 = _interopRequireDefault(_TopNavBar);
 	
-	var _Projects = __webpack_require__(/*! ./Projects */ 267);
+	var _Projects = __webpack_require__(/*! ./Projects */ 269);
 	
 	var _Projects2 = _interopRequireDefault(_Projects);
 	
-	var _Tasks = __webpack_require__(/*! ./Tasks */ 269);
+	var _Tasks = __webpack_require__(/*! ./Tasks */ 271);
 	
 	var _Tasks2 = _interopRequireDefault(_Tasks);
 	
-	var _Subtasks = __webpack_require__(/*! ./Subtasks */ 270);
+	var _Subtasks = __webpack_require__(/*! ./Subtasks */ 272);
 	
 	var _Subtasks2 = _interopRequireDefault(_Subtasks);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var navBarItems = [{
-	  id: 1,
-	  name: "Projects",
-	  link: "/projects",
-	  component: _Projects2.default
+	    id: 1,
+	    name: "Projects",
+	    link: "/projects",
+	    component: _Projects2.default
 	}, {
-	  id: 2,
-	  name: "Tasks",
-	  link: "/tasks",
-	  component: _Tasks2.default
+	    id: 2,
+	    name: "Tasks",
+	    link: "/tasks",
+	    component: _Tasks2.default
 	}, {
-	  id: 3,
-	  name: "Subtasks",
-	  link: "/subtasks",
-	  component: _Subtasks2.default
+	    id: 3,
+	    name: "Subtasks",
+	    link: "/subtasks",
+	    component: _Subtasks2.default
 	}];
 	
-	var App = _react2.default.createClass({
-	  displayName: 'App',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'page' },
-	      _react2.default.createElement(_TopNavBar2.default, { elements: navBarItems }),
-	      this.props.children
-	    );
-	  }
+	var Main = _react2.default.createClass({
+	    displayName: 'Main',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'page' },
+	            _react2.default.createElement(_TopNavBar2.default, { elements: navBarItems }),
+	            _react2.default.cloneElement(this.props.children, this.props)
+	        );
+	    }
 	});
 	
-	exports.default = App;
+	exports.default = Main;
 
 /***/ },
-/* 266 */
+/* 268 */
 /*!********************************************!*\
   !*** ./Content/React/modules/TopNavBar.js ***!
   \********************************************/
@@ -29451,7 +29525,7 @@
 	exports.default = TopNavBar;
 
 /***/ },
-/* 267 */
+/* 269 */
 /*!*******************************************!*\
   !*** ./Content/React/modules/Projects.js ***!
   \*******************************************/
@@ -29467,9 +29541,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Table = __webpack_require__(/*! ./Table */ 268);
+	var _Table = __webpack_require__(/*! ./Table */ 270);
 	
 	var _Table2 = _interopRequireDefault(_Table);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29481,16 +29557,54 @@
 	    name: "Actions"
 	}];
 	
+	var tableRowDataProcesser = function tableRowDataProcesser(element) {
+	    return _react2.default.createElement(
+	        'tr',
+	        { key: element.id },
+	        _react2.default.createElement(
+	            'td',
+	            null,
+	            element.projectName
+	        ),
+	        _react2.default.createElement(
+	            'td',
+	            null,
+	            element.owner
+	        ),
+	        _react2.default.createElement(
+	            'td',
+	            { width: '20%' },
+	            _react2.default.createElement(
+	                'button',
+	                { className: 'btn btn-info' },
+	                'Details'
+	            ),
+	            _react2.default.createElement(
+	                'button',
+	                { className: 'btn btn-danger' },
+	                'Edit'
+	            ),
+	            _react2.default.createElement(
+	                'button',
+	                { className: 'btn btn-danger' },
+	                'Remove'
+	            )
+	        )
+	    );
+	};
+	
 	var Projects = _react2.default.createClass({
 	    displayName: 'Projects',
 	
 	    render: function render() {
-	        var self = this;
+	        var tableData = this.props.projects;
 	
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'app-content' },
-	            _react2.default.createElement(_Table2.default, { columns: cols })
+	            _react2.default.createElement(_Table2.default, { columns: cols,
+	                data: tableData,
+	                rowDataProcesser: tableRowDataProcesser })
 	        );
 	    }
 	});
@@ -29498,13 +29612,13 @@
 	exports.default = Projects;
 
 /***/ },
-/* 268 */
+/* 270 */
 /*!****************************************!*\
   !*** ./Content/React/modules/Table.js ***!
   \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -29514,31 +29628,48 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 172);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Table = _react2.default.createClass({
-	    displayName: "Table",
+	    displayName: 'Table',
 	
 	    render: function render() {
-	        var data = this.props.columns;
+	        if (this == null) {
+	            return _react2.default.createElement(
+	                'h1',
+	                null,
+	                'this == null'
+	            );
+	        }
+	
+	        var columns = this.props.columns;
+	        var data = this.props.data;
+	        var rowDataProcesser = this.props.rowDataProcesser;
 	
 	        return _react2.default.createElement(
-	            "table",
-	            { className: "table table-striped table-hover" },
+	            'table',
+	            { className: 'table table-striped table-hover' },
 	            _react2.default.createElement(
-	                "thead",
+	                'thead',
 	                null,
 	                _react2.default.createElement(
-	                    "tr",
+	                    'tr',
 	                    null,
-	                    data.map(function (el) {
+	                    columns.map(function (el) {
 	                        return _react2.default.createElement(
-	                            "th",
+	                            'th',
 	                            null,
 	                            el.name
 	                        );
 	                    })
 	                )
+	            ),
+	            _react2.default.createElement(
+	                'tbody',
+	                null,
+	                data.map(rowDataProcesser)
 	            )
 	        );
 	    }
@@ -29547,7 +29678,7 @@
 	exports.default = Table;
 
 /***/ },
-/* 269 */
+/* 271 */
 /*!****************************************!*\
   !*** ./Content/React/modules/Tasks.js ***!
   \****************************************/
@@ -29565,7 +29696,7 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
-	var _Table = __webpack_require__(/*! ./Table */ 268);
+	var _Table = __webpack_require__(/*! ./Table */ 270);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 	
@@ -29596,7 +29727,7 @@
 	exports.default = Tasks;
 
 /***/ },
-/* 270 */
+/* 272 */
 /*!*******************************************!*\
   !*** ./Content/React/modules/Subtasks.js ***!
   \*******************************************/
@@ -29614,7 +29745,7 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
-	var _Table = __webpack_require__(/*! ./Table */ 268);
+	var _Table = __webpack_require__(/*! ./Table */ 270);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 	

@@ -1,4 +1,5 @@
-﻿var WebpackNotifierPlugin = require('webpack-notifier');
+/// <binding />
+var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
     entry: "./Content/React/Index.js",
