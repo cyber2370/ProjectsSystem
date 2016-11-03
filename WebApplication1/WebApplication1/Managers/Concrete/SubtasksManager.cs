@@ -13,10 +13,14 @@ namespace WebApplication1.Managers.Concrete
     public class SubtasksManager : ISubtasksManager
     {
         private readonly ISubtasksRepository _subtasksRepository;
+        private readonly ITasksManager _tasksManager;
 
-        public SubtasksManager(ISubtasksRepository subtasksRepository)
+        public SubtasksManager(
+            ISubtasksRepository subtasksRepository,
+            ITasksManager tasksManager)
         {
             _subtasksRepository = subtasksRepository;
+            _tasksManager = tasksManager;
         }
 
         public Task<IEnumerable<Subtask>> GetSubtasksAsync()
@@ -34,11 +38,15 @@ namespace WebApplication1.Managers.Concrete
             return _subtasksRepository.GetItemAsync(subtaskId);
         }
 
-        public Task<Subtask> AddSubtaskAsync(Subtask subtask)
+        public async Task<Subtask> AddSubtaskAsync(int taskId, Subtask subtask)
         {
             CheckIsValid(subtask);
 
-            return _subtasksRepository.AddItemAsync(subtask);
+            Data.DB.Entities.Task task = await _tasksManager.GetTaskAsync(taskId);
+
+            subtask.Task = task;
+
+            return await _subtasksRepository.AddItemAsync(subtask);
         }
 
         public Task<Subtask> UpdateSubtaskAsync(Subtask subtask)

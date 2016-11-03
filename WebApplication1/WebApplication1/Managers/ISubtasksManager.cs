@@ -14,7 +14,7 @@ namespace WebApplication1.Managers
 
         Task<Subtask> GetSubtaskAsync(int subtaskId);
 
-        Task<Subtask> AddSubtaskAsync(Subtask subtask);
+        Task<Subtask> AddSubtaskAsync(int taskId, Subtask subtask);
 
         Task<Subtask> UpdateSubtaskAsync(Subtask subtask);
 

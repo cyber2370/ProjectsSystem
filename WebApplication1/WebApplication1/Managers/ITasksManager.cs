@@ -16,7 +16,7 @@ namespace WebApplication1.Managers
 
         Task<TaskModel> GetTaskAsync(int taskId);
 
-        Task<TaskModel> AddTaskAsync(TaskModel task);
+        Task<TaskModel> AddTaskAsync(int projectId, TaskModel task);
 
         Task<TaskModel> UpdateTaskAsync(TaskModel task);
 

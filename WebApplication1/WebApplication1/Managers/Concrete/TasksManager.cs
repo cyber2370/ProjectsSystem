@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using WebApplication1.Data.DB.Entities;
 using WebApplication1.Data.Repositories;
+using Task = System.Threading.Tasks.Task;
 using TaskModel = WebApplication1.Data.DB.Entities.Task;
 
 namespace WebApplication1.Managers.Concrete
@@ -11,10 +13,14 @@ namespace WebApplication1.Managers.Concrete
     public class TasksManager : ITasksManager
     {
         private readonly ITasksRepository _tasksRepository;
+        private readonly IProjectsManager _projectsManager;
 
-        public TasksManager(ITasksRepository tasksRepository)
+        public TasksManager(
+            ITasksRepository tasksRepository,
+            IProjectsManager projectsManager)
         {
             _tasksRepository = tasksRepository;
+            _projectsManager = projectsManager;
         }
 
         public Task<IEnumerable<TaskModel>> GetTasksAsync()
@@ -32,11 +38,15 @@ namespace WebApplication1.Managers.Concrete
             return _tasksRepository.GetItemAsync(taskId);
         }
 
-        public Task<TaskModel> AddTaskAsync(TaskModel task)
+        public async Task<TaskModel> AddTaskAsync(int projectId, TaskModel task)
         {
             CheckIsValid(task);
 
-            return _tasksRepository.AddItemAsync(task);
+            Project project = await _projectsManager.GetProjectAsync(projectId);
+
+            task.Project = project;
+
+            return await _tasksRepository.AddItemAsync(task);
         }
 
         public Task<TaskModel> UpdateTaskAsync(TaskModel task)

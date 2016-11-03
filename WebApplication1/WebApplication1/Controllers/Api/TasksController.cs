@@ -31,17 +31,18 @@ namespace WebApplication1.Controllers.Api
         }
 
         // GET api/<controller>/5
-        public async Task<TaskModel> GetTask(int taskId)
+        public async Task<TaskModel> GetTask(int id)
         {
-            return await _tasksManager.GetTaskAsync(taskId);
+            return await _tasksManager.GetTaskAsync(id);
         }
 
         // POST api/<controller>
-        public async Task<TaskModel> PostTask([FromBody]TaskModel task)
+        [System.Web.Http.Route("api/projects/{id}/tasks")]
+        public async Task<TaskModel> PostTask(int id, [FromBody]TaskModel task)
         {
             try
             {
-                return await _tasksManager.AddTaskAsync(task);
+                return await _tasksManager.AddTaskAsync(id, task);
             }
             catch (Exception ex)
             {
@@ -51,7 +52,8 @@ namespace WebApplication1.Controllers.Api
         }
 
         // PUT api/<controller>/5
-        public async Task<TaskModel> PutTask(int id, [FromBody]TaskModel task)
+        [System.Web.Http.Route("api/projects/{id}/tasks")]
+        public async Task<TaskModel> PutTask([FromBody]TaskModel task)
         {
             try
             {
@@ -65,9 +67,9 @@ namespace WebApplication1.Controllers.Api
         }
 
         // DELETE api/<controller>/5
-        public async Task DeleteTask(int taskId)
+        public async Task DeleteTask(int id)
         {
-            await _tasksManager.RemoveTaskAsync(taskId);
+            await _tasksManager.RemoveTaskAsync(id);
         }
     }
 }
