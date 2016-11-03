@@ -1,9 +1,12 @@
-﻿import React from 'react'
-import { Link } from 'react-router'
-import Table from './Table'
+﻿import React from 'react';
+import Table from './Table';
+
+import { Link } from 'react-router';
 
 var cols = [{
     name: "Subtask Name"
+}, {
+    name: "Description"
 }, {
     name: "Duration"
 }, {
@@ -12,10 +15,28 @@ var cols = [{
 
 const Subtasks = React.createClass({
     render: function () {
-        var self = this;
+        let self = this;
+        
+        let tableRowDataProcesser = function(element) {
+            return (
+                <tr key={element.id}>
+                    <td>{element.name}</td>
+					<td>{element.description}</td>
+                    <td>{element.duration}</td>
+                    <td width="20%">
+                        <button className="btn btn-danger">Edit</button>
+                        <button className="btn btn-danger" onClick={self.props.removeSubtask.bind(null, element.id)}>Remove</button>
+                    </td>
+                </tr>
+            );
+        };
+
+        let tableData = this.props.subtasks;
 
         return <div className="app-content">
-            <Table columns={cols} />
+            <Table columns={cols} 
+            	data={tableData} 
+            	rowDataProcesser={tableRowDataProcesser} />
         </div>;
     }
 });

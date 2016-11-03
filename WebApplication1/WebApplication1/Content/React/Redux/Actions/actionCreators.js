@@ -1,14 +1,5 @@
-﻿export function addProject(projectName, ownerName) {
-	return {
-		type: 'ADD_PROJECT',
-		projectName,
-		ownerName
-	}
-}
+﻿import * as projectsActionCreators from './projectsActionCreators'; 
+import * as tasksActionCreators from './tasksActionCreators'; 
+import * as subtasksActionCreators from './subtasksActionCreators'; 
 
-export function removeProject(projectId) {
-	return {
-		type: 'REMOVE_PROJECT',
-		projectId
-	}
-}
+export default Object.assign({}, projectsActionCreators, tasksActionCreators, subtasksActionCreators);

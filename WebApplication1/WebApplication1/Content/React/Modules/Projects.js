@@ -11,22 +11,26 @@ var cols = [{
     name: "Actions"
 }];
 
-var tableRowDataProcesser = function(element) {
-	return (
-		<tr key={element.id}>
-			<td>{element.projectName}</td>
-			<td>{element.owner}</td>
-			<td width="20%">
-                <button className="btn btn-info">Details</button>
-                <button className="btn btn-danger">Edit</button>
-                <button className="btn btn-danger">Remove</button>
-            </td>
-		</tr>
-	);
-};
-
 const Projects = React.createClass({
     render: function () {
+        let self = this;
+        
+        let tableRowDataProcesser = function(element) {
+            return (
+                <tr key={element.id}>
+                    <td>{element.name}</td>
+                    <td>{element.owner}</td>
+                    <td width="20%">
+                        <Link to={'/projects/' + element.id}>
+                            <button className="btn btn-info">Tasks</button>
+                        </Link>
+                        <button className="btn btn-danger">Edit</button>
+                        <button className="btn btn-danger" onClick={self.props.removeProject.bind(null, element.id)}>Remove</button>
+                    </td>
+                </tr>
+            );
+        };
+
         let tableData = this.props.projects;
 
         return <div className="app-content">

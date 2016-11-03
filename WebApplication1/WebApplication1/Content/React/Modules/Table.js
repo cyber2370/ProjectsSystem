@@ -3,9 +3,6 @@ import { Link } from 'react-router';
 
 const Table = React.createClass({
     render: function() {
-        if(this == null) {
-            return <h1>this == null</h1>;
-        }
 
         let columns = this.props.columns;
         let data = this.props.data;

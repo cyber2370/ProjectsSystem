@@ -339,6 +339,9 @@
     <Content Include="Content\React\Modules\Tasks.js" />
     <Content Include="Content\React\Modules\TopNavBar.js" />
     <Content Include="Content\React\Redux\Actions\actionCreators.js" />
+    <Content Include="Content\React\Redux\Actions\projectsActionCreators.js" />
+    <Content Include="Content\React\Redux\Actions\subtasksActionCreators.js" />
+    <Content Include="Content\React\Redux\Actions\tasksActionCreators.js" />
     <Content Include="Content\React\Redux\Reducers\index.js" />
     <Content Include="Content\React\Redux\Reducers\projects.js" />
     <Content Include="Content\React\Redux\Reducers\subtasks.js" />

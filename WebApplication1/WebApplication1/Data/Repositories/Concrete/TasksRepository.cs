@@ -19,8 +19,9 @@ namespace WebApplication1.Data.Repositories.Concrete
         {
             var taskToUpdate = Queryable.Single(t => task.Id == t.Id);
 
-            taskToUpdate = task;
-
+            taskToUpdate.Name = task.Name;
+            taskToUpdate.Description = task.Description;
+            
             await SaveChangesAsync();
         }
 
