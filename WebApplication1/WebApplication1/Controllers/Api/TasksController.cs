@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Mvc;
 using WebApplication1.Managers;
 using TaskModel = WebApplication1.Data.DB.Entities.Task;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Controllers.Api
 {
     public class TasksController : ApiController
     {
@@ -40,15 +37,31 @@ namespace WebApplication1.Controllers
         }
 
         // POST api/<controller>
-        public async Task PostTask([FromBody]TaskModel task)
+        public async Task<TaskModel> PostTask([FromBody]TaskModel task)
         {
-            await _tasksManager.AddTaskAsync(task);
+            try
+            {
+                return await _tasksManager.AddTaskAsync(task);
+            }
+            catch (Exception ex)
+            {
+                //TODO: return exception
+                return null;
+            }
         }
 
         // PUT api/<controller>/5
-        public async Task PutTask(int id, [FromBody]TaskModel task)
+        public async Task<TaskModel> PutTask(int id, [FromBody]TaskModel task)
         {
-            await _tasksManager.UpdateTaskAsync(task);
+            try
+            {
+                return await _tasksManager.UpdateTaskAsync(task);
+            }
+            catch (Exception ex)
+            {
+                //TODO: return exception
+                return null;
+            }
         }
 
         // DELETE api/<controller>/5

@@ -8,6 +8,5 @@ namespace WebApplication1.Data.Repositories
 {
     public interface ITasksRepository : ICrudRepositoryBase<Task, int>
     {
-        System.Threading.Tasks.Task UpdateItemAsync(Task task);
     }
 }

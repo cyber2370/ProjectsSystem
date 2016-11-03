@@ -34,19 +34,32 @@ namespace WebApplication1.Managers.Concrete
             return _subtasksRepository.GetItemAsync(subtaskId);
         }
 
-        public Task AddSubtaskAsync(Subtask subtask)
+        public Task<Subtask> AddSubtaskAsync(Subtask subtask)
         {
+            CheckIsValid(subtask);
+
             return _subtasksRepository.AddItemAsync(subtask);
         }
 
-        public Task UpdateSubtaskAsync(Subtask subtask)
+        public Task<Subtask> UpdateSubtaskAsync(Subtask subtask)
         {
+            CheckIsValid(subtask);
+
             return _subtasksRepository.UpdateItemAsync(subtask);
         }
 
         public Task RemoveSubtaskAsync(int subtaskId)
         {
             return _subtasksRepository.RemoveItemAsync(subtaskId);
+        }
+
+        private void CheckIsValid(Subtask subtask)
+        {
+            if (string.IsNullOrEmpty(subtask.Name)
+                || string.IsNullOrEmpty(subtask.Description))
+            {
+                throw new Exception("invalid_data");
+            }
         }
     }
 }

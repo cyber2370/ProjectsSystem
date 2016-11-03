@@ -11,6 +11,5 @@ namespace WebApplication1.Data.Repositories
 {
     public interface ISubtasksRepository : ICrudRepositoryBase<Subtask, int>
     {
-        Task UpdateItemAsync(Subtask subtask);
     }
 }

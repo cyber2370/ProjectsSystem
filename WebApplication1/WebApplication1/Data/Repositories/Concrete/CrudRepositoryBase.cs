@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using System.Web;
 using WebApplication1.Data.DB;
 
 namespace WebApplication1.Data.Repositories.Concrete
@@ -37,6 +37,12 @@ namespace WebApplication1.Data.Repositories.Concrete
         public virtual async Task<TEntity> AddItemAsync(TEntity item)
         {
             DbSet.Add(item);
+            await SaveChangesAsync();
+            return item;
+        }
+        public virtual async Task<TEntity> UpdateItemAsync(TEntity item)
+        {
+            DbSet.AddOrUpdate(item);
             await SaveChangesAsync();
             return item;
         }

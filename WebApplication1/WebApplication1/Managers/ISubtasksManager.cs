@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebApplication1.Data.DB.Entities;
-
+using WebApplication1.Data.Repositories.Concrete;
 using Task = System.Threading.Tasks.Task;
 
 namespace WebApplication1.Managers
@@ -14,9 +14,9 @@ namespace WebApplication1.Managers
 
         Task<Subtask> GetSubtaskAsync(int subtaskId);
 
-        Task AddSubtaskAsync(Subtask subtask);
+        Task<Subtask> AddSubtaskAsync(Subtask subtask);
 
-        Task UpdateSubtaskAsync(Subtask subtask);
+        Task<Subtask> UpdateSubtaskAsync(Subtask subtask);
 
         Task RemoveSubtaskAsync(int subtaskId);
     }

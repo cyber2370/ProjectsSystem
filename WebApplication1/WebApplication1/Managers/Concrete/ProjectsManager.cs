@@ -28,19 +28,32 @@ namespace WebApplication1.Managers.Concrete
             return _projectsRepository.GetItemAsync(projectId);
         }
 
-        public Task AddProjectAsync(Project project)
+        public Task<Project> AddProjectAsync(Project project)
         {
+            CheckIsValid(project);
+
             return _projectsRepository.AddItemAsync(project);
         }
 
-        public Task UpdateProjectAsync(Project project)
+        public Task<Project> UpdateProjectAsync(Project project)
         {
+            CheckIsValid(project);
+
             return _projectsRepository.UpdateItemAsync(project);
         }
 
         public Task RemoveProjectAsync(int projectId)
         {
             return _projectsRepository.RemoveItemAsync(projectId);
+        }
+
+        private void CheckIsValid(Project project)
+        {
+            if (string.IsNullOrEmpty(project.Name)
+                || string.IsNullOrEmpty(project.Owner))
+            {
+                throw new Exception("invalid_data");
+            }
         }
     }
 }

@@ -12,6 +12,5 @@ namespace WebApplication1.Data.Repositories
 {
     public interface IProjectsRepository : ICrudRepositoryBase<Project, int>
     {
-        Task UpdateItemAsync(Project project);
     }
 }

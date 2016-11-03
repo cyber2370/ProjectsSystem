@@ -15,9 +15,9 @@ namespace WebApplication1.Managers
 
         Task<Project> GetProjectAsync(int projectId);
 
-        Task AddProjectAsync(Project project);
+        Task<Project> AddProjectAsync(Project project);
 
-        Task UpdateProjectAsync(Project project);
+        Task<Project> UpdateProjectAsync(Project project);
 
         Task RemoveProjectAsync(int projectId);
     }

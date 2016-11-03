@@ -13,15 +13,6 @@ namespace WebApplication1.Data.Repositories.Concrete
         {
         }
 
-        public async System.Threading.Tasks.Task UpdateItemAsync(Project project)
-        {
-            var projectToUpdate = Queryable.Single(p => project.Id == p.Id);
-
-            projectToUpdate = project;
-
-            await SaveChangesAsync();
-        }
-
         protected override Expression<Func<Project, bool>> KeyPredicate(int id) => (it => it.Id == id);
     }
 }

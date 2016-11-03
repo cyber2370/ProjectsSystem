@@ -32,19 +32,32 @@ namespace WebApplication1.Managers.Concrete
             return _tasksRepository.GetItemAsync(taskId);
         }
 
-        public Task AddTaskAsync(TaskModel task)
+        public Task<TaskModel> AddTaskAsync(TaskModel task)
         {
+            CheckIsValid(task);
+
             return _tasksRepository.AddItemAsync(task);
         }
 
-        public Task UpdateTaskAsync(TaskModel task)
+        public Task<TaskModel> UpdateTaskAsync(TaskModel task)
         {
+            CheckIsValid(task);
+
             return _tasksRepository.UpdateItemAsync(task);
         }
 
         public Task RemoveTaskAsync(int taskId)
         {
             return _tasksRepository.RemoveItemAsync(taskId);
+        }
+
+        private void CheckIsValid(TaskModel task)
+        {
+            if (string.IsNullOrEmpty(task.Name)
+                || string.IsNullOrEmpty(task.Description))
+            {
+                throw new Exception("invalid_data");
+            }
         }
     }
 }

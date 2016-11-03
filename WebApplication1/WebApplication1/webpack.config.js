@@ -1,4 +1,4 @@
-/// <binding />
+/// <binding BeforeBuild='Run - Development' />
 var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -10,7 +6,7 @@ using WebApplication1.Data.DB.Entities;
 using WebApplication1.Managers;
 using Task = System.Threading.Tasks.Task;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Controllers.Api
 {
     public class SubtasksController : ApiController
     {

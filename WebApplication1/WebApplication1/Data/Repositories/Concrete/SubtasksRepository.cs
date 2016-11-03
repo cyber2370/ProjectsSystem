@@ -15,15 +15,6 @@ namespace WebApplication1.Data.Repositories.Concrete
         {
         }
 
-        public async System.Threading.Tasks.Task UpdateItemAsync(Subtask subtask)
-        {
-            var subtaskToUpdate = Queryable.Single(t => subtask.Id == t.Id);
-
-            subtaskToUpdate = subtask;
-
-            await SaveChangesAsync();
-        }
-
         protected override Expression<Func<Subtask, bool>> KeyPredicate(int id) => (it => it.Id == id);
     }
 }
