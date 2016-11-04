@@ -3,20 +3,37 @@ import Table from './Table';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
 
-import EditProjectModal from './EditProjectModal';
-
-var cols = [{
-    name: "Project Name"
-}, {
-    name: "Owner"
-}, {
-    name: "Actions"
-}];
+import EditFormModal from './EditFormModal';
 
 const Projects = React.createClass({
     render: function () {
         let self = this;
-        
+
+        let cols = [{
+            name: "Project Name"
+        }, {
+            name: "Owner"
+        }, {
+            name: "Actions"
+        }];
+
+        let modalSettings = {
+            title: "Edit Project",
+
+            modalButtonName: "Edit",
+
+            handleResult: this.props.updateProject,
+            
+            //name must be equal property from data(project)            
+            formFields: [{
+                name:  'name',
+                label:  'Project Name'
+            }, {
+                name:  'owner',
+                label:  'Owner'
+            }]
+        };
+                
         let tableRowDataProcesser = function(element) {
             return (
                 <tr key={element.id}>
@@ -26,7 +43,7 @@ const Projects = React.createClass({
                         <Link to={'/projects/' + element.id}>
                             <button className="btn btn-info">Tasks</button>
                         </Link>
-                        <EditProjectModal />
+                        <EditFormModal data={element} {...modalSettings} />
                         <button className="btn btn-danger" onClick={self.props.removeProject.bind(null, element.id)}>Remove</button>
                     </td>
                 </tr>
@@ -38,7 +55,8 @@ const Projects = React.createClass({
         return <div className="app-content">
             <Table columns={cols} 
             	data={tableData} 
-            	rowDataProcesser={tableRowDataProcesser} />
+            	rowDataProcesser={tableRowDataProcesser} 
+                {...this.props}/>
         </div>;
     }
 });

@@ -43,11 +43,11 @@ const EditProjectModal = React.createClass({
 			      <ModalBody>
 			          <form>
 			            <div className="form-group">
-			              <label for="recipient-name" className="form-control-label">Recipient:</label>
+			              <label htmlFor="recipient-name" className="form-control-label">Recipient:</label>
 			              <input type="text" className="form-control" id="recipient-name"/>
 			            </div>
 			            <div className="form-group">
-			              <label for="message-text" className="form-control-label">Message:</label>
+			              <label htmlFor="message-text" className="form-control-label">Message:</label>
 			              <textarea className="form-control" id="message-text"/>
 			            </div>
 			          </form>
