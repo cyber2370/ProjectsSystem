@@ -3,8 +3,7 @@
 		case 'REMOVE_SUBTASK':
 			var newState = state.slice();
 			
-			var elementToRemove = newState.find((element, index, array) => element.id == action.id);
-			var indexToRemove = newState.indexOf(elementToRemove);
+			var indexToRemove = newState.findIndex((element, index, array) => element.id == action.id);
     		newState.splice(indexToRemove, 1);
 
 			return newState;

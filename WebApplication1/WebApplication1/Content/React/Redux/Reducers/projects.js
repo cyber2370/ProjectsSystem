@@ -3,8 +3,7 @@
 		case 'REMOVE_PROJECT':
 			var projects = state.slice();
 			
-			var elementToRemove = projects.find((element, index, array) => element.id == action.id);
-			var indexToRemove = projects.indexOf(elementToRemove);
+			var indexToRemove = projects.findIndex((element, index, array) => element.id == action.id);
     		projects.splice(indexToRemove, 1);
 
 			return projects;

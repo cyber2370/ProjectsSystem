@@ -37,9 +37,10 @@ namespace WebApplication1.Controllers.Api
         }
 
         // POST api/<controller>
-        public async Task PostSubtask([FromBody]Subtask subtask)
+        [System.Web.Http.Route("api/tasks/{id}/subtasks/")]
+        public async Task PostSubtask(int id, [FromBody]Subtask subtask)
         {
-            await _subtasksManager.AddSubtaskAsync(subtask);
+            await _subtasksManager.AddSubtaskAsync(id, subtask);
         }
 
         // PUT api/<controller>/5
