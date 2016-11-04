@@ -1,7 +1,9 @@
 ﻿import React from 'react';
 import Table from './Table';
-
+import { render } from 'react-dom';
 import { Link } from 'react-router';
+
+import EditProjectModal from './EditProjectModal';
 
 var cols = [{
     name: "Project Name"
@@ -24,7 +26,7 @@ const Projects = React.createClass({
                         <Link to={'/projects/' + element.id}>
                             <button className="btn btn-info">Tasks</button>
                         </Link>
-                        <button className="btn btn-danger">Edit</button>
+                        <EditProjectModal />
                         <button className="btn btn-danger" onClick={self.props.removeProject.bind(null, element.id)}>Remove</button>
                     </td>
                 </tr>

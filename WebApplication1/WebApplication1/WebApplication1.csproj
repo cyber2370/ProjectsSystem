@@ -331,6 +331,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\React\Modules\EditProjectModal.js" />
     <Content Include="Content\React\Modules\App.js" />
     <Content Include="Content\React\Modules\Main.js" />
     <Content Include="Content\React\Modules\Projects.js" />
@@ -1217,7 +1218,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\React\Modules\Sample.jsx" />
     <Content Include="node_modules\.bin\acorn" />
     <Content Include="node_modules\.bin\acorn.cmd" />
     <Content Include="node_modules\.bin\errno" />

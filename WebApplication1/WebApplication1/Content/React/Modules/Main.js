@@ -27,6 +27,7 @@ const Main = React.createClass({
       render() {
         return (
           <div className="page">
+            <div className="modalDiv"></div>
             <TopNavBar elements={navBarItems} />
             {React.cloneElement(this.props.children, this.props)}
           </div>
