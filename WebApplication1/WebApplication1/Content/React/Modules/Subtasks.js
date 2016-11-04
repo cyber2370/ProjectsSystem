@@ -16,6 +16,9 @@ var cols = [{
 const Subtasks = React.createClass({
     render: function () {
         let self = this;
+
+        let taskId = this.props.params.taskId;
+        let tableData = this.props.subtasks.filter(subtask => subtask.task.id == taskId);
         
         let tableRowDataProcesser = function(element) {
             return (
@@ -30,8 +33,6 @@ const Subtasks = React.createClass({
                 </tr>
             );
         };
-
-        let tableData = this.props.subtasks;
 
         return <div className="app-content">
             <Table columns={cols} 

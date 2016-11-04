@@ -85,8 +85,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var router = _react2.default.createClass({
-	    displayName: 'router',
+	var MainComponent = _react2.default.createClass({
+	    displayName: 'MainComponent',
 	    render: function render() {
 	        return _react2.default.createElement(
 	            _reactRedux.Provider,
@@ -107,7 +107,7 @@
 	    }
 	});
 	
-	(0, _reactDom.render)(_react2.default.createElement(router), document.getElementById('app'));
+	(0, _reactDom.render)(_react2.default.createElement(MainComponent, null), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -28819,33 +28819,141 @@
 	
 	var tasks = [{
 		id: 1,
-		name: "TaskName1",
-		description: "Description1"
+		name: "Task1 of " + projects[0].name,
+		description: "Description1",
+		project: projects[0]
 	}, {
 		id: 2,
-		name: "TaskName2",
-		description: "Description2"
+		name: "Task2 of " + projects[0].name,
+		description: "Description1",
+		project: projects[0]
 	}, {
 		id: 3,
-		name: "TaskName3",
-		description: "Description3"
+		name: "Task3 of " + projects[0].name,
+		description: "Description1",
+		project: projects[0]
+	}, {
+		id: 4,
+		name: "Task1 of " + projects[1].name,
+		description: "Description1",
+		project: projects[1]
+	}, {
+		id: 5,
+		name: "Task2 of " + projects[1].name,
+		description: "Description1",
+		project: projects[1]
+	}, {
+		id: 6,
+		name: "Task3 of " + projects[1].name,
+		description: "Description1",
+		project: projects[1]
+	}, {
+		id: 7,
+		name: "Task1 of " + projects[2].name,
+		description: "Description1",
+		project: projects[2]
+	}, {
+		id: 8,
+		name: "Task2 of " + projects[2].name,
+		description: "Description1",
+		project: projects[2]
+	}, {
+		id: 9,
+		name: "Task3 of " + projects[2].name,
+		description: "Description1",
+		project: projects[2]
 	}];
 	
 	var subtasks = [{
 		id: 1,
-		name: "SubtaskName1",
+		name: "Subtask1 of " + tasks[0].name,
 		description: "Description1",
-		duration: "14:00"
+		duration: "14:00",
+		task: tasks[0]
 	}, {
 		id: 2,
-		name: "SubtaskName2",
-		description: "Description2",
-		duration: "4:00"
+		name: "Subtask2 of " + tasks[0].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[0]
 	}, {
 		id: 3,
-		name: "SubtaskName3",
-		description: "Description3",
-		duration: "22:00"
+		name: "Subtask3 of " + tasks[0].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[0]
+	}, {
+		id: 4,
+		name: "Subtask1 of " + tasks[1].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[1]
+	}, {
+		id: 5,
+		name: "Subtask2 of " + tasks[1].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[1]
+	}, {
+		id: 6,
+		name: "Subtask3 of " + tasks[1].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[1]
+	}, {
+		id: 7,
+		name: "Subtask1 of " + tasks[2].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[2]
+	}, {
+		id: 8,
+		name: "Subtask2 of " + tasks[2].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[2]
+	}, {
+		id: 9,
+		name: "Subtask3 of " + tasks[2].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[2]
+	}, {
+		id: 10,
+		name: "Subtask1 of " + tasks[3].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[3]
+	}, {
+		id: 11,
+		name: "Subtask2 of " + tasks[4].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[4]
+	}, {
+		id: 12,
+		name: "Subtask3 of " + tasks[5].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[5]
+	}, {
+		id: 13,
+		name: "Subtask1 of " + tasks[6].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[6]
+	}, {
+		id: 14,
+		name: "Subtask2 of " + tasks[7].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[7]
+	}, {
+		id: 15,
+		name: "Subtask3 of " + tasks[8].name,
+		description: "Description1",
+		duration: "14:00",
+		task: tasks[8]
 	}];
 	
 	var defaultState = {
@@ -28854,7 +28962,11 @@
 		subtasks: subtasks
 	};
 	
-	var store = (0, _redux.createStore)(_index2.default, defaultState);
+	var enhansers = (0, _redux.compose)(window.devToolsExtension ? window.devToolsExtension() : function (f) {
+		return f;
+	});
+	
+	var store = (0, _redux.createStore)(_index2.default, defaultState, enhansers);
 	var history = exports.history = (0, _reactRouterRedux.syncHistoryWithStore)(_reactRouter.hashHistory, store);
 	
 	exports.default = store;
@@ -29299,7 +29411,6 @@
 				var indexToRemove = projects.findIndex(function (element, index, array) {
 					return element.id == action.id;
 				});
-				//var indexToRemove = projects.indexOf(elementToRemove);
 				projects.splice(indexToRemove, 1);
 	
 				return projects;
@@ -29330,10 +29441,9 @@
 			case 'REMOVE_TASK':
 				var newState = state.slice();
 	
-				var elementToRemove = newState.find(function (element, index, array) {
+				var indexToRemove = newState.findIndex(function (element, index, array) {
 					return element.id == action.id;
 				});
-				var indexToRemove = newState.indexOf(elementToRemove);
 				newState.splice(indexToRemove, 1);
 	
 				return newState;
@@ -29364,10 +29474,9 @@
 			case 'REMOVE_SUBTASK':
 				var newState = state.slice();
 	
-				var elementToRemove = newState.find(function (element, index, array) {
+				var indexToRemove = newState.findIndex(function (element, index, array) {
 					return element.id == action.id;
 				});
-				var indexToRemove = newState.indexOf(elementToRemove);
 				newState.splice(indexToRemove, 1);
 	
 				return newState;
@@ -29870,6 +29979,11 @@
 	    render: function render() {
 	        var self = this;
 	
+	        var projectId = this.props.params.projectId;
+	        var tableData = this.props.tasks.filter(function (task) {
+	            return task.project.id == projectId;
+	        });
+	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
 	            return _react2.default.createElement(
 	                'tr',
@@ -29909,8 +30023,6 @@
 	                )
 	            );
 	        };
-	
-	        var tableData = this.props.tasks;
 	
 	        return _react2.default.createElement(
 	            'div',
@@ -29965,6 +30077,11 @@
 	    render: function render() {
 	        var self = this;
 	
+	        var taskId = this.props.params.taskId;
+	        var tableData = this.props.subtasks.filter(function (subtask) {
+	            return subtask.task.id == taskId;
+	        });
+	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
 	            return _react2.default.createElement(
 	                'tr',
@@ -30000,8 +30117,6 @@
 	                )
 	            );
 	        };
-	
-	        var tableData = this.props.subtasks;
 	
 	        return _react2.default.createElement(
 	            'div',

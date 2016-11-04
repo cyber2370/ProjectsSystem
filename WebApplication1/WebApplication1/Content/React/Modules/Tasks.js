@@ -15,6 +15,9 @@ const Tasks = React.createClass({
     render: function () {
         let self = this;
 
+        let projectId = this.props.params.projectId;
+        let tableData = this.props.tasks.filter(task => task.project.id == projectId);
+
         var tableRowDataProcesser = function(element) {
             return (
                 <tr key={element.id}>
@@ -30,8 +33,6 @@ const Tasks = React.createClass({
                 </tr>
             );
         };
-
-        let tableData = this.props.tasks;
 
         return <div className="app-content">
             <Table columns={cols} 

@@ -12,7 +12,7 @@ import Projects from './modules/Projects';
 import Tasks from './modules/Tasks';
 import Subtasks from './modules/Subtasks';
 
-const router = React.createClass({
+const MainComponent = React.createClass({
     render(){
         return (
             <Provider store={store}>
@@ -29,4 +29,4 @@ const router = React.createClass({
     }
 });
 
-render(React.createElement(router), document.getElementById('app'));
+render(<MainComponent />, document.getElementById('app'));
