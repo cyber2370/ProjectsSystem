@@ -11,6 +11,7 @@ export function addProject(project) {
 }
 
 export function updateProject(project) {
+	console.log(project, "UPDATE_PROJECT");
 	return {
 		type: UPDATE_PROJECT,
 		project

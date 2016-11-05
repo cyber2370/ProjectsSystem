@@ -2,7 +2,6 @@
 /// <reference path="../content/react/index.js" />
 /// <reference path="../content/react/modules/app.js" />
 /// <reference path="../content/react/modules/editformmodal.js" />
-/// <reference path="../content/react/modules/editprojectmodal.js" />
 /// <reference path="../content/react/modules/main.js" />
 /// <reference path="../content/react/modules/projects.js" />
 /// <reference path="../content/react/modules/subtasks.js" />

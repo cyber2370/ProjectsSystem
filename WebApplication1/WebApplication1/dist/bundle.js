@@ -29605,6 +29605,7 @@
 	}
 	
 	function updateProject(project) {
+		console.log(project, "UPDATE_PROJECT");
 		return {
 			type: UPDATE_PROJECT,
 			project: project
@@ -29872,6 +29873,7 @@
 	
 	            handleResult: this.props.updateProject,
 	
+	            //name must be equal property from data(project)            
 	            formFields: [{
 	                name: 'name',
 	                label: 'Project Name'
@@ -29882,6 +29884,8 @@
 	        };
 	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
+	            var uniqIndex = Math.random() * 1234567 ^ 0;
+	
 	            return _react2.default.createElement(
 	                'tr',
 	                { key: element.id },
@@ -29907,7 +29911,7 @@
 	                            'Tasks'
 	                        )
 	                    ),
-	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, modalSettings)),
+	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, modalSettings, { key: uniqIndex })),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { className: 'btn btn-danger', onClick: self.props.removeProject.bind(null, element.id) },
@@ -29971,10 +29975,10 @@
 	                _react2.default.createElement(
 	                    'tr',
 	                    null,
-	                    columns.map(function (el) {
+	                    columns.map(function (el, index) {
 	                        return _react2.default.createElement(
 	                            'th',
-	                            null,
+	                            { key: index },
 	                            el.name
 	                        );
 	                    })
@@ -30028,21 +30032,22 @@
 		open: function open() {
 			this.setState({ showModal: true });
 		},
-		submitForm: function submitForm($form) {
+		submitForm: function submitForm(formId, e) {
+			e.preventDefault();
+			var $form = $('#' + formId);
+	
 			var _props = this.props,
 			    formFields = _props.formFields,
 			    handleResult = _props.handleResult,
 			    data = _props.data;
 	
 	
-			for (var p in data) {
-				var input = $('#' + p, $form);
+			for (var p in formFields) {
+				var propertyName = formFields[p].name;
 	
-				if (!input[0]) continue;
+				var $input = $('#' + propertyName, $form);
 	
-				data[p] = input[0].value;
-	
-				console.log(input, input[0], data[p], data);
+				data[propertyName] = $input[0].value;
 			}
 	
 			handleResult(data);
@@ -30057,6 +30062,7 @@
 			    handleResult = _props2.handleResult,
 			    data = _props2.data;
 	
+			var formId = Math.random() * 1234567 ^ 0;
 	
 			return _react2.default.createElement(
 				'div',
@@ -30089,7 +30095,7 @@
 							null,
 							_react2.default.createElement(
 								'form',
-								{ id: 'form' },
+								{ id: formId },
 								formFields.map(function (element, index) {
 									return _react2.default.createElement(
 										'div',
@@ -30100,7 +30106,7 @@
 											element.label,
 											':'
 										),
-										_react2.default.createElement('input', { type: 'text', className: 'form-control', id: element.name, defaultValue: data[element.name] })
+										_react2.default.createElement('input', { type: 'text', className: 'form-control', ref: element.name, id: element.name, defaultValue: data[element.name] })
 									);
 								})
 							)
@@ -30115,7 +30121,7 @@
 							),
 							_react2.default.createElement(
 								'button',
-								{ className: 'btn btn-primary', onClick: this.submitForm.bind(null, $('#form')) },
+								{ className: 'btn btn-primary', onClick: this.submitForm.bind(null, formId) },
 								'Save'
 							)
 						)

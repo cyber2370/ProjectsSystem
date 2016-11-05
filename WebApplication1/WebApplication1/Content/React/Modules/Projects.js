@@ -35,6 +35,8 @@ const Projects = React.createClass({
         };
                 
         let tableRowDataProcesser = function(element) {
+            let uniqIndex = (Math.random() * 1234567) ^ 0;
+
             return (
                 <tr key={element.id}>
                     <td>{element.name}</td>
@@ -43,7 +45,7 @@ const Projects = React.createClass({
                         <Link to={'/projects/' + element.id}>
                             <button className="btn btn-info">Tasks</button>
                         </Link>
-                        <EditFormModal data={element} {...modalSettings} />
+                        <EditFormModal data={element} {...modalSettings} key={uniqIndex}/>
                         <button className="btn btn-danger" onClick={self.props.removeProject.bind(null, element.id)}>Remove</button>
                     </td>
                 </tr>

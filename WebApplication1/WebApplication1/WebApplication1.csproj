@@ -302,7 +302,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\React\Modules\EditProjectModal.js" />
     <Content Include="Content\React\Modules\App.js" />
     <Content Include="Content\React\Modules\Main.js" />
     <Content Include="Content\React\Modules\Projects.js" />

@@ -12,8 +12,8 @@ const Table = React.createClass({
             <thead>
             <tr>
                 {
-                    columns.map(function(el) {
-                        return <th>{el.name}</th>;
+                    columns.map(function(el, index) {
+                        return <th key={index}>{el.name}</th>;
                     })
                 }
             </tr>
