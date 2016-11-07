@@ -8,7 +8,9 @@
 let baseUrl = "http://localhost:54243/api/"
 let baseTasksUrl = baseUrl + 'tasks/';
 
-let baseAjaxSettings = {};
+let baseAjaxSettings = {
+	error: console.log
+};
 
 export function getTasksAsync(callback) {
 	let url = baseTasksUrl;

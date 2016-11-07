@@ -8,7 +8,9 @@
 let baseUrl = "http://localhost:54243/api/"
 let baseSubtasksUrl = baseUrl + 'subtasks/';
 
-let baseAjaxSettings = {};
+let baseAjaxSettings = {
+	error: console.log
+};
 
 export function getSubtasksAsync(callback) {
 	let url = baseSubtasksUrl;
