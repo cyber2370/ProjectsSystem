@@ -30,14 +30,19 @@ const EditFormModal = React.createClass({
 		e.preventDefault();
 		let $form = $('#' + formId);
 
-		let { formFields, handleResult, data } = this.props;
-		
+		let { formFields, handleResult, data = {} } = this.props;
+
 		for(let p in formFields) {
 			let propertyName = formFields[p].name;
 
 			let $input = $('#' + propertyName, $form);
 
 			data[propertyName] = $input[0].value;
+		}
+
+		//TODO: remove when API calls will be implemented
+		if(!(data.id)) {
+			data.id = (Math.random() * 1234567) ^ 0;
 		}
 
 		handleResult(data);
@@ -70,7 +75,11 @@ const EditFormModal = React.createClass({
 				        	return (
 					        	<div className="form-group" key={index}>
 					              <label htmlFor={element.name} className="form-control-label">{element.label}:</label>
-					              <input type="text" className="form-control" ref={element.name} id={element.name} defaultValue={data[element.name]}/>
+					              <input type="text" 
+						               className="form-control"
+						               ref={element.name} 
+						               id={element.name} 
+						               defaultValue={data ? data[element.name] : ""}/>
 					            </div>
 				        	);
 				        })    

@@ -3,10 +3,11 @@
 	  REMOVE_SUBTASK = 'REMOVE_SUBTASK';
 
 
-export function addSubtask(subtask) {
+export function addSubtask(taskId, subtask) {
 	return {
 		type: ADD_SUBTASK,
-		subtask
+		subtask,
+		taskId
 	}
 }
 

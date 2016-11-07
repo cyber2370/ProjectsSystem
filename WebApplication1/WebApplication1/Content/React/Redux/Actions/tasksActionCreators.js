@@ -3,10 +3,11 @@
 	  REMOVE_TASK = 'REMOVE_TASK';
 
 
-export function addTask(task) {
+export function addTask(projectId, task) {
 	return {
 		type: ADD_TASK,
-		task
+		task,
+		projectId
 	}
 }
 

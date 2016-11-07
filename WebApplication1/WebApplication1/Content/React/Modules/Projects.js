@@ -17,7 +17,15 @@ const Projects = React.createClass({
             name: "Actions"
         }];
 
-        let modalSettings = {
+        let formFields = [{
+                name:  'name',
+                label:  'Project Name'
+            }, {
+                name:  'owner',
+                label:  'Owner'
+            }];
+
+        let editModalSettings = {
             title: "Edit Project",
 
             modalButtonName: "Edit",
@@ -25,13 +33,18 @@ const Projects = React.createClass({
             handleResult: this.props.updateProject,
             
             //name must be equal property from data(project)            
-            formFields: [{
-                name:  'name',
-                label:  'Project Name'
-            }, {
-                name:  'owner',
-                label:  'Owner'
-            }]
+            formFields
+        };
+
+        let addModalSettings = {
+            title: "Add Project",
+
+            modalButtonName: "Add",
+
+            handleResult: this.props.addProject,
+            
+            //name must be equal property from data(project)            
+            formFields
         };
                 
         let tableRowDataProcesser = function(element) {
@@ -45,7 +58,7 @@ const Projects = React.createClass({
                         <Link to={'/projects/' + element.id}>
                             <button className="btn btn-info">Tasks</button>
                         </Link>
-                        <EditFormModal data={element} {...modalSettings} key={uniqIndex}/>
+                        <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
                         <button className="btn btn-danger" onClick={self.props.removeProject.bind(null, element.id)}>Remove</button>
                     </td>
                 </tr>
@@ -55,6 +68,7 @@ const Projects = React.createClass({
         let tableData = this.props.projects;
 
         return <div className="app-content">
+            <EditFormModal {...addModalSettings}/>
             <Table columns={cols} 
             	data={tableData} 
             	rowDataProcesser={tableRowDataProcesser} 

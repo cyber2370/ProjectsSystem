@@ -29461,6 +29461,9 @@
 	
 		switch (action.type) {
 			case 'ADD_TASK':
+				action.task.project = {};
+				action.task.project.id = action.projectId;
+	
 				return [].concat(_toConsumableArray(state), [action.task]);
 			case 'UPDATE_TASK':
 				var tasks = state.slice();
@@ -29473,7 +29476,7 @@
 				tasks[indexToUpdate].description = action.task.description;
 	
 				return tasks;
-			case 'REMOVE_SUBTASK':
+			case 'REMOVE_TASK':
 				var tasks = state.slice();
 	
 				var indexToRemove = tasks.findIndex(function (element) {
@@ -29510,6 +29513,9 @@
 	
 		switch (action.type) {
 			case 'ADD_SUBTASK':
+				action.subtask.task = {};
+				action.subtask.task.id = action.taskId;
+	
 				return [].concat(_toConsumableArray(state), [action.subtask]);
 			case 'UPDATE_SUBTASK':
 				var subtasks = state.slice();
@@ -29671,10 +29677,11 @@
 	    UPDATE_TASK = 'UPDATE_TASK',
 	    REMOVE_TASK = 'REMOVE_TASK';
 	
-	function addTask(task) {
+	function addTask(projectId, task) {
 		return {
 			type: ADD_TASK,
-			task: task
+			task: task,
+			projectId: projectId
 		};
 	}
 	
@@ -29711,10 +29718,11 @@
 	    UPDATE_SUBTASK = 'UPDATE_SUBTASK',
 	    REMOVE_SUBTASK = 'REMOVE_SUBTASK';
 	
-	function addSubtask(subtask) {
+	function addSubtask(taskId, subtask) {
 		return {
 			type: ADD_SUBTASK,
-			subtask: subtask
+			subtask: subtask,
+			taskId: taskId
 		};
 	}
 	
@@ -29918,7 +29926,15 @@
 	            name: "Actions"
 	        }];
 	
-	        var modalSettings = {
+	        var formFields = [{
+	            name: 'name',
+	            label: 'Project Name'
+	        }, {
+	            name: 'owner',
+	            label: 'Owner'
+	        }];
+	
+	        var editModalSettings = {
 	            title: "Edit Project",
 	
 	            modalButtonName: "Edit",
@@ -29926,13 +29942,18 @@
 	            handleResult: this.props.updateProject,
 	
 	            //name must be equal property from data(project)            
-	            formFields: [{
-	                name: 'name',
-	                label: 'Project Name'
-	            }, {
-	                name: 'owner',
-	                label: 'Owner'
-	            }]
+	            formFields: formFields
+	        };
+	
+	        var addModalSettings = {
+	            title: "Add Project",
+	
+	            modalButtonName: "Add",
+	
+	            handleResult: this.props.addProject,
+	
+	            //name must be equal property from data(project)            
+	            formFields: formFields
 	        };
 	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
@@ -29963,7 +29984,7 @@
 	                            'Tasks'
 	                        )
 	                    ),
-	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, modalSettings, { key: uniqIndex })),
+	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, editModalSettings, { key: uniqIndex })),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { className: 'btn btn-danger', onClick: self.props.removeProject.bind(null, element.id) },
@@ -29978,6 +29999,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'app-content' },
+	            _react2.default.createElement(_EditFormModal2.default, addModalSettings),
 	            _react2.default.createElement(_Table2.default, _extends({ columns: cols,
 	                data: tableData,
 	                rowDataProcesser: tableRowDataProcesser
@@ -30091,7 +30113,8 @@
 			var _props = this.props,
 			    formFields = _props.formFields,
 			    handleResult = _props.handleResult,
-			    data = _props.data;
+			    _props$data = _props.data,
+			    data = _props$data === undefined ? {} : _props$data;
 	
 	
 			for (var p in formFields) {
@@ -30100,6 +30123,11 @@
 				var $input = $('#' + propertyName, $form);
 	
 				data[propertyName] = $input[0].value;
+			}
+	
+			//TODO: remove when API calls will be implemented
+			if (!data.id) {
+				data.id = Math.random() * 1234567 ^ 0;
 			}
 	
 			handleResult(data);
@@ -30158,7 +30186,11 @@
 											element.label,
 											':'
 										),
-										_react2.default.createElement('input', { type: 'text', className: 'form-control', ref: element.name, id: element.name, defaultValue: data[element.name] })
+										_react2.default.createElement('input', { type: 'text',
+											className: 'form-control',
+											ref: element.name,
+											id: element.name,
+											defaultValue: data ? data[element.name] : "" })
 									);
 								})
 							)
@@ -55102,11 +55134,11 @@
 	
 	var _Table2 = _interopRequireDefault(_Table);
 	
-	var _reactRouter = __webpack_require__(/*! react-router */ 172);
-	
 	var _EditFormModal = __webpack_require__(/*! ./EditFormModal */ 274);
 	
 	var _EditFormModal2 = _interopRequireDefault(_EditFormModal);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -55124,7 +55156,21 @@
 	    render: function render() {
 	        var self = this;
 	
-	        var modalSettings = {
+	        var projectId = this.props.params.projectId;
+	        var tableData = this.props.tasks.filter(function (task) {
+	            return task.project.id == projectId;
+	        });
+	        var uniqIndex = Math.random() * 1234567 ^ 0;
+	
+	        var formFields = [{
+	            name: 'name',
+	            label: 'Task Name'
+	        }, {
+	            name: 'description',
+	            label: 'Description'
+	        }];
+	
+	        var editModalSettings = {
 	            title: "Edit Task",
 	
 	            modalButtonName: "Edit",
@@ -55132,20 +55178,22 @@
 	            handleResult: this.props.updateTask,
 	
 	            //name must be equal property from data(task)            
-	            formFields: [{
-	                name: 'name',
-	                label: 'Task Name'
-	            }, {
-	                name: 'description',
-	                label: 'Description'
-	            }]
+	            formFields: formFields
 	        };
 	
-	        var projectId = this.props.params.projectId;
-	        var tableData = this.props.tasks.filter(function (task) {
-	            return task.project.id == projectId;
-	        });
-	        var uniqIndex = Math.random() * 1234567 ^ 0;
+	        var addModalSettings = {
+	            title: "Add Task",
+	
+	            modalButtonName: "Add",
+	
+	            handleResult: function handleResult(task) {
+	                console.log(projectId);
+	                self.props.addTask(projectId, task);
+	            },
+	
+	            //name must be equal property from data(task)            
+	            formFields: formFields
+	        };
 	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
 	            return _react2.default.createElement(
@@ -55163,7 +55211,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    'td',
-	                    { width: '20%' },
+	                    { width: '30%' },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
 	                        { to: '/tasks/' + element.id },
@@ -55173,7 +55221,7 @@
 	                            'Subtasks'
 	                        )
 	                    ),
-	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, modalSettings, { key: uniqIndex })),
+	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, editModalSettings, { key: uniqIndex })),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { className: 'btn btn-danger', onClick: self.props.removeTask.bind(null, element.id) },
@@ -55186,6 +55234,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'app-content' },
+	            _react2.default.createElement(_EditFormModal2.default, addModalSettings),
 	            _react2.default.createElement(_Table2.default, { columns: cols,
 	                data: tableData,
 	                rowDataProcesser: tableRowDataProcesser })
@@ -55242,7 +55291,24 @@
 	    render: function render() {
 	        var self = this;
 	
-	        var modalSettings = {
+	        var taskId = this.props.params.taskId;
+	        var tableData = this.props.subtasks.filter(function (subtask) {
+	            return subtask.task.id == taskId;
+	        });
+	        var uniqIndex = Math.random() * 1234567 ^ 0;
+	
+	        var formFields = [{
+	            name: 'name',
+	            label: 'Subtask Name'
+	        }, {
+	            name: 'description',
+	            label: 'Description'
+	        }, {
+	            name: 'duration',
+	            label: 'Duration'
+	        }];
+	
+	        var editModalSettings = {
 	            title: "Edit Project",
 	
 	            modalButtonName: "Edit",
@@ -55250,23 +55316,22 @@
 	            handleResult: this.props.updateSubtask,
 	
 	            //name must be equal property from data(subtask)            
-	            formFields: [{
-	                name: 'name',
-	                label: 'Subtask Name'
-	            }, {
-	                name: 'description',
-	                label: 'Description'
-	            }, {
-	                name: 'duration',
-	                label: 'Duration'
-	            }]
+	            formFields: formFields
 	        };
 	
-	        var taskId = this.props.params.taskId;
-	        var tableData = this.props.subtasks.filter(function (subtask) {
-	            return subtask.task.id == taskId;
-	        });
-	        var uniqIndex = Math.random() * 1234567 ^ 0;
+	        var addModalSettings = {
+	            title: "Add Subtask",
+	
+	            modalButtonName: "Add",
+	
+	            handleResult: function handleResult(subtask) {
+	                console.log(taskId);
+	                self.props.addSubtask(taskId, subtask);
+	            },
+	
+	            //name must be equal property from data(task)            
+	            formFields: formFields
+	        };
 	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
 	            return _react2.default.createElement(
@@ -55290,7 +55355,7 @@
 	                _react2.default.createElement(
 	                    'td',
 	                    { width: '20%' },
-	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, modalSettings, { key: uniqIndex })),
+	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, editModalSettings, { key: uniqIndex })),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { className: 'btn btn-danger', onClick: self.props.removeSubtask.bind(null, element.id) },
@@ -55303,6 +55368,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'app-content' },
+	            _react2.default.createElement(_EditFormModal2.default, addModalSettings),
 	            _react2.default.createElement(_Table2.default, { columns: cols,
 	                data: tableData,
 	                rowDataProcesser: tableRowDataProcesser })
