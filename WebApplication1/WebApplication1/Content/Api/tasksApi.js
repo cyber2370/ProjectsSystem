@@ -10,38 +10,54 @@ let baseTasksUrl = baseUrl + 'tasks/';
 
 let baseAjaxSettings = {};
 
-export function getTasksAsync() {
+export function getTasksAsync(callback) {
 	let url = baseTasksUrl;
 
+	baseAjaxSettings.success = callback;
+
 	return getAsync(url, baseAjaxSettings);
 }
 
-export function getTasksByProjectIdAsync(projectId) {
+export function getTasksByProjectIdAsync(projectId, callback) {
 	let url = baseUrl + 'projects/' +  projectId + '/tasks/';
 
+	baseAjaxSettings.success = callback;
+
 	return getAsync(url, baseAjaxSettings);
 }
 
-export function getTaskByIdAsync(taskId) {
+export function getTaskByIdAsync(taskId, callback) {
 	let url = baseTasksUrl + taskId + '/';
 
+	baseAjaxSettings.success = callback;
+
 	return getAsync(url, baseAjaxSettings);
 }
 
-export function addTaskAsync(projectId, task) {
+export function addTaskAsync(projectId, task, callback) {
 	let url = baseUrl + 'projects/' +  projectId + '/tasks/';
+
+	baseAjaxSettings.success = function(updatedTask){
+		 callback(updatedTask.projectId, updatedTask);
+	};
 
 	return postAsync(url, task, baseAjaxSettings);
 }
 
-export function updateTaskAsync(task) {
+export function updateTaskAsync(task, callback) {
 	let url = baseTasksUrl;
+
+	baseAjaxSettings.success = callback;
 
 	return putAsync(url, task, baseAjaxSettings);
 }
 
-export function deleteTaskAsync(taskId) {
+export function deleteTaskAsync(taskId, callback) {
 	let url = baseTasksUrl + taskId + '/';
+
+	baseAjaxSettings.success = function() {
+		callback(taskId);
+	};
 
 	return deleteAsync(url, baseAjaxSettings);
 }

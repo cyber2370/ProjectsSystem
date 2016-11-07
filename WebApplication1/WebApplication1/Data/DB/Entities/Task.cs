@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Data.DB.Entities
 {
@@ -13,8 +11,8 @@ namespace WebApplication1.Data.DB.Entities
 
         public string Description { get; set; }
 
+        [ForeignKey("Project")]
+        public int ProjectId { get; set; }
         public Project Project { get; set; }
-
-        public IList<Subtask> Subtasks { get; set; } 
     }
 }

@@ -4,7 +4,7 @@
 	  REMOVE_PROJECT = 'REMOVE_PROJECT';
 
 export function addProjects(projects) {
-	console.log(projects);
+	console.log("addProjects: " + projects);
 	return {
 		type: ADD_PROJECTS,
 		projects
@@ -12,6 +12,7 @@ export function addProjects(projects) {
 }
 
 export function addProject(project) {
+	console.log("addProject: " + project);
 	return {
 		type: ADD_PROJECT,
 		project
@@ -19,7 +20,7 @@ export function addProject(project) {
 }
 
 export function updateProject(project) {
-	console.log(project, "UPDATE_PROJECT");
+	console.log("updateProject: " + project);
 	return {
 		type: UPDATE_PROJECT,
 		project
@@ -27,6 +28,7 @@ export function updateProject(project) {
 }
 
 export function removeProject(id) {
+	console.log("removeProject: " + id);
 	return {
 		type: REMOVE_PROJECT,
 		id

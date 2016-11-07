@@ -1,5 +1,7 @@
 ﻿function subtasks(state = [], action) {
 	switch (action.type) {
+		case 'ADD_SUBTASKS':
+			return action.subtasks;
 		case 'ADD_SUBTASK':
 			action.subtask.task = {};
 			action.subtask.task.id = action.taskId;

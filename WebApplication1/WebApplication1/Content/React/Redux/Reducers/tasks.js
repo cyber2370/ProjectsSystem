@@ -1,9 +1,9 @@
 ﻿function tasks(state = [], action) {
 	switch (action.type) {
-		case 'ADD_TASK':
-			action.task.project = {};
-			action.task.project.id = action.projectId;
+		case 'ADD_TASKS':
+			return action.tasks;
 			
+		case 'ADD_TASK':
 			return [
 				...state,
 				action.task

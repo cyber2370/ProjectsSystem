@@ -42,9 +42,7 @@ namespace WebApplication1.Managers.Concrete
         {
             CheckIsValid(task);
 
-            Project project = await _projectsManager.GetProjectAsync(projectId);
-
-            task.Project = project;
+            task.ProjectId = projectId;
 
             return await _tasksRepository.AddItemAsync(task);
         }

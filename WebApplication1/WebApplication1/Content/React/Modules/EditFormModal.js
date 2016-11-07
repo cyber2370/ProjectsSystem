@@ -32,6 +32,8 @@ const EditFormModal = React.createClass({
 
 		let { formFields, handleResult, data = {} } = this.props;
 
+		console.log("submitForm", formFields, handleResult, data);
+
 		for(let p in formFields) {
 			let propertyName = formFields[p].name;
 

@@ -12,7 +12,5 @@ namespace WebApplication1.Data.DB.Entities
         public string Name { get; set; }
 
         public string Owner { get; set; }
-
-        public IList<Task> Tasks { get; set; }
     }
 }

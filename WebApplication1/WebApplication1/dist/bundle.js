@@ -79,7 +79,7 @@
 	
 	var _Tasks2 = _interopRequireDefault(_Tasks);
 	
-	var _Subtasks = __webpack_require__(/*! ./modules/Subtasks */ 598);
+	var _Subtasks = __webpack_require__(/*! ./modules/Subtasks */ 599);
 	
 	var _Subtasks2 = _interopRequireDefault(_Subtasks);
 	
@@ -29303,10 +29303,10 @@
 		var action = arguments[1];
 	
 		switch (action.type) {
-			case 'ADD_TASK':
-				action.task.project = {};
-				action.task.project.id = action.projectId;
+			case 'ADD_TASKS':
+				return action.tasks;
 	
+			case 'ADD_TASK':
 				return [].concat(_toConsumableArray(state), [action.task]);
 			case 'UPDATE_TASK':
 				var tasks = state.slice();
@@ -29355,6 +29355,8 @@
 		var action = arguments[1];
 	
 		switch (action.type) {
+			case 'ADD_SUBTASKS':
+				return action.subtasks;
 			case 'ADD_SUBTASK':
 				action.subtask.task = {};
 				action.subtask.task.id = action.taskId;
@@ -29482,7 +29484,7 @@
 	    REMOVE_PROJECT = 'REMOVE_PROJECT';
 	
 	function addProjects(projects) {
-		console.log(projects);
+		console.log("addProjects: " + projects);
 		return {
 			type: ADD_PROJECTS,
 			projects: projects
@@ -29490,6 +29492,7 @@
 	}
 	
 	function addProject(project) {
+		console.log("addProject: " + project);
 		return {
 			type: ADD_PROJECT,
 			project: project
@@ -29497,7 +29500,7 @@
 	}
 	
 	function updateProject(project) {
-		console.log(project, "UPDATE_PROJECT");
+		console.log("updateProject: " + project);
 		return {
 			type: UPDATE_PROJECT,
 			project: project
@@ -29505,6 +29508,7 @@
 	}
 	
 	function removeProject(id) {
+		console.log("removeProject: " + id);
 		return {
 			type: REMOVE_PROJECT,
 			id: id
@@ -29523,14 +29527,25 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.addTasks = addTasks;
 	exports.addTask = addTask;
 	exports.updateTask = updateTask;
 	exports.removeTask = removeTask;
-	var ADD_TASK = 'ADD_TASK',
+	var ADD_TASKS = 'ADD_TASKS',
+	    ADD_TASK = 'ADD_TASK',
 	    UPDATE_TASK = 'UPDATE_TASK',
 	    REMOVE_TASK = 'REMOVE_TASK';
 	
+	function addTasks(tasks) {
+		console.log("addTasks: " + tasks);
+		return {
+			type: ADD_TASKS,
+			tasks: tasks
+		};
+	}
+	
 	function addTask(projectId, task) {
+		console.log("addTask: " + projectId, task);
 		return {
 			type: ADD_TASK,
 			task: task,
@@ -29539,6 +29554,7 @@
 	}
 	
 	function updateTask(task) {
+		console.log("updateTask: " + task);
 		return {
 			type: UPDATE_TASK,
 			task: task
@@ -29546,6 +29562,7 @@
 	}
 	
 	function removeTask(id) {
+		console.log("removeTask: " + id);
 		return {
 			type: REMOVE_TASK,
 			id: id
@@ -29564,14 +29581,25 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.addSubtasks = addSubtasks;
 	exports.addSubtask = addSubtask;
 	exports.updateSubtask = updateSubtask;
 	exports.removeSubtask = removeSubtask;
-	var ADD_SUBTASK = 'ADD_SUBTASK',
+	var ADD_SUBTASKS = 'ADD_SUBTASKS',
+	    ADD_SUBTASK = 'ADD_SUBTASK',
 	    UPDATE_SUBTASK = 'UPDATE_SUBTASK',
 	    REMOVE_SUBTASK = 'REMOVE_SUBTASK';
 	
+	function addSubtasks(subtasks) {
+		console.log("addSubtasks: " + subtasks);
+		return {
+			type: ADD_SUBTASKS,
+			subtasks: subtasks
+		};
+	}
+	
 	function addSubtask(taskId, subtask) {
+		console.log("addSubtask: " + taskId, subtask);
 		return {
 			type: ADD_SUBTASK,
 			subtask: subtask,
@@ -29580,6 +29608,7 @@
 	}
 	
 	function updateSubtask(subtask) {
+		console.log("updateSubtask: " + subtask);
 		return {
 			type: UPDATE_SUBTASK,
 			subtask: subtask
@@ -29587,6 +29616,7 @@
 	}
 	
 	function removeSubtask(id) {
+		console.log("removeSubtask: " + id);
 		return {
 			type: REMOVE_SUBTASK,
 			id: id
@@ -29624,7 +29654,7 @@
 	
 	var _Tasks2 = _interopRequireDefault(_Tasks);
 	
-	var _Subtasks = __webpack_require__(/*! ./Subtasks */ 598);
+	var _Subtasks = __webpack_require__(/*! ./Subtasks */ 599);
 	
 	var _Subtasks2 = _interopRequireDefault(_Subtasks);
 	
@@ -29828,8 +29858,6 @@
 	        var handleRemoveClick = function handleRemoveClick(projectId) {
 	            var callback = self.props.removeProject;
 	
-	            console.log(callback, projectId);
-	
 	            (0, _projectsApi.deleteProjectAsync)(projectId, callback);
 	        };
 	
@@ -29876,7 +29904,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'app-content' },
-	            _react2.default.createElement(_EditFormModal2.default, addModalSettings),
+	            _react2.default.createElement(_EditFormModal2.default, _extends({}, addModalSettings, { className: 'addButton' })),
 	            _react2.default.createElement(_Table2.default, _extends({ columns: cols,
 	                data: tableData,
 	                rowDataProcesser: tableRowDataProcesser
@@ -30039,33 +30067,27 @@
 	function getAsync(url, settings) {
 		settings.type = queryTypes.GET;
 	
-		return $.ajax(url, settings).done(function (data) {
-			return data;
-		});
+		return $.ajax(url, settings);
 	}
 	
 	function postAsync(url, data, settings) {
 		settings.type = queryTypes.POST;
 		settings.data = data;
 	
-		return $.ajax(url, settings).done();
+		return $.ajax(url, settings);
 	}
 	
 	function putAsync(url, data, settings) {
 		settings.type = queryTypes.PUT;
 		settings.data = data;
 	
-		return $.ajax(url, settings).done(function (data) {
-			return data;
-		});
+		return $.ajax(url, settings);
 	}
 	
 	function deleteAsync(url, settings) {
 		settings.type = queryTypes.DELETE;
 	
-		return $.ajax(url, settings).done(function (data) {
-			return data;
-		});
+		return $.ajax(url, settings);
 	}
 
 /***/ },
@@ -30115,6 +30137,8 @@
 			    _props$data = _props.data,
 			    data = _props$data === undefined ? {} : _props$data;
 	
+	
+			console.log("submitForm", formFields, handleResult, data);
 	
 			for (var p in formFields) {
 				var propertyName = formFields[p].name;
@@ -55132,6 +55156,8 @@
 	
 	var _EditFormModal2 = _interopRequireDefault(_EditFormModal);
 	
+	var _tasksApi = __webpack_require__(/*! ../../Api/tasksApi */ 598);
+	
 	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -55147,13 +55173,18 @@
 	var Tasks = _react2.default.createClass({
 	    displayName: 'Tasks',
 	
+	    componentWillMount: function componentWillMount() {
+	        var projectId = this.props.params.projectId;
+	        var callback = this.props.addTasks;
+	
+	        (0, _tasksApi.getTasksByProjectIdAsync)(projectId, callback);
+	    },
+	
 	    render: function render() {
 	        var self = this;
 	
 	        var projectId = this.props.params.projectId;
-	        var tableData = this.props.tasks.filter(function (task) {
-	            return task.project.id == projectId;
-	        });
+	        var tableData = this.props.tasks;
 	        var uniqIndex = Math.random() * 1234567 ^ 0;
 	
 	        var formFields = [{
@@ -55169,7 +55200,11 @@
 	
 	            modalButtonName: "Edit",
 	
-	            handleResult: this.props.updateTask,
+	            handleResult: function handleResult(task) {
+	                var callback = self.props.updateTask;
+	
+	                (0, _tasksApi.updateTaskAsync)(task, callback);
+	            },
 	
 	            //name must be equal property from data(task)            
 	            formFields: formFields
@@ -55181,12 +55216,21 @@
 	            modalButtonName: "Add",
 	
 	            handleResult: function handleResult(task) {
-	                console.log(projectId);
-	                self.props.addTask(projectId, task);
+	                var callback = self.props.addTask;
+	
+	                console.log("handleResult ADD_TASK ", projectId, task, callback);
+	
+	                (0, _tasksApi.addTaskAsync)(projectId, task, callback);
 	            },
 	
 	            //name must be equal property from data(task)            
 	            formFields: formFields
+	        };
+	
+	        var handleRemoveClick = function handleRemoveClick(taskId) {
+	            var callback = self.props.removeTask;
+	
+	            (0, _tasksApi.deleteTaskAsync)(taskId, callback);
 	        };
 	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
@@ -55218,7 +55262,7 @@
 	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, editModalSettings, { key: uniqIndex })),
 	                    _react2.default.createElement(
 	                        'button',
-	                        { className: 'btn btn-danger', onClick: self.props.removeTask.bind(null, element.id) },
+	                        { className: 'btn btn-danger', onClick: handleRemoveClick.bind(null, element.id) },
 	                        'Remove'
 	                    )
 	                )
@@ -55228,7 +55272,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'app-content' },
-	            _react2.default.createElement(_EditFormModal2.default, addModalSettings),
+	            _react2.default.createElement(_EditFormModal2.default, _extends({}, addModalSettings, { className: 'addButton' })),
 	            _react2.default.createElement(_Table2.default, { columns: cols,
 	                data: tableData,
 	                rowDataProcesser: tableRowDataProcesser })
@@ -55240,6 +55284,84 @@
 
 /***/ },
 /* 598 */
+/*!*********************************!*\
+  !*** ./Content/Api/tasksApi.js ***!
+  \*********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.getTasksAsync = getTasksAsync;
+	exports.getTasksByProjectIdAsync = getTasksByProjectIdAsync;
+	exports.getTaskByIdAsync = getTaskByIdAsync;
+	exports.addTaskAsync = addTaskAsync;
+	exports.updateTaskAsync = updateTaskAsync;
+	exports.deleteTaskAsync = deleteTaskAsync;
+	
+	var _ajaxRequests = __webpack_require__(/*! ./ajaxRequests */ 275);
+	
+	var baseUrl = "http://localhost:54243/api/";
+	var baseTasksUrl = baseUrl + 'tasks/';
+	
+	var baseAjaxSettings = {};
+	
+	function getTasksAsync(callback) {
+		var url = baseTasksUrl;
+	
+		baseAjaxSettings.success = callback;
+	
+		return (0, _ajaxRequests.getAsync)(url, baseAjaxSettings);
+	}
+	
+	function getTasksByProjectIdAsync(projectId, callback) {
+		var url = baseUrl + 'projects/' + projectId + '/tasks/';
+	
+		baseAjaxSettings.success = callback;
+	
+		return (0, _ajaxRequests.getAsync)(url, baseAjaxSettings);
+	}
+	
+	function getTaskByIdAsync(taskId, callback) {
+		var url = baseTasksUrl + taskId + '/';
+	
+		baseAjaxSettings.success = callback;
+	
+		return (0, _ajaxRequests.getAsync)(url, baseAjaxSettings);
+	}
+	
+	function addTaskAsync(projectId, task, callback) {
+		var url = baseUrl + 'projects/' + projectId + '/tasks/';
+	
+		baseAjaxSettings.success = function (updatedTask) {
+			callback(updatedTask.projectId, updatedTask);
+		};
+	
+		return (0, _ajaxRequests.postAsync)(url, task, baseAjaxSettings);
+	}
+	
+	function updateTaskAsync(task, callback) {
+		var url = baseTasksUrl;
+	
+		baseAjaxSettings.success = callback;
+	
+		return (0, _ajaxRequests.putAsync)(url, task, baseAjaxSettings);
+	}
+	
+	function deleteTaskAsync(taskId, callback) {
+		var url = baseTasksUrl + taskId + '/';
+	
+		baseAjaxSettings.success = function () {
+			callback(taskId);
+		};
+	
+		return (0, _ajaxRequests.deleteAsync)(url, baseAjaxSettings);
+	}
+
+/***/ },
+/* 599 */
 /*!*******************************************!*\
   !*** ./Content/React/modules/Subtasks.js ***!
   \*******************************************/
@@ -55265,6 +55387,8 @@
 	
 	var _EditFormModal2 = _interopRequireDefault(_EditFormModal);
 	
+	var _subtasksApi = __webpack_require__(/*! ../../Api/subtasksApi */ 600);
+	
 	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -55282,13 +55406,18 @@
 	var Subtasks = _react2.default.createClass({
 	    displayName: 'Subtasks',
 	
+	    componentWillMount: function componentWillMount() {
+	        var taskId = this.props.params.taskId;
+	        var callback = this.props.addSubtasks;
+	
+	        (0, _subtasksApi.getSubtasksByTaskIdAsync)(taskId, callback);
+	    },
+	
 	    render: function render() {
 	        var self = this;
 	
 	        var taskId = this.props.params.taskId;
-	        var tableData = this.props.subtasks.filter(function (subtask) {
-	            return subtask.task.id == taskId;
-	        });
+	        var tableData = this.props.subtasks;
 	        var uniqIndex = Math.random() * 1234567 ^ 0;
 	
 	        var formFields = [{
@@ -55307,7 +55436,11 @@
 	
 	            modalButtonName: "Edit",
 	
-	            handleResult: this.props.updateSubtask,
+	            handleResult: function handleResult(subtask) {
+	                var callback = self.props.updateSubtask;
+	
+	                (0, _subtasksApi.updateSubtaskAsync)(subtask, callback);
+	            },
 	
 	            //name must be equal property from data(subtask)            
 	            formFields: formFields
@@ -55319,12 +55452,19 @@
 	            modalButtonName: "Add",
 	
 	            handleResult: function handleResult(subtask) {
-	                console.log(taskId);
-	                self.props.addSubtask(taskId, subtask);
+	                var callback = self.props.addSubtask;
+	
+	                (0, _subtasksApi.addSubtaskAsync)(taskId, subtask, callback);
 	            },
 	
 	            //name must be equal property from data(task)            
 	            formFields: formFields
+	        };
+	
+	        var handleRemoveClick = function handleRemoveClick(subtaskId) {
+	            var callback = self.props.removeSubtask;
+	
+	            (0, _subtasksApi.deleteSubtaskAsync)(subtaskId, callback);
 	        };
 	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
@@ -55352,7 +55492,7 @@
 	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, editModalSettings, { key: uniqIndex })),
 	                    _react2.default.createElement(
 	                        'button',
-	                        { className: 'btn btn-danger', onClick: self.props.removeSubtask.bind(null, element.id) },
+	                        { className: 'btn btn-danger', onClick: handleRemoveClick.bind(null, element.id) },
 	                        'Remove'
 	                    )
 	                )
@@ -55362,7 +55502,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'app-content' },
-	            _react2.default.createElement(_EditFormModal2.default, addModalSettings),
+	            _react2.default.createElement(_EditFormModal2.default, _extends({}, addModalSettings, { className: 'addButton' })),
 	            _react2.default.createElement(_Table2.default, { columns: cols,
 	                data: tableData,
 	                rowDataProcesser: tableRowDataProcesser })
@@ -55371,6 +55511,84 @@
 	});
 	
 	exports.default = Subtasks;
+
+/***/ },
+/* 600 */
+/*!************************************!*\
+  !*** ./Content/Api/subtasksApi.js ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.getSubtasksAsync = getSubtasksAsync;
+	exports.getSubtasksByTaskIdAsync = getSubtasksByTaskIdAsync;
+	exports.getSubtaskByIdAsync = getSubtaskByIdAsync;
+	exports.addSubtaskAsync = addSubtaskAsync;
+	exports.updateSubtaskAsync = updateSubtaskAsync;
+	exports.deleteSubtaskAsync = deleteSubtaskAsync;
+	
+	var _ajaxRequests = __webpack_require__(/*! ./ajaxRequests */ 275);
+	
+	var baseUrl = "http://localhost:54243/api/";
+	var baseSubtasksUrl = baseUrl + 'subtasks/';
+	
+	var baseAjaxSettings = {};
+	
+	function getSubtasksAsync(callback) {
+		var url = baseSubtasksUrl;
+	
+		baseAjaxSettings.success = callback;
+	
+		return (0, _ajaxRequests.getAsync)(url, baseAjaxSettings);
+	}
+	
+	function getSubtasksByTaskIdAsync(taskId, callback) {
+		var url = baseUrl + 'tasks/' + taskId + '/subtasks/';
+	
+		baseAjaxSettings.success = callback;
+	
+		return (0, _ajaxRequests.getAsync)(url, baseAjaxSettings);
+	}
+	
+	function getSubtaskByIdAsync(id, callback) {
+		var url = baseSubtasksUrl + id + '/';
+	
+		baseAjaxSettings.success = callback;
+	
+		return (0, _ajaxRequests.getAsync)(url, baseAjaxSettings);
+	}
+	
+	function addSubtaskAsync(taskId, subtask, callback) {
+		var url = baseUrl + 'tasks/' + taskId + '/subtasks/';
+	
+		baseAjaxSettings.success = function (updatedSubtask) {
+			callback(updatedSubtask.taskId, updatedSubtask);
+		};
+	
+		return (0, _ajaxRequests.postAsync)(url, subtask, baseAjaxSettings);
+	}
+	
+	function updateSubtaskAsync(subtask, callback) {
+		var url = baseSubtasksUrl;
+	
+		baseAjaxSettings.success = callback;
+	
+		return (0, _ajaxRequests.putAsync)(url, subtask, baseAjaxSettings);
+	}
+	
+	function deleteSubtaskAsync(subtaskId, callback) {
+		var url = baseSubtasksUrl + subtaskId + '/';
+	
+		baseAjaxSettings.success = function () {
+			callback(subtaskId);
+		};
+	
+		return (0, _ajaxRequests.deleteAsync)(url, baseAjaxSettings);
+	}
 
 /***/ }
 /******/ ]);

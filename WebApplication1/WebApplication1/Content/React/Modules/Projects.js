@@ -68,9 +68,7 @@ const Projects = React.createClass({
 
         let handleRemoveClick = function(projectId) {
             let callback = self.props.removeProject;
-
-            console.log(callback, projectId);
-
+            
             deleteProjectAsync(projectId, callback);
         };
                 
@@ -95,7 +93,7 @@ const Projects = React.createClass({
         let tableData = this.props.projects;
 
         return <div className="app-content">
-            <EditFormModal {...addModalSettings}/>
+            <EditFormModal {...addModalSettings} className="addButton"/>
             <Table columns={cols} 
             	data={tableData} 
             	rowDataProcesser={tableRowDataProcesser} 

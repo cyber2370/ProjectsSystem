@@ -20,7 +20,9 @@ namespace WebApplication1.Controllers.Api
         // GET api/<controller>
         public async Task<IEnumerable<TaskModel>> GetTasks()
         {
-            return await _tasksManager.GetTasksAsync();
+            var response = await _tasksManager.GetTasksAsync();
+
+            return response;
         }
 
         // GET api/tasks/project/{id}

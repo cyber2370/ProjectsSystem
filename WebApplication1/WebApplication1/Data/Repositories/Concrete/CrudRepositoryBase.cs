@@ -47,10 +47,10 @@ namespace WebApplication1.Data.Repositories.Concrete
             return item;
         }
 
-        public virtual Task RemoveItemAsync(TEntity item)
+        public virtual async Task RemoveItemAsync(TEntity item)
         {
             DbSet.Remove(item);
-            return SaveChangesAsync();
+            await SaveChangesAsync();
         }
 
         protected virtual ApplicationDbContext DbContext { get; }

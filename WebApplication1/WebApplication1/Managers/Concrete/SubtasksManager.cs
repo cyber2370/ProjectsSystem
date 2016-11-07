@@ -42,9 +42,7 @@ namespace WebApplication1.Managers.Concrete
         {
             CheckIsValid(subtask);
 
-            Data.DB.Entities.Task task = await _tasksManager.GetTaskAsync(taskId);
-
-            subtask.Task = task;
+            subtask.TaskId = taskId;
 
             return await _subtasksRepository.AddItemAsync(subtask);
         }
