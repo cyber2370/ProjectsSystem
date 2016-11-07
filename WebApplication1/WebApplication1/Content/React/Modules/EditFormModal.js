@@ -39,7 +39,15 @@ const EditFormModal = React.createClass({
 
 			let $input = $('#' + propertyName, $form);
 
-			data[propertyName] = $input[0].value;
+			let inputValue = $input[0].value;
+			
+			if(inputValue == "") {
+				alert("Error! **---" + formFields[p].label + "---**  field is required!");
+
+				return;
+			} 
+ 
+			data[propertyName] = inputValue;
 			
 			$input[0].value = "";
 		}

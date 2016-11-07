@@ -25,7 +25,7 @@ export function getProjectByIdAsync(projectId, callback) {
 
 	baseAjaxSettings.success = callback;
 
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url, baseAjaxSettings);	
 }
 
 export function addProjectAsync(project, callback) {

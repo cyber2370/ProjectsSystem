@@ -29633,7 +29633,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _react = __webpack_require__(/*! react */ 1);
@@ -29661,34 +29661,23 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var navBarItems = [{
-	    id: 1,
-	    name: "Projects",
-	    link: "/projects",
-	    component: _Projects2.default
-	} /*, {
-	     id: 2,
-	     name: "Tasks",
-	     link: "/tasks",
-	     component: Tasks
-	  }, {
-	     id: 3,
-	     name: "Subtasks",
-	     link: "/subtasks",
-	     component: Subtasks
-	  }*/
-	];
+	  id: 1,
+	  name: "Projects",
+	  link: "/projects",
+	  component: _Projects2.default
+	}];
 	
 	var Main = _react2.default.createClass({
-	    displayName: 'Main',
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            { className: 'page' },
-	            _react2.default.createElement('div', { className: 'modalDiv' }),
-	            _react2.default.createElement(_TopNavBar2.default, { elements: navBarItems }),
-	            _react2.default.cloneElement(this.props.children, this.props)
-	        );
-	    }
+	  displayName: 'Main',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'page' },
+	      _react2.default.createElement('div', { className: 'modalDiv' }),
+	      _react2.default.createElement(_TopNavBar2.default, { elements: navBarItems }),
+	      _react2.default.cloneElement(this.props.children, this.props)
+	    );
+	  }
 	});
 	
 	exports.default = Main;
@@ -29998,7 +29987,9 @@
 	var baseUrl = "http://localhost:54243/api/";
 	var baseProjectsUrl = baseUrl + 'projects/';
 	
-	var baseAjaxSettings = {};
+	var baseAjaxSettings = {
+		error: console.log
+	};
 	
 	function getProjectsAsync(callback) {
 		var url = baseProjectsUrl;
@@ -30146,7 +30137,15 @@
 	
 				var $input = $('#' + propertyName, $form);
 	
-				data[propertyName] = $input[0].value;
+				var inputValue = $input[0].value;
+	
+				if (inputValue == "") {
+					alert("Error! **---" + formFields[p].label + "---**  field is required!");
+	
+					return;
+				}
+	
+				data[propertyName] = inputValue;
 	
 				$input[0].value = "";
 			}
@@ -55309,7 +55308,9 @@
 	var baseUrl = "http://localhost:54243/api/";
 	var baseTasksUrl = baseUrl + 'tasks/';
 	
-	var baseAjaxSettings = {};
+	var baseAjaxSettings = {
+		error: console.log
+	};
 	
 	function getTasksAsync(callback) {
 		var url = baseTasksUrl;
@@ -55539,7 +55540,9 @@
 	var baseUrl = "http://localhost:54243/api/";
 	var baseSubtasksUrl = baseUrl + 'subtasks/';
 	
-	var baseAjaxSettings = {};
+	var baseAjaxSettings = {
+		error: console.log
+	};
 	
 	function getSubtasksAsync(callback) {
 		var url = baseSubtasksUrl;
