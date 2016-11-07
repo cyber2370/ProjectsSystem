@@ -1,16 +1,25 @@
-﻿export function addSubtask(id, name, description, duration) {
+﻿const ADD_SUBTASK 	 = 'ADD_SUBTASK',
+	  UPDATE_SUBTASK = 'UPDATE_SUBTASK',
+	  REMOVE_SUBTASK = 'REMOVE_SUBTASK';
+
+
+export function addSubtask(subtask) {
 	return {
-		type: 'ADD_SUBTASK',
-		id,
-		name,
-		description,
-		duration
+		type: ADD_SUBTASK,
+		subtask
+	}
+}
+
+export function updateSubtask(subtask) {
+	return {
+		type: UPDATE_SUBTASK,
+		subtask
 	}
 }
 
 export function removeSubtask(id) {
 	return {
-		type: 'REMOVE_SUBTASK',
+		type: REMOVE_SUBTASK,
 		id
 	}
 }

@@ -1,12 +1,27 @@
 ﻿function subtasks(state = [], action) {
 	switch (action.type) {
-		case 'REMOVE_SUBTASK':
-			var newState = state.slice();
+		case 'ADD_SUBTASK':
+			return [
+				...state,
+				action.subtask
+			];
+		case 'UPDATE_SUBTASK':
+			var subtasks = state.slice();
 			
-			var indexToRemove = newState.findIndex((element, index, array) => element.id == action.id);
-    		newState.splice(indexToRemove, 1);
+			var indexToUpdate = subtasks.findIndex((element) => element.id == action.subtask.id);
 
-			return newState;
+			subtasks[indexToUpdate].name = action.subtask.name;
+			subtasks[indexToUpdate].description = action.subtask.description;
+			subtasks[indexToUpdate].duration = action.subtask.duration;
+
+			return subtasks;
+		case 'REMOVE_SUBTASK':
+			var subtasks = state.slice();
+			
+			var indexToRemove = subtasks.findIndex((element) => element.id == action.id);
+    		subtasks.splice(indexToRemove, 1);
+
+			return subtasks;
 		default:
 			return state;
 	}

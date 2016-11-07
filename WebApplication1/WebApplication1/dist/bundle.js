@@ -75,11 +75,11 @@
 	
 	var _Projects2 = _interopRequireDefault(_Projects);
 	
-	var _Tasks = __webpack_require__(/*! ./modules/Tasks */ 596);
+	var _Tasks = __webpack_require__(/*! ./modules/Tasks */ 595);
 	
 	var _Tasks2 = _interopRequireDefault(_Tasks);
 	
-	var _Subtasks = __webpack_require__(/*! ./modules/Subtasks */ 597);
+	var _Subtasks = __webpack_require__(/*! ./modules/Subtasks */ 596);
 	
 	var _Subtasks2 = _interopRequireDefault(_Subtasks);
 	
@@ -217,13 +217,13 @@
 	};
 	
 	module.exports = React;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 3 */
-/*!******************************!*\
-  !*** ./~/process/browser.js ***!
-  \******************************/
+/*!**************************************!*\
+  !*** (webpack)/~/process/browser.js ***!
+  \**************************************/
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -827,7 +827,7 @@
 	};
 	
 	module.exports = PooledClass;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 7 */
@@ -932,7 +932,7 @@
 	}
 	
 	module.exports = invariant;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 9 */
@@ -1289,7 +1289,7 @@
 	ReactElement.REACT_ELEMENT_TYPE = REACT_ELEMENT_TYPE;
 	
 	module.exports = ReactElement;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 10 */
@@ -1403,7 +1403,7 @@
 	}
 	
 	module.exports = warning;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 12 */
@@ -1482,7 +1482,7 @@
 	}
 	
 	module.exports = canDefineProperty;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 14 */
@@ -1658,7 +1658,7 @@
 	}
 	
 	module.exports = traverseAllChildren;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 15 */
@@ -1901,7 +1901,7 @@
 	}
 	
 	module.exports = ReactComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 18 */
@@ -2006,7 +2006,7 @@
 	};
 	
 	module.exports = ReactNoopUpdateQueue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 19 */
@@ -2034,7 +2034,7 @@
 	}
 	
 	module.exports = emptyObject;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 20 */
@@ -2825,7 +2825,7 @@
 	};
 	
 	module.exports = ReactClass;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 22 */
@@ -2911,7 +2911,7 @@
 	};
 	
 	module.exports = keyMirror;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 24 */
@@ -2944,7 +2944,7 @@
 	}
 	
 	module.exports = ReactPropTypeLocationNames;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 25 */
@@ -3165,7 +3165,7 @@
 	};
 	
 	module.exports = ReactDOMFactories;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 27 */
@@ -3402,7 +3402,7 @@
 	};
 	
 	module.exports = ReactElementValidator;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 28 */
@@ -3753,7 +3753,7 @@
 	};
 	
 	module.exports = ReactComponentTreeHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 29 */
@@ -3849,7 +3849,7 @@
 	}
 	
 	module.exports = checkReactTypeSpec;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 30 */
@@ -4313,7 +4313,7 @@
 	}
 	
 	module.exports = ReactPropTypes;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 32 */
@@ -4382,7 +4382,7 @@
 	}
 	
 	module.exports = onlyChild;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 34 */
@@ -4513,7 +4513,7 @@
 	}
 	
 	module.exports = ReactDOM;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 36 */
@@ -4710,7 +4710,7 @@
 	};
 	
 	module.exports = ReactDOMComponentTree;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 37 */
@@ -4925,7 +4925,7 @@
 	};
 	
 	module.exports = DOMProperty;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 38 */
@@ -5692,7 +5692,7 @@
 	};
 	
 	module.exports = EventPropagators;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 43 */
@@ -5952,7 +5952,7 @@
 	};
 	
 	module.exports = EventPluginHub;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 44 */
@@ -6208,7 +6208,7 @@
 	};
 	
 	module.exports = EventPluginRegistry;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 45 */
@@ -6446,7 +6446,7 @@
 	};
 	
 	module.exports = EventPluginUtils;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 46 */
@@ -6531,7 +6531,7 @@
 	}
 	
 	module.exports = ReactErrorUtils;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 47 */
@@ -6598,7 +6598,7 @@
 	}
 	
 	module.exports = accumulateInto;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 48 */
@@ -7145,7 +7145,7 @@
 	    process.env.NODE_ENV !== 'production' ? warning(warningCondition, 'This synthetic event is reused for performance reasons. If you\'re seeing this, ' + 'you\'re %s `%s` on a released/nullified synthetic event. %s. ' + 'If you must keep the original synthetic event around, use event.persist(). ' + 'See https://fb.me/react-event-pooling for more information.', action, propName, result) : void 0;
 	  }
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 54 */
@@ -7783,7 +7783,7 @@
 	};
 	
 	module.exports = ReactUpdates;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 57 */
@@ -7898,7 +7898,7 @@
 	PooledClass.addPoolingTo(CallbackQueue);
 	
 	module.exports = CallbackQueue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 58 */
@@ -8105,7 +8105,7 @@
 	};
 	
 	module.exports = ReactReconciler;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 60 */
@@ -8296,7 +8296,7 @@
 	};
 	
 	module.exports = ReactOwner;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 62 */
@@ -8326,7 +8326,7 @@
 	}
 	
 	module.exports = { debugTool: debugTool };
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 63 */
@@ -8636,7 +8636,7 @@
 	}
 	
 	module.exports = ReactDebugTool;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 64 */
@@ -8681,7 +8681,7 @@
 	};
 	
 	module.exports = ReactInvalidSetStateWarningHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 65 */
@@ -8789,7 +8789,7 @@
 	};
 	
 	module.exports = ReactChildrenMutationWarningHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 67 */
@@ -9102,7 +9102,7 @@
 	};
 	
 	module.exports = Transaction;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 70 */
@@ -10114,7 +10114,7 @@
 	};
 	
 	module.exports = DOMChildrenOperations;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 82 */
@@ -10658,7 +10658,7 @@
 	};
 	
 	module.exports = Danger;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 89 */
@@ -10750,7 +10750,7 @@
 	}
 	
 	module.exports = createNodesFromMarkup;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 90 */
@@ -10885,7 +10885,7 @@
 	}
 	
 	module.exports = createArrayFromMixed;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 91 */
@@ -10988,7 +10988,7 @@
 	}
 	
 	module.exports = getMarkupWrap;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 92 */
@@ -12085,7 +12085,7 @@
 	_assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mixin);
 	
 	module.exports = ReactDOMComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 95 */
@@ -12365,7 +12365,7 @@
 	};
 	
 	module.exports = CSSPropertyOperations;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 98 */
@@ -12695,7 +12695,7 @@
 	}
 	
 	module.exports = dangerousStyleValue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 102 */
@@ -13048,7 +13048,7 @@
 	};
 	
 	module.exports = DOMPropertyOperations;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 106 */
@@ -13938,7 +13938,7 @@
 	}
 	
 	module.exports = ReactDOMInput;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 113 */
@@ -14083,7 +14083,7 @@
 	};
 	
 	module.exports = LinkedValueUtils;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 114 */
@@ -14215,7 +14215,7 @@
 	};
 	
 	module.exports = ReactDOMOption;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 115 */
@@ -14425,7 +14425,7 @@
 	}
 	
 	module.exports = ReactDOMSelect;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 116 */
@@ -14589,7 +14589,7 @@
 	}
 	
 	module.exports = ReactDOMTextarea;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 117 */
@@ -15049,7 +15049,7 @@
 	};
 	
 	module.exports = ReactMultiChild;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 118 */
@@ -15103,7 +15103,7 @@
 	};
 	
 	module.exports = ReactComponentEnvironment;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 119 */
@@ -15322,7 +15322,7 @@
 	};
 	
 	module.exports = ReactChildReconciler;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 121 */
@@ -15450,7 +15450,7 @@
 	}
 	
 	module.exports = instantiateReactComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 122 */
@@ -16363,7 +16363,7 @@
 	};
 	
 	module.exports = ReactCompositeComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 123 */
@@ -16412,7 +16412,7 @@
 	};
 	
 	module.exports = ReactNodeTypes;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 124 */
@@ -16660,7 +16660,7 @@
 	};
 	
 	module.exports = ReactHostComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 128 */
@@ -16745,7 +16745,7 @@
 	}
 	
 	module.exports = flattenChildren;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 129 */
@@ -16844,7 +16844,7 @@
 	PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 	
 	module.exports = ReactServerRenderingTransaction;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 130 */
@@ -16994,7 +16994,7 @@
 	}();
 	
 	module.exports = ReactServerUpdateQueue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 131 */
@@ -17229,7 +17229,7 @@
 	};
 	
 	module.exports = ReactUpdateQueue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 132 */
@@ -17620,7 +17620,7 @@
 	}
 	
 	module.exports = validateDOMNesting;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 133 */
@@ -17833,7 +17833,7 @@
 	  traverseTwoPhase: traverseTwoPhase,
 	  traverseEnterLeave: traverseEnterLeave
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 135 */
@@ -18006,7 +18006,7 @@
 	});
 	
 	module.exports = ReactDOMTextComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 136 */
@@ -18339,7 +18339,7 @@
 	};
 	
 	module.exports = EventListener;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 139 */
@@ -18616,7 +18616,7 @@
 	PooledClass.addPoolingTo(ReactReconcileTransaction);
 	
 	module.exports = ReactReconcileTransaction;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 142 */
@@ -20359,7 +20359,7 @@
 	};
 	
 	module.exports = SimpleEventPlugin;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 152 */
@@ -21505,7 +21505,7 @@
 	};
 	
 	module.exports = ReactMount;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 163 */
@@ -21547,7 +21547,7 @@
 	}
 	
 	module.exports = ReactDOMContainerInfo;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 164 */
@@ -21752,7 +21752,7 @@
 	}
 	
 	module.exports = findDOMNode;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 168 */
@@ -21935,7 +21935,7 @@
 	};
 	
 	module.exports = ReactDOMUnknownPropertyHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 171 */
@@ -21987,7 +21987,7 @@
 	};
 	
 	module.exports = ReactDOMNullInputValuePropHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 172 */
@@ -22502,7 +22502,7 @@
 	
 	  return pathname.replace(/\/+/g, '/');
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 176 */
@@ -22563,7 +22563,7 @@
 	
 	module.exports = invariant;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 177 */
@@ -22747,7 +22747,7 @@
 	
 	exports.default = Router;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 178 */
@@ -23031,7 +23031,7 @@
 	  };
 	}
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 179 */
@@ -23145,7 +23145,7 @@
 	
 	module.exports = warning;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 181 */
@@ -23974,7 +23974,7 @@
 	  }, callback);
 	}
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 188 */
@@ -24156,7 +24156,7 @@
 	
 	exports.default = RouterContext;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 190 */
@@ -24522,7 +24522,7 @@
 	
 	exports.default = Link;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 194 */
@@ -24639,7 +24639,7 @@
 	  return (0, _hoistNonReactStatics2.default)(WithRouter, WrappedComponent);
 	}
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 196 */
@@ -24771,7 +24771,7 @@
 	
 	exports.default = IndexRedirect;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 198 */
@@ -24883,7 +24883,7 @@
 	
 	exports.default = Redirect;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 199 */
@@ -24953,7 +24953,7 @@
 	
 	exports.default = IndexRoute;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 200 */
@@ -25020,7 +25020,7 @@
 	
 	exports.default = Route;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 201 */
@@ -25101,7 +25101,7 @@
 	
 	exports.default = match;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 202 */
@@ -25453,7 +25453,7 @@
 	};
 	
 	exports.default = runTransitionHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 208 */
@@ -25554,7 +25554,7 @@
 	  // a.action === b.action && // Different action !== location change.
 	  a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && statesAreEqual(a.state, b.state);
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 209 */
@@ -25664,7 +25664,7 @@
 	
 	  return path;
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 210 */
@@ -25930,7 +25930,7 @@
 	};
 	
 	exports.default = createMemoryHistory;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 212 */
@@ -26274,7 +26274,7 @@
 	};
 	
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 216 */
@@ -26400,7 +26400,7 @@
 	};
 	
 	exports.default = createBrowserHistory;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 218 */
@@ -26660,7 +26660,7 @@
 	
 	  return undefined;
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 222 */
@@ -26912,7 +26912,7 @@
 	};
 	
 	exports.default = createHashHistory;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 226 */
@@ -27057,7 +27057,7 @@
 	    if (getHashPath() !== path) replaceHashPath(path);
 	  });
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 227 */
@@ -27169,7 +27169,7 @@
 	Provider.childContextTypes = {
 	  store: _storeShape2["default"].isRequired
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 229 */
@@ -27622,7 +27622,7 @@
 	    return (0, _hoistNonReactStatics2["default"])(Connect, WrappedComponent);
 	  };
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 232 */
@@ -27731,7 +27731,7 @@
 	exports.bindActionCreators = _bindActionCreators2['default'];
 	exports.applyMiddleware = _applyMiddleware2['default'];
 	exports.compose = _compose2['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 235 */
@@ -28568,7 +28568,7 @@
 	    return hasChanged ? nextState : state;
 	  };
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 251 */
@@ -29452,20 +29452,36 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
 	function tasks() {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 		var action = arguments[1];
 	
 		switch (action.type) {
-			case 'REMOVE_TASK':
-				var newState = state.slice();
+			case 'ADD_TASK':
+				return [].concat(_toConsumableArray(state), [action.task]);
+			case 'UPDATE_TASK':
+				var tasks = state.slice();
 	
-				var indexToRemove = newState.findIndex(function (element, index, array) {
+				var indexToUpdate = tasks.findIndex(function (element) {
+					return element.id == action.task.id;
+				});
+	
+				tasks[indexToUpdate].name = action.task.name;
+				tasks[indexToUpdate].description = action.task.description;
+	
+				return tasks;
+			case 'REMOVE_SUBTASK':
+				var tasks = state.slice();
+	
+				var indexToRemove = tasks.findIndex(function (element) {
 					return element.id == action.id;
 				});
-				newState.splice(indexToRemove, 1);
+				tasks.splice(indexToRemove, 1);
 	
-				return newState;
+				return tasks;
 			default:
 				return state;
 		}
@@ -29485,20 +29501,37 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
 	function subtasks() {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 		var action = arguments[1];
 	
 		switch (action.type) {
-			case 'REMOVE_SUBTASK':
-				var newState = state.slice();
+			case 'ADD_SUBTASK':
+				return [].concat(_toConsumableArray(state), [action.subtask]);
+			case 'UPDATE_SUBTASK':
+				var subtasks = state.slice();
 	
-				var indexToRemove = newState.findIndex(function (element, index, array) {
+				var indexToUpdate = subtasks.findIndex(function (element) {
+					return element.id == action.subtask.id;
+				});
+	
+				subtasks[indexToUpdate].name = action.subtask.name;
+				subtasks[indexToUpdate].description = action.subtask.description;
+				subtasks[indexToUpdate].duration = action.subtask.duration;
+	
+				return subtasks;
+			case 'REMOVE_SUBTASK':
+				var subtasks = state.slice();
+	
+				var indexToRemove = subtasks.findIndex(function (element) {
 					return element.id == action.id;
 				});
-				newState.splice(indexToRemove, 1);
+				subtasks.splice(indexToRemove, 1);
 	
-				return newState;
+				return subtasks;
 			default:
 				return state;
 		}
@@ -29632,19 +29665,29 @@
 		value: true
 	});
 	exports.addTask = addTask;
+	exports.updateTask = updateTask;
 	exports.removeTask = removeTask;
-	function addTask(id, name, description) {
+	var ADD_TASK = 'ADD_TASK',
+	    UPDATE_TASK = 'UPDATE_TASK',
+	    REMOVE_TASK = 'REMOVE_TASK';
+	
+	function addTask(task) {
 		return {
-			type: 'ADD_TASK',
-			id: id,
-			name: name,
-			description: description
+			type: ADD_TASK,
+			task: task
+		};
+	}
+	
+	function updateTask(task) {
+		return {
+			type: UPDATE_TASK,
+			task: task
 		};
 	}
 	
 	function removeTask(id) {
 		return {
-			type: 'REMOVE_TASK',
+			type: REMOVE_TASK,
 			id: id
 		};
 	}
@@ -29662,20 +29705,29 @@
 		value: true
 	});
 	exports.addSubtask = addSubtask;
+	exports.updateSubtask = updateSubtask;
 	exports.removeSubtask = removeSubtask;
-	function addSubtask(id, name, description, duration) {
+	var ADD_SUBTASK = 'ADD_SUBTASK',
+	    UPDATE_SUBTASK = 'UPDATE_SUBTASK',
+	    REMOVE_SUBTASK = 'REMOVE_SUBTASK';
+	
+	function addSubtask(subtask) {
 		return {
-			type: 'ADD_SUBTASK',
-			id: id,
-			name: name,
-			description: description,
-			duration: duration
+			type: ADD_SUBTASK,
+			subtask: subtask
+		};
+	}
+	
+	function updateSubtask(subtask) {
+		return {
+			type: UPDATE_SUBTASK,
+			subtask: subtask
 		};
 	}
 	
 	function removeSubtask(id) {
 		return {
-			type: 'REMOVE_SUBTASK',
+			type: REMOVE_SUBTASK,
 			id: id
 		};
 	}
@@ -29707,11 +29759,11 @@
 	
 	var _Projects2 = _interopRequireDefault(_Projects);
 	
-	var _Tasks = __webpack_require__(/*! ./Tasks */ 596);
+	var _Tasks = __webpack_require__(/*! ./Tasks */ 595);
 	
 	var _Tasks2 = _interopRequireDefault(_Tasks);
 	
-	var _Subtasks = __webpack_require__(/*! ./Subtasks */ 597);
+	var _Subtasks = __webpack_require__(/*! ./Subtasks */ 596);
 	
 	var _Subtasks2 = _interopRequireDefault(_Subtasks);
 	
@@ -32493,9 +32545,9 @@
 
 /***/ },
 /* 362 */
-/*!*************************************************!*\
-  !*** ./~/react-bootstrap/~/classnames/index.js ***!
-  \*************************************************/
+/*!*******************************!*\
+  !*** ./~/classnames/index.js ***!
+  \*******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -32768,7 +32820,7 @@
 	}
 	
 	var _curry = exports._curry = curry;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 364 */
@@ -33728,9 +33780,9 @@
 
 /***/ },
 /* 379 */
-/*!*****************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-prop-types/lib/elementType.js ***!
-  \*****************************************************************/
+/*!***********************************************!*\
+  !*** ./~/react-prop-types/lib/elementType.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33768,9 +33820,9 @@
 
 /***/ },
 /* 380 */
-/*!**************************************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-prop-types/lib/utils/createChainableTypeChecker.js ***!
-  \**************************************************************************************/
+/*!********************************************************************!*\
+  !*** ./~/react-prop-types/lib/utils/createChainableTypeChecker.js ***!
+  \********************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -34063,9 +34115,9 @@
 
 /***/ },
 /* 383 */
-/*!*********************************************************!*\
-  !*** ./~/react-bootstrap/~/react-prop-types/lib/all.js ***!
-  \*********************************************************/
+/*!***************************************!*\
+  !*** ./~/react-prop-types/lib/all.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35255,7 +35307,7 @@
 	
 	exports['default'] = (0, _bootstrapUtils.bsClass)('checkbox', Checkbox);
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 391 */
@@ -35517,7 +35569,7 @@
 	
 	exports['default'] = (0, _bootstrapUtils.bsClass)('control-label', ControlLabel);
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 394 */
@@ -36062,9 +36114,9 @@
 
 /***/ },
 /* 396 */
-/*!********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/style/index.js ***!
-  \********************************************************/
+/*!**************************************!*\
+  !*** ./~/dom-helpers/style/index.js ***!
+  \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36094,9 +36146,9 @@
 
 /***/ },
 /* 397 */
-/*!***************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/util/camelizeStyle.js ***!
-  \***************************************************************/
+/*!*********************************************!*\
+  !*** ./~/dom-helpers/util/camelizeStyle.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -36115,9 +36167,9 @@
 
 /***/ },
 /* 398 */
-/*!**********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/util/camelize.js ***!
-  \**********************************************************/
+/*!****************************************!*\
+  !*** ./~/dom-helpers/util/camelize.js ***!
+  \****************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -36132,9 +36184,9 @@
 
 /***/ },
 /* 399 */
-/*!****************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/util/hyphenateStyle.js ***!
-  \****************************************************************/
+/*!**********************************************!*\
+  !*** ./~/dom-helpers/util/hyphenateStyle.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -36154,9 +36206,9 @@
 
 /***/ },
 /* 400 */
-/*!***********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/util/hyphenate.js ***!
-  \***********************************************************/
+/*!*****************************************!*\
+  !*** ./~/dom-helpers/util/hyphenate.js ***!
+  \*****************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -36169,9 +36221,9 @@
 
 /***/ },
 /* 401 */
-/*!*******************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/style/getComputedStyle.js ***!
-  \*******************************************************************/
+/*!*************************************************!*\
+  !*** ./~/dom-helpers/style/getComputedStyle.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36225,9 +36277,9 @@
 
 /***/ },
 /* 402 */
-/*!**************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/util/babelHelpers.js ***!
-  \**************************************************************/
+/*!********************************************!*\
+  !*** ./~/dom-helpers/util/babelHelpers.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
@@ -36264,9 +36316,9 @@
 
 /***/ },
 /* 403 */
-/*!**************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/style/removeStyle.js ***!
-  \**************************************************************/
+/*!********************************************!*\
+  !*** ./~/dom-helpers/style/removeStyle.js ***!
+  \********************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -36277,9 +36329,9 @@
 
 /***/ },
 /* 404 */
-/*!**************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/Transition.js ***!
-  \**************************************************************/
+/*!********************************************!*\
+  !*** ./~/react-overlays/lib/Transition.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36648,9 +36700,9 @@
 
 /***/ },
 /* 405 */
-/*!******************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/transition/properties.js ***!
-  \******************************************************************/
+/*!************************************************!*\
+  !*** ./~/dom-helpers/transition/properties.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36711,9 +36763,9 @@
 
 /***/ },
 /* 406 */
-/*!*******************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/util/inDOM.js ***!
-  \*******************************************************/
+/*!*************************************!*\
+  !*** ./~/dom-helpers/util/inDOM.js ***!
+  \*************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -36721,9 +36773,9 @@
 
 /***/ },
 /* 407 */
-/*!******************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/events/on.js ***!
-  \******************************************************/
+/*!************************************!*\
+  !*** ./~/dom-helpers/events/on.js ***!
+  \************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37162,13 +37214,13 @@
 	
 	exports['default'] = UncontrolledDropdown;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 409 */
-/*!**********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/activeElement.js ***!
-  \**********************************************************/
+/*!****************************************!*\
+  !*** ./~/dom-helpers/activeElement.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37198,9 +37250,9 @@
 
 /***/ },
 /* 410 */
-/*!**********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/ownerDocument.js ***!
-  \**********************************************************/
+/*!****************************************!*\
+  !*** ./~/dom-helpers/ownerDocument.js ***!
+  \****************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -37216,9 +37268,9 @@
 
 /***/ },
 /* 411 */
-/*!***********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/query/contains.js ***!
-  \***********************************************************/
+/*!*****************************************!*\
+  !*** ./~/dom-helpers/query/contains.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37244,9 +37296,9 @@
 
 /***/ },
 /* 412 */
-/*!**********************************************!*\
-  !*** ./~/react-bootstrap/~/keycode/index.js ***!
-  \**********************************************/
+/*!****************************!*\
+  !*** ./~/keycode/index.js ***!
+  \****************************/
 /***/ function(module, exports) {
 
 	// Source: http://jsfiddle.net/vWx8V/
@@ -37399,9 +37451,9 @@
 
 /***/ },
 /* 413 */
-/*!***********************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-prop-types/lib/isRequiredForA11y.js ***!
-  \***********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/react-prop-types/lib/isRequiredForA11y.js ***!
+  \*****************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -37427,9 +37479,9 @@
 
 /***/ },
 /* 414 */
-/*!*****************************************************!*\
-  !*** ./~/react-bootstrap/~/uncontrollable/index.js ***!
-  \*****************************************************/
+/*!***********************************!*\
+  !*** ./~/uncontrollable/index.js ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37466,9 +37518,9 @@
 
 /***/ },
 /* 415 */
-/*!********************************************************************!*\
-  !*** ./~/react-bootstrap/~/uncontrollable/createUncontrollable.js ***!
-  \********************************************************************/
+/*!**************************************************!*\
+  !*** ./~/uncontrollable/createUncontrollable.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37638,9 +37690,9 @@
 
 /***/ },
 /* 416 */
-/*!*****************************************************!*\
-  !*** ./~/react-bootstrap/~/uncontrollable/utils.js ***!
-  \*****************************************************/
+/*!***********************************!*\
+  !*** ./~/uncontrollable/utils.js ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -37759,7 +37811,7 @@
 	function isReactComponent(component) {
 	  return !!(component && component.prototype && component.prototype.isReactComponent);
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 417 */
@@ -38164,9 +38216,9 @@
 
 /***/ },
 /* 427 */
-/*!********************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/RootCloseWrapper.js ***!
-  \********************************************************************/
+/*!**************************************************!*\
+  !*** ./~/react-overlays/lib/RootCloseWrapper.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38332,9 +38384,9 @@
 
 /***/ },
 /* 428 */
-/*!**************************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/utils/addEventListener.js ***!
-  \**************************************************************************/
+/*!********************************************************!*\
+  !*** ./~/react-overlays/lib/utils/addEventListener.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38367,9 +38419,9 @@
 
 /***/ },
 /* 429 */
-/*!*******************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/events/off.js ***!
-  \*******************************************************/
+/*!*************************************!*\
+  !*** ./~/dom-helpers/events/off.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38392,9 +38444,9 @@
 
 /***/ },
 /* 430 */
-/*!***********************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/utils/ownerDocument.js ***!
-  \***********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/react-overlays/lib/utils/ownerDocument.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39118,7 +39170,7 @@
 	
 	exports['default'] = (0, _bootstrapUtils.bsClass)('form-control', FormControl);
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 438 */
@@ -41622,9 +41674,9 @@
 
 /***/ },
 /* 460 */
-/*!*********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/events/index.js ***!
-  \*********************************************************/
+/*!***************************************!*\
+  !*** ./~/dom-helpers/events/index.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41636,9 +41688,9 @@
 
 /***/ },
 /* 461 */
-/*!**********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/events/filter.js ***!
-  \**********************************************************/
+/*!****************************************!*\
+  !*** ./~/dom-helpers/events/filter.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41660,9 +41712,9 @@
 
 /***/ },
 /* 462 */
-/*!*******************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/query/querySelectorAll.js ***!
-  \*******************************************************************/
+/*!*************************************************!*\
+  !*** ./~/dom-helpers/query/querySelectorAll.js ***!
+  \*************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -41695,9 +41747,9 @@
 
 /***/ },
 /* 463 */
-/*!***************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/util/scrollbarSize.js ***!
-  \***************************************************************/
+/*!*********************************************!*\
+  !*** ./~/dom-helpers/util/scrollbarSize.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41728,9 +41780,9 @@
 
 /***/ },
 /* 464 */
-/*!*********************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/Modal.js ***!
-  \*********************************************************/
+/*!***************************************!*\
+  !*** ./~/react-overlays/lib/Modal.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42266,9 +42318,9 @@
 
 /***/ },
 /* 465 */
-/*!************************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-prop-types/lib/componentOrElement.js ***!
-  \************************************************************************/
+/*!******************************************************!*\
+  !*** ./~/react-prop-types/lib/componentOrElement.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42306,9 +42358,9 @@
 
 /***/ },
 /* 466 */
-/*!**********************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/Portal.js ***!
-  \**********************************************************/
+/*!****************************************!*\
+  !*** ./~/react-overlays/lib/Portal.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42431,9 +42483,9 @@
 
 /***/ },
 /* 467 */
-/*!**********************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/utils/getContainer.js ***!
-  \**********************************************************************/
+/*!****************************************************!*\
+  !*** ./~/react-overlays/lib/utils/getContainer.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42457,9 +42509,9 @@
 
 /***/ },
 /* 468 */
-/*!****************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/ModalManager.js ***!
-  \****************************************************************/
+/*!**********************************************!*\
+  !*** ./~/react-overlays/lib/ModalManager.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42652,9 +42704,9 @@
 
 /***/ },
 /* 469 */
-/*!********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/class/index.js ***!
-  \********************************************************/
+/*!**************************************!*\
+  !*** ./~/dom-helpers/class/index.js ***!
+  \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42667,9 +42719,9 @@
 
 /***/ },
 /* 470 */
-/*!***********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/class/addClass.js ***!
-  \***********************************************************/
+/*!*****************************************!*\
+  !*** ./~/dom-helpers/class/addClass.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42681,9 +42733,9 @@
 
 /***/ },
 /* 471 */
-/*!***********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/class/hasClass.js ***!
-  \***********************************************************/
+/*!*****************************************!*\
+  !*** ./~/dom-helpers/class/hasClass.js ***!
+  \*****************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -42693,9 +42745,9 @@
 
 /***/ },
 /* 472 */
-/*!**************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/class/removeClass.js ***!
-  \**************************************************************/
+/*!********************************************!*\
+  !*** ./~/dom-helpers/class/removeClass.js ***!
+  \********************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -42706,9 +42758,9 @@
 
 /***/ },
 /* 473 */
-/*!***********************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/utils/isOverflowing.js ***!
-  \***********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/react-overlays/lib/utils/isOverflowing.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42755,9 +42807,9 @@
 
 /***/ },
 /* 474 */
-/*!***********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/query/isWindow.js ***!
-  \***********************************************************/
+/*!*****************************************!*\
+  !*** ./~/dom-helpers/query/isWindow.js ***!
+  \*****************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -42768,9 +42820,9 @@
 
 /***/ },
 /* 475 */
-/*!**************************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/utils/manageAriaHidden.js ***!
-  \**************************************************************************/
+/*!********************************************************!*\
+  !*** ./~/react-overlays/lib/utils/manageAriaHidden.js ***!
+  \********************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -42825,9 +42877,9 @@
 
 /***/ },
 /* 476 */
-/*!**************************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/utils/addFocusListener.js ***!
-  \**************************************************************************/
+/*!********************************************************!*\
+  !*** ./~/react-overlays/lib/utils/addFocusListener.js ***!
+  \********************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43734,7 +43786,7 @@
 	
 	exports['default'] = (0, _bootstrapUtils.bsClass)('nav', (0, _bootstrapUtils.bsStyles)(['tabs', 'pills'], Nav));
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 483 */
@@ -44880,9 +44932,9 @@
 
 /***/ },
 /* 491 */
-/*!***********************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/Overlay.js ***!
-  \***********************************************************/
+/*!*****************************************!*\
+  !*** ./~/react-overlays/lib/Overlay.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45116,9 +45168,9 @@
 
 /***/ },
 /* 492 */
-/*!************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/Position.js ***!
-  \************************************************************/
+/*!******************************************!*\
+  !*** ./~/react-overlays/lib/Position.js ***!
+  \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45335,9 +45387,9 @@
 
 /***/ },
 /* 493 */
-/*!***************************************************************************!*\
-  !*** ./~/react-bootstrap/~/react-overlays/lib/utils/calculatePosition.js ***!
-  \***************************************************************************/
+/*!*********************************************************!*\
+  !*** ./~/react-overlays/lib/utils/calculatePosition.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45472,9 +45524,9 @@
 
 /***/ },
 /* 494 */
-/*!*********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/query/offset.js ***!
-  \*********************************************************/
+/*!***************************************!*\
+  !*** ./~/dom-helpers/query/offset.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45510,9 +45562,9 @@
 
 /***/ },
 /* 495 */
-/*!***********************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/query/position.js ***!
-  \***********************************************************/
+/*!*****************************************!*\
+  !*** ./~/dom-helpers/query/position.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45575,9 +45627,9 @@
 
 /***/ },
 /* 496 */
-/*!***************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/query/offsetParent.js ***!
-  \***************************************************************/
+/*!*********************************************!*\
+  !*** ./~/dom-helpers/query/offsetParent.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45614,9 +45666,9 @@
 
 /***/ },
 /* 497 */
-/*!************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/query/scrollTop.js ***!
-  \************************************************************/
+/*!******************************************!*\
+  !*** ./~/dom-helpers/query/scrollTop.js ***!
+  \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45632,9 +45684,9 @@
 
 /***/ },
 /* 498 */
-/*!*************************************************************!*\
-  !*** ./~/react-bootstrap/~/dom-helpers/query/scrollLeft.js ***!
-  \*************************************************************/
+/*!*******************************************!*\
+  !*** ./~/dom-helpers/query/scrollLeft.js ***!
+  \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46001,7 +46053,7 @@
 	
 	exports['default'] = OverlayTrigger;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 500 */
@@ -46334,7 +46386,7 @@
 	function _resetWarned() {
 	  warned = {};
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 504 */
@@ -47666,7 +47718,7 @@
 	
 	exports['default'] = (0, _bootstrapUtils.bsClass)('radio', Radio);
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 511 */
@@ -47781,7 +47833,7 @@
 	
 	exports['default'] = (0, _bootstrapUtils.bsClass)('embed-responsive', ResponsiveEmbed);
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 512 */
@@ -48841,7 +48893,7 @@
 	
 	exports['default'] = (0, _bootstrapUtils.bsClass)('tab-pane', TabPane);
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
 /* 519 */
@@ -49535,31 +49587,31 @@
 	
 	exports.Modal = _Modal3['default'];
 	
-	var _ModalHeader2 = __webpack_require__(/*! ./ModalHeader */ 591);
+	var _ModalHeader2 = __webpack_require__(/*! ./ModalHeader */ 590);
 	
 	var _ModalHeader3 = _interopRequireDefault(_ModalHeader2);
 	
 	exports.ModalHeader = _ModalHeader3['default'];
 	
-	var _ModalClose2 = __webpack_require__(/*! ./ModalClose */ 592);
+	var _ModalClose2 = __webpack_require__(/*! ./ModalClose */ 591);
 	
 	var _ModalClose3 = _interopRequireDefault(_ModalClose2);
 	
 	exports.ModalClose = _ModalClose3['default'];
 	
-	var _ModalTitle2 = __webpack_require__(/*! ./ModalTitle */ 593);
+	var _ModalTitle2 = __webpack_require__(/*! ./ModalTitle */ 592);
 	
 	var _ModalTitle3 = _interopRequireDefault(_ModalTitle2);
 	
 	exports.ModalTitle = _ModalTitle3['default'];
 	
-	var _ModalBody2 = __webpack_require__(/*! ./ModalBody */ 594);
+	var _ModalBody2 = __webpack_require__(/*! ./ModalBody */ 593);
 	
 	var _ModalBody3 = _interopRequireDefault(_ModalBody2);
 	
 	exports.ModalBody = _ModalBody3['default'];
 	
-	var _ModalFooter2 = __webpack_require__(/*! ./ModalFooter */ 595);
+	var _ModalFooter2 = __webpack_require__(/*! ./ModalFooter */ 594);
 	
 	var _ModalFooter3 = _interopRequireDefault(_ModalFooter2);
 	
@@ -49596,15 +49648,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _classnames = __webpack_require__(/*! classnames */ 527);
+	var _classnames = __webpack_require__(/*! classnames */ 362);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _radium = __webpack_require__(/*! radium */ 528);
+	var _radium = __webpack_require__(/*! radium */ 527);
 	
 	var _radium2 = _interopRequireDefault(_radium);
 	
-	var _lodashAssign = __webpack_require__(/*! lodash.assign */ 590);
+	var _lodashAssign = __webpack_require__(/*! lodash.assign */ 589);
 	
 	var _lodashAssign2 = _interopRequireDefault(_lodashAssign);
 	
@@ -49803,66 +49855,9 @@
 
 /***/ },
 /* 527 */
-/*!*******************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/classnames/index.js ***!
-  \*******************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-	
-	(function () {
-		'use strict';
-	
-		var hasOwn = {}.hasOwnProperty;
-	
-		function classNames () {
-			var classes = [];
-	
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-	
-				var argType = typeof arg;
-	
-				if (argType === 'string' || argType === 'number') {
-					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				}
-			}
-	
-			return classes.join(' ');
-		}
-	
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
-
-/***/ },
-/* 528 */
-/*!*******************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/index.js ***!
-  \*******************************************************/
+/*!*******************************!*\
+  !*** ./~/radium/lib/index.js ***!
+  \*******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -49871,31 +49866,31 @@
 	  value: true
 	});
 	
-	var _enhancer = __webpack_require__(/*! ./enhancer */ 529);
+	var _enhancer = __webpack_require__(/*! ./enhancer */ 528);
 	
 	var _enhancer2 = _interopRequireDefault(_enhancer);
 	
-	var _plugins = __webpack_require__(/*! ./plugins */ 575);
+	var _plugins = __webpack_require__(/*! ./plugins */ 574);
 	
 	var _plugins2 = _interopRequireDefault(_plugins);
 	
-	var _style = __webpack_require__(/*! ./components/style */ 586);
+	var _style = __webpack_require__(/*! ./components/style */ 585);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
-	var _styleRoot = __webpack_require__(/*! ./components/style-root */ 587);
+	var _styleRoot = __webpack_require__(/*! ./components/style-root */ 586);
 	
 	var _styleRoot2 = _interopRequireDefault(_styleRoot);
 	
-	var _getState = __webpack_require__(/*! ./get-state */ 571);
+	var _getState = __webpack_require__(/*! ./get-state */ 570);
 	
 	var _getState2 = _interopRequireDefault(_getState);
 	
-	var _keyframes = __webpack_require__(/*! ./keyframes */ 589);
+	var _keyframes = __webpack_require__(/*! ./keyframes */ 588);
 	
 	var _keyframes2 = _interopRequireDefault(_keyframes);
 	
-	var _resolveStyles = __webpack_require__(/*! ./resolve-styles */ 531);
+	var _resolveStyles = __webpack_require__(/*! ./resolve-styles */ 530);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -49919,13 +49914,13 @@
 	
 	exports.default = Radium;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
-/* 529 */
-/*!**********************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/enhancer.js ***!
-  \**********************************************************/
+/* 528 */
+/*!**********************************!*\
+  !*** ./~/radium/lib/enhancer.js ***!
+  \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -49942,11 +49937,11 @@
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
-	var _styleKeeper = __webpack_require__(/*! ./style-keeper.js */ 530);
+	var _styleKeeper = __webpack_require__(/*! ./style-keeper.js */ 529);
 	
 	var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 	
-	var _resolveStyles = __webpack_require__(/*! ./resolve-styles.js */ 531);
+	var _resolveStyles = __webpack_require__(/*! ./resolve-styles.js */ 530);
 	
 	var _resolveStyles2 = _interopRequireDefault(_resolveStyles);
 	
@@ -50111,13 +50106,13 @@
 	  return RadiumEnhancer;
 	}
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
-/* 530 */
-/*!**************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/style-keeper.js ***!
-  \**************************************************************/
+/* 529 */
+/*!**************************************!*\
+  !*** ./~/radium/lib/style-keeper.js ***!
+  \**************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -50189,10 +50184,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 531 */
-/*!****************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/resolve-styles.js ***!
-  \****************************************************************/
+/* 530 */
+/*!****************************************!*\
+  !*** ./~/radium/lib/resolve-styles.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -50205,33 +50200,33 @@
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
-	var _appendImportantToEachValue = __webpack_require__(/*! ./append-important-to-each-value */ 532);
+	var _appendImportantToEachValue = __webpack_require__(/*! ./append-important-to-each-value */ 531);
 	
 	var _appendImportantToEachValue2 = _interopRequireDefault(_appendImportantToEachValue);
 	
-	var _cssRuleSetToString = __webpack_require__(/*! ./css-rule-set-to-string */ 535);
+	var _cssRuleSetToString = __webpack_require__(/*! ./css-rule-set-to-string */ 534);
 	
 	var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 	
-	var _getState = __webpack_require__(/*! ./get-state */ 571);
+	var _getState = __webpack_require__(/*! ./get-state */ 570);
 	
 	var _getState2 = _interopRequireDefault(_getState);
 	
-	var _getStateKey = __webpack_require__(/*! ./get-state-key */ 572);
+	var _getStateKey = __webpack_require__(/*! ./get-state-key */ 571);
 	
 	var _getStateKey2 = _interopRequireDefault(_getStateKey);
 	
-	var _hash = __webpack_require__(/*! ./hash */ 573);
+	var _hash = __webpack_require__(/*! ./hash */ 572);
 	
 	var _hash2 = _interopRequireDefault(_hash);
 	
-	var _mergeStyles = __webpack_require__(/*! ./merge-styles */ 574);
+	var _mergeStyles = __webpack_require__(/*! ./merge-styles */ 573);
 	
-	var _plugins = __webpack_require__(/*! ./plugins/ */ 575);
+	var _plugins = __webpack_require__(/*! ./plugins/ */ 574);
 	
 	var _plugins2 = _interopRequireDefault(_plugins);
 	
-	var _exenv = __webpack_require__(/*! exenv */ 585);
+	var _exenv = __webpack_require__(/*! exenv */ 584);
 	
 	var _exenv2 = _interopRequireDefault(_exenv);
 	
@@ -50551,13 +50546,13 @@
 	
 	exports.default = resolveStyles;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
-/* 532 */
-/*!********************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/append-important-to-each-value.js ***!
-  \********************************************************************************/
+/* 531 */
+/*!********************************************************!*\
+  !*** ./~/radium/lib/append-important-to-each-value.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50567,11 +50562,11 @@
 	});
 	exports.default = appendImportantToEachValue;
 	
-	var _appendPxIfNeeded = __webpack_require__(/*! ./append-px-if-needed */ 533);
+	var _appendPxIfNeeded = __webpack_require__(/*! ./append-px-if-needed */ 532);
 	
 	var _appendPxIfNeeded2 = _interopRequireDefault(_appendPxIfNeeded);
 	
-	var _mapObject = __webpack_require__(/*! ./map-object */ 534);
+	var _mapObject = __webpack_require__(/*! ./map-object */ 533);
 	
 	var _mapObject2 = _interopRequireDefault(_mapObject);
 	
@@ -50585,10 +50580,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 533 */
-/*!*********************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/append-px-if-needed.js ***!
-  \*********************************************************************/
+/* 532 */
+/*!*********************************************!*\
+  !*** ./~/radium/lib/append-px-if-needed.js ***!
+  \*********************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -50642,10 +50637,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 534 */
-/*!************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/map-object.js ***!
-  \************************************************************/
+/* 533 */
+/*!************************************!*\
+  !*** ./~/radium/lib/map-object.js ***!
+  \************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50663,10 +50658,10 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 535 */
-/*!************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/css-rule-set-to-string.js ***!
-  \************************************************************************/
+/* 534 */
+/*!************************************************!*\
+  !*** ./~/radium/lib/css-rule-set-to-string.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50676,19 +50671,19 @@
 	});
 	exports.default = cssRuleSetToString;
 	
-	var _appendPxIfNeeded = __webpack_require__(/*! ./append-px-if-needed */ 533);
+	var _appendPxIfNeeded = __webpack_require__(/*! ./append-px-if-needed */ 532);
 	
 	var _appendPxIfNeeded2 = _interopRequireDefault(_appendPxIfNeeded);
 	
-	var _camelCasePropsToDashCase = __webpack_require__(/*! ./camel-case-props-to-dash-case */ 536);
+	var _camelCasePropsToDashCase = __webpack_require__(/*! ./camel-case-props-to-dash-case */ 535);
 	
 	var _camelCasePropsToDashCase2 = _interopRequireDefault(_camelCasePropsToDashCase);
 	
-	var _mapObject = __webpack_require__(/*! ./map-object */ 534);
+	var _mapObject = __webpack_require__(/*! ./map-object */ 533);
 	
 	var _mapObject2 = _interopRequireDefault(_mapObject);
 	
-	var _prefixer = __webpack_require__(/*! ./prefixer */ 537);
+	var _prefixer = __webpack_require__(/*! ./prefixer */ 536);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -50715,10 +50710,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 536 */
-/*!*******************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/camel-case-props-to-dash-case.js ***!
-  \*******************************************************************************/
+/* 535 */
+/*!*******************************************************!*\
+  !*** ./~/radium/lib/camel-case-props-to-dash-case.js ***!
+  \*******************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -50758,10 +50753,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 537 */
-/*!**********************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/prefixer.js ***!
-  \**********************************************************/
+/* 536 */
+/*!**********************************!*\
+  !*** ./~/radium/lib/prefixer.js ***!
+  \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {'use strict';
@@ -50780,7 +50775,7 @@
 	exports.getPrefixedKeyframes = getPrefixedKeyframes;
 	exports.getPrefixedStyle = getPrefixedStyle;
 	
-	var _inlineStylePrefixer = __webpack_require__(/*! inline-style-prefixer */ 538);
+	var _inlineStylePrefixer = __webpack_require__(/*! inline-style-prefixer */ 537);
 	
 	var _inlineStylePrefixer2 = _interopRequireDefault(_inlineStylePrefixer);
 	
@@ -50842,13 +50837,13 @@
 	  var prefixedStyle = prefixer.prefix(styleWithFallbacks);
 	  return prefixedStyle;
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
-/* 538 */
-/*!**********************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/Prefixer.js ***!
-  \**********************************************************************************/
+/* 537 */
+/*!*************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/Prefixer.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50863,61 +50858,61 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var _inlineStylePrefixAll = __webpack_require__(/*! inline-style-prefix-all */ 539);
+	var _inlineStylePrefixAll = __webpack_require__(/*! inline-style-prefix-all */ 538);
 	
 	var _inlineStylePrefixAll2 = _interopRequireDefault(_inlineStylePrefixAll);
 	
-	var _utilsGetBrowserInformation = __webpack_require__(/*! ./utils/getBrowserInformation */ 554);
+	var _utilsGetBrowserInformation = __webpack_require__(/*! ./utils/getBrowserInformation */ 553);
 	
 	var _utilsGetBrowserInformation2 = _interopRequireDefault(_utilsGetBrowserInformation);
 	
-	var _utilsGetPrefixedKeyframes = __webpack_require__(/*! ./utils/getPrefixedKeyframes */ 557);
+	var _utilsGetPrefixedKeyframes = __webpack_require__(/*! ./utils/getPrefixedKeyframes */ 556);
 	
 	var _utilsGetPrefixedKeyframes2 = _interopRequireDefault(_utilsGetPrefixedKeyframes);
 	
-	var _utilsCapitalizeString = __webpack_require__(/*! ./utils/capitalizeString */ 558);
+	var _utilsCapitalizeString = __webpack_require__(/*! ./utils/capitalizeString */ 557);
 	
 	var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 	
-	var _utilsAssign = __webpack_require__(/*! ./utils/assign */ 559);
+	var _utilsAssign = __webpack_require__(/*! ./utils/assign */ 558);
 	
 	var _utilsAssign2 = _interopRequireDefault(_utilsAssign);
 	
-	var _prefixProps = __webpack_require__(/*! ./prefixProps */ 560);
+	var _prefixProps = __webpack_require__(/*! ./prefixProps */ 559);
 	
 	var _prefixProps2 = _interopRequireDefault(_prefixProps);
 	
-	var _pluginsCalc = __webpack_require__(/*! ./plugins/calc */ 561);
+	var _pluginsCalc = __webpack_require__(/*! ./plugins/calc */ 560);
 	
 	var _pluginsCalc2 = _interopRequireDefault(_pluginsCalc);
 	
-	var _pluginsCursor = __webpack_require__(/*! ./plugins/cursor */ 563);
+	var _pluginsCursor = __webpack_require__(/*! ./plugins/cursor */ 562);
 	
 	var _pluginsCursor2 = _interopRequireDefault(_pluginsCursor);
 	
-	var _pluginsFlex = __webpack_require__(/*! ./plugins/flex */ 564);
+	var _pluginsFlex = __webpack_require__(/*! ./plugins/flex */ 563);
 	
 	var _pluginsFlex2 = _interopRequireDefault(_pluginsFlex);
 	
-	var _pluginsSizing = __webpack_require__(/*! ./plugins/sizing */ 565);
+	var _pluginsSizing = __webpack_require__(/*! ./plugins/sizing */ 564);
 	
 	var _pluginsSizing2 = _interopRequireDefault(_pluginsSizing);
 	
-	var _pluginsGradient = __webpack_require__(/*! ./plugins/gradient */ 566);
+	var _pluginsGradient = __webpack_require__(/*! ./plugins/gradient */ 565);
 	
 	var _pluginsGradient2 = _interopRequireDefault(_pluginsGradient);
 	
-	var _pluginsTransition = __webpack_require__(/*! ./plugins/transition */ 567);
+	var _pluginsTransition = __webpack_require__(/*! ./plugins/transition */ 566);
 	
 	var _pluginsTransition2 = _interopRequireDefault(_pluginsTransition);
 	
 	// special flexbox specifications
 	
-	var _pluginsFlexboxIE = __webpack_require__(/*! ./plugins/flexboxIE */ 569);
+	var _pluginsFlexboxIE = __webpack_require__(/*! ./plugins/flexboxIE */ 568);
 	
 	var _pluginsFlexboxIE2 = _interopRequireDefault(_pluginsFlexboxIE);
 	
-	var _pluginsFlexboxOld = __webpack_require__(/*! ./plugins/flexboxOld */ 570);
+	var _pluginsFlexboxOld = __webpack_require__(/*! ./plugins/flexboxOld */ 569);
 	
 	var _pluginsFlexboxOld2 = _interopRequireDefault(_pluginsFlexboxOld);
 	
@@ -51051,10 +51046,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 539 */
-/*!*************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/prefixAll.js ***!
-  \*************************************************************************************************************/
+/* 538 */
+/*!****************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/prefixAll.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51066,49 +51061,49 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _prefixProps = __webpack_require__(/*! ./prefixProps */ 540);
+	var _prefixProps = __webpack_require__(/*! ./prefixProps */ 539);
 	
 	var _prefixProps2 = _interopRequireDefault(_prefixProps);
 	
-	var _utilsCapitalizeString = __webpack_require__(/*! ./utils/capitalizeString */ 541);
+	var _utilsCapitalizeString = __webpack_require__(/*! ./utils/capitalizeString */ 540);
 	
 	var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 	
-	var _utilsAssign = __webpack_require__(/*! ./utils/assign */ 542);
+	var _utilsAssign = __webpack_require__(/*! ./utils/assign */ 541);
 	
 	var _utilsAssign2 = _interopRequireDefault(_utilsAssign);
 	
-	var _pluginsCalc = __webpack_require__(/*! ./plugins/calc */ 543);
+	var _pluginsCalc = __webpack_require__(/*! ./plugins/calc */ 542);
 	
 	var _pluginsCalc2 = _interopRequireDefault(_pluginsCalc);
 	
-	var _pluginsCursor = __webpack_require__(/*! ./plugins/cursor */ 547);
+	var _pluginsCursor = __webpack_require__(/*! ./plugins/cursor */ 546);
 	
 	var _pluginsCursor2 = _interopRequireDefault(_pluginsCursor);
 	
-	var _pluginsFlex = __webpack_require__(/*! ./plugins/flex */ 548);
+	var _pluginsFlex = __webpack_require__(/*! ./plugins/flex */ 547);
 	
 	var _pluginsFlex2 = _interopRequireDefault(_pluginsFlex);
 	
-	var _pluginsSizing = __webpack_require__(/*! ./plugins/sizing */ 549);
+	var _pluginsSizing = __webpack_require__(/*! ./plugins/sizing */ 548);
 	
 	var _pluginsSizing2 = _interopRequireDefault(_pluginsSizing);
 	
-	var _pluginsGradient = __webpack_require__(/*! ./plugins/gradient */ 550);
+	var _pluginsGradient = __webpack_require__(/*! ./plugins/gradient */ 549);
 	
 	var _pluginsGradient2 = _interopRequireDefault(_pluginsGradient);
 	
-	var _pluginsTransition = __webpack_require__(/*! ./plugins/transition */ 551);
+	var _pluginsTransition = __webpack_require__(/*! ./plugins/transition */ 550);
 	
 	var _pluginsTransition2 = _interopRequireDefault(_pluginsTransition);
 	
 	// special flexbox specifications
 	
-	var _pluginsFlexboxIE = __webpack_require__(/*! ./plugins/flexboxIE */ 552);
+	var _pluginsFlexboxIE = __webpack_require__(/*! ./plugins/flexboxIE */ 551);
 	
 	var _pluginsFlexboxIE2 = _interopRequireDefault(_pluginsFlexboxIE);
 	
-	var _pluginsFlexboxOld = __webpack_require__(/*! ./plugins/flexboxOld */ 553);
+	var _pluginsFlexboxOld = __webpack_require__(/*! ./plugins/flexboxOld */ 552);
 	
 	var _pluginsFlexboxOld2 = _interopRequireDefault(_pluginsFlexboxOld);
 	
@@ -51148,10 +51143,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 540 */
-/*!***************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/prefixProps.js ***!
-  \***************************************************************************************************************/
+/* 539 */
+/*!******************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/prefixProps.js ***!
+  \******************************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -51163,10 +51158,10 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 541 */
-/*!**************************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/utils/capitalizeString.js ***!
-  \**************************************************************************************************************************/
+/* 540 */
+/*!*****************************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/utils/capitalizeString.js ***!
+  \*****************************************************************/
 /***/ function(module, exports) {
 
 	// helper to capitalize strings
@@ -51183,10 +51178,10 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 542 */
-/*!****************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/utils/assign.js ***!
-  \****************************************************************************************************************/
+/* 541 */
+/*!*******************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/utils/assign.js ***!
+  \*******************************************************/
 /***/ function(module, exports) {
 
 	// leight polyfill for Object.assign
@@ -51207,10 +51202,10 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 543 */
-/*!****************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/plugins/calc.js ***!
-  \****************************************************************************************************************/
+/* 542 */
+/*!*******************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/plugins/calc.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51222,11 +51217,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 544);
+	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 543);
 	
 	var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 	
-	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 546);
+	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 545);
 	
 	var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 	
@@ -51243,10 +51238,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 544 */
-/*!***************************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/utils/joinPrefixedRules.js ***!
-  \***************************************************************************************************************************/
+/* 543 */
+/*!******************************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/utils/joinPrefixedRules.js ***!
+  \******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51259,7 +51254,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _camelToDashCase = __webpack_require__(/*! ./camelToDashCase */ 545);
+	var _camelToDashCase = __webpack_require__(/*! ./camelToDashCase */ 544);
 	
 	var _camelToDashCase2 = _interopRequireDefault(_camelToDashCase);
 	
@@ -51279,10 +51274,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 545 */
-/*!*************************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/utils/camelToDashCase.js ***!
-  \*************************************************************************************************************************/
+/* 544 */
+/*!****************************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/utils/camelToDashCase.js ***!
+  \****************************************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -51304,10 +51299,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 546 */
-/*!*************************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/utils/isPrefixedValue.js ***!
-  \*************************************************************************************************************************/
+/* 545 */
+/*!****************************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/utils/isPrefixedValue.js ***!
+  \****************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51325,10 +51320,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 547 */
-/*!******************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/plugins/cursor.js ***!
-  \******************************************************************************************************************/
+/* 546 */
+/*!*********************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/plugins/cursor.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51340,7 +51335,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 544);
+	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 543);
 	
 	var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 	
@@ -51360,10 +51355,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 548 */
-/*!****************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/plugins/flex.js ***!
-  \****************************************************************************************************************/
+/* 547 */
+/*!*******************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/plugins/flex.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51375,7 +51370,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 545);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 544);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -51392,10 +51387,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 549 */
-/*!******************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/plugins/sizing.js ***!
-  \******************************************************************************************************************/
+/* 548 */
+/*!*********************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/plugins/sizing.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51407,7 +51402,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 544);
+	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 543);
 	
 	var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 	
@@ -51437,10 +51432,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 550 */
-/*!********************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/plugins/gradient.js ***!
-  \********************************************************************************************************************/
+/* 549 */
+/*!***********************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/plugins/gradient.js ***!
+  \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51452,11 +51447,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 544);
+	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 543);
 	
 	var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 	
-	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 546);
+	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 545);
 	
 	var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 	
@@ -51473,10 +51468,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 551 */
-/*!**********************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/plugins/transition.js ***!
-  \**********************************************************************************************************************/
+/* 550 */
+/*!*************************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/plugins/transition.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51490,19 +51485,19 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 545);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 544);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
-	var _utilsCapitalizeString = __webpack_require__(/*! ../utils/capitalizeString */ 541);
+	var _utilsCapitalizeString = __webpack_require__(/*! ../utils/capitalizeString */ 540);
 	
 	var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 	
-	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 546);
+	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 545);
 	
 	var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 	
-	var _prefixProps = __webpack_require__(/*! ../prefixProps */ 540);
+	var _prefixProps = __webpack_require__(/*! ../prefixProps */ 539);
 	
 	var _prefixProps2 = _interopRequireDefault(_prefixProps);
 	
@@ -51563,10 +51558,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 552 */
-/*!*********************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/plugins/flexboxIE.js ***!
-  \*********************************************************************************************************************/
+/* 551 */
+/*!************************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/plugins/flexboxIE.js ***!
+  \************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51604,10 +51599,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 553 */
-/*!**********************************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/inline-style-prefix-all/lib/plugins/flexboxOld.js ***!
-  \**********************************************************************************************************************/
+/* 552 */
+/*!*************************************************************!*\
+  !*** ./~/inline-style-prefix-all/lib/plugins/flexboxOld.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51621,7 +51616,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 545);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 544);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -51655,10 +51650,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 554 */
-/*!*****************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/utils/getBrowserInformation.js ***!
-  \*****************************************************************************************************/
+/* 553 */
+/*!********************************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/utils/getBrowserInformation.js ***!
+  \********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51669,7 +51664,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _bowser = __webpack_require__(/*! bowser */ 555);
+	var _bowser = __webpack_require__(/*! bowser */ 554);
 	
 	var _bowser2 = _interopRequireDefault(_bowser);
 	
@@ -51756,10 +51751,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 555 */
-/*!*****************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/~/bowser/src/bowser.js ***!
-  \*****************************************************************************************/
+/* 554 */
+/*!********************************!*\
+  !*** ./~/bowser/src/bowser.js ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -51770,7 +51765,7 @@
 	
 	!function (name, definition) {
 	  if (typeof module != 'undefined' && module.exports) module.exports = definition()
-	  else if (true) __webpack_require__(/*! !webpack amd define */ 556)(name, definition)
+	  else if (true) __webpack_require__(/*! !webpack amd define */ 555)(name, definition)
 	  else this[name] = definition()
 	}('bowser', function () {
 	  /**
@@ -52345,7 +52340,7 @@
 
 
 /***/ },
-/* 556 */
+/* 555 */
 /*!***************************************!*\
   !*** (webpack)/buildin/amd-define.js ***!
   \***************************************/
@@ -52355,10 +52350,10 @@
 
 
 /***/ },
-/* 557 */
-/*!****************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/utils/getPrefixedKeyframes.js ***!
-  \****************************************************************************************************/
+/* 556 */
+/*!*******************************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/utils/getPrefixedKeyframes.js ***!
+  \*******************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -52383,10 +52378,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 558 */
-/*!************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/utils/capitalizeString.js ***!
-  \************************************************************************************************/
+/* 557 */
+/*!***************************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/utils/capitalizeString.js ***!
+  \***************************************************************/
 /***/ function(module, exports) {
 
 	// helper to capitalize strings
@@ -52403,10 +52398,10 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 559 */
-/*!**************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/utils/assign.js ***!
-  \**************************************************************************************/
+/* 558 */
+/*!*****************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/utils/assign.js ***!
+  \*****************************************************/
 /***/ function(module, exports) {
 
 	// leight polyfill for Object.assign
@@ -52428,10 +52423,10 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 560 */
-/*!*************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/prefixProps.js ***!
-  \*************************************************************************************/
+/* 559 */
+/*!****************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/prefixProps.js ***!
+  \****************************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -52443,10 +52438,10 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 561 */
-/*!**************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/plugins/calc.js ***!
-  \**************************************************************************************/
+/* 560 */
+/*!*****************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/plugins/calc.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52460,7 +52455,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 562);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 561);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -52481,10 +52476,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 562 */
-/*!***********************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/utils/camelToDashCase.js ***!
-  \***********************************************************************************************/
+/* 561 */
+/*!**************************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/utils/camelToDashCase.js ***!
+  \**************************************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -52506,10 +52501,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 563 */
-/*!****************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/plugins/cursor.js ***!
-  \****************************************************************************************/
+/* 562 */
+/*!*******************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/plugins/cursor.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52521,7 +52516,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 562);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 561);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -52551,10 +52546,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 564 */
-/*!**************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/plugins/flex.js ***!
-  \**************************************************************************************/
+/* 563 */
+/*!*****************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/plugins/flex.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52566,7 +52561,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 562);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 561);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -52594,10 +52589,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 565 */
-/*!****************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/plugins/sizing.js ***!
-  \****************************************************************************************/
+/* 564 */
+/*!*******************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/plugins/sizing.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52611,7 +52606,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 562);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 561);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -52648,10 +52643,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 566 */
-/*!******************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/plugins/gradient.js ***!
-  \******************************************************************************************/
+/* 565 */
+/*!*********************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/plugins/gradient.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52665,7 +52660,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 562);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 561);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -52688,10 +52683,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 567 */
-/*!********************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/plugins/transition.js ***!
-  \********************************************************************************************/
+/* 566 */
+/*!***********************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/plugins/transition.js ***!
+  \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52705,15 +52700,15 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 562);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 561);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
-	var _utilsCapitalizeString = __webpack_require__(/*! ../utils/capitalizeString */ 558);
+	var _utilsCapitalizeString = __webpack_require__(/*! ../utils/capitalizeString */ 557);
 	
 	var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 	
-	var _utilsUnprefixProperty = __webpack_require__(/*! ../utils/unprefixProperty */ 568);
+	var _utilsUnprefixProperty = __webpack_require__(/*! ../utils/unprefixProperty */ 567);
 	
 	var _utilsUnprefixProperty2 = _interopRequireDefault(_utilsUnprefixProperty);
 	
@@ -52757,10 +52752,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 568 */
-/*!************************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/utils/unprefixProperty.js ***!
-  \************************************************************************************************/
+/* 567 */
+/*!***************************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/utils/unprefixProperty.js ***!
+  \***************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -52777,10 +52772,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 569 */
-/*!*******************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/plugins/flexboxIE.js ***!
-  \*******************************************************************************************/
+/* 568 */
+/*!**********************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/plugins/flexboxIE.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52794,7 +52789,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 562);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 561);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -52850,10 +52845,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 570 */
-/*!********************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/inline-style-prefixer/lib/plugins/flexboxOld.js ***!
-  \********************************************************************************************/
+/* 569 */
+/*!***********************************************************!*\
+  !*** ./~/inline-style-prefixer/lib/plugins/flexboxOld.js ***!
+  \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52867,7 +52862,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 562);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 561);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -52929,10 +52924,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 571 */
-/*!***********************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/get-state.js ***!
-  \***********************************************************/
+/* 570 */
+/*!***********************************!*\
+  !*** ./~/radium/lib/get-state.js ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52941,7 +52936,7 @@
 	  value: true
 	});
 	
-	var _getStateKey = __webpack_require__(/*! ./get-state-key */ 572);
+	var _getStateKey = __webpack_require__(/*! ./get-state-key */ 571);
 	
 	var _getStateKey2 = _interopRequireDefault(_getStateKey);
 	
@@ -52957,10 +52952,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 572 */
-/*!***************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/get-state-key.js ***!
-  \***************************************************************/
+/* 571 */
+/*!***************************************!*\
+  !*** ./~/radium/lib/get-state-key.js ***!
+  \***************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -52978,10 +52973,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 573 */
-/*!******************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/hash.js ***!
-  \******************************************************/
+/* 572 */
+/*!******************************!*\
+  !*** ./~/radium/lib/hash.js ***!
+  \******************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53013,10 +53008,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 574 */
-/*!**************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/merge-styles.js ***!
-  \**************************************************************/
+/* 573 */
+/*!**************************************!*\
+  !*** ./~/radium/lib/merge-styles.js ***!
+  \**************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53080,10 +53075,10 @@
 	}
 
 /***/ },
-/* 575 */
-/*!***************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/index.js ***!
-  \***************************************************************/
+/* 574 */
+/*!***************************************!*\
+  !*** ./~/radium/lib/plugins/index.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53092,35 +53087,35 @@
 	  value: true
 	});
 	
-	var _checkPropsPlugin = __webpack_require__(/*! ./check-props-plugin */ 576);
+	var _checkPropsPlugin = __webpack_require__(/*! ./check-props-plugin */ 575);
 	
 	var _checkPropsPlugin2 = _interopRequireDefault(_checkPropsPlugin);
 	
-	var _keyframesPlugin = __webpack_require__(/*! ./keyframes-plugin */ 577);
+	var _keyframesPlugin = __webpack_require__(/*! ./keyframes-plugin */ 576);
 	
 	var _keyframesPlugin2 = _interopRequireDefault(_keyframesPlugin);
 	
-	var _mergeStyleArrayPlugin = __webpack_require__(/*! ./merge-style-array-plugin */ 578);
+	var _mergeStyleArrayPlugin = __webpack_require__(/*! ./merge-style-array-plugin */ 577);
 	
 	var _mergeStyleArrayPlugin2 = _interopRequireDefault(_mergeStyleArrayPlugin);
 	
-	var _prefixPlugin = __webpack_require__(/*! ./prefix-plugin */ 579);
+	var _prefixPlugin = __webpack_require__(/*! ./prefix-plugin */ 578);
 	
 	var _prefixPlugin2 = _interopRequireDefault(_prefixPlugin);
 	
-	var _removeNestedStylesPlugin = __webpack_require__(/*! ./remove-nested-styles-plugin */ 580);
+	var _removeNestedStylesPlugin = __webpack_require__(/*! ./remove-nested-styles-plugin */ 579);
 	
 	var _removeNestedStylesPlugin2 = _interopRequireDefault(_removeNestedStylesPlugin);
 	
-	var _resolveInteractionStylesPlugin = __webpack_require__(/*! ./resolve-interaction-styles-plugin */ 581);
+	var _resolveInteractionStylesPlugin = __webpack_require__(/*! ./resolve-interaction-styles-plugin */ 580);
 	
 	var _resolveInteractionStylesPlugin2 = _interopRequireDefault(_resolveInteractionStylesPlugin);
 	
-	var _resolveMediaQueriesPlugin = __webpack_require__(/*! ./resolve-media-queries-plugin */ 583);
+	var _resolveMediaQueriesPlugin = __webpack_require__(/*! ./resolve-media-queries-plugin */ 582);
 	
 	var _resolveMediaQueriesPlugin2 = _interopRequireDefault(_resolveMediaQueriesPlugin);
 	
-	var _visitedPlugin = __webpack_require__(/*! ./visited-plugin */ 584);
+	var _visitedPlugin = __webpack_require__(/*! ./visited-plugin */ 583);
 	
 	var _visitedPlugin2 = _interopRequireDefault(_visitedPlugin);
 	
@@ -53141,10 +53136,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 576 */
-/*!****************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/check-props-plugin.js ***!
-  \****************************************************************************/
+/* 575 */
+/*!****************************************************!*\
+  !*** ./~/radium/lib/plugins/check-props-plugin.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -53208,13 +53203,13 @@
 	
 	exports.default = _checkProps;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/process/browser.js */ 3)))
 
 /***/ },
-/* 577 */
-/*!**************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/keyframes-plugin.js ***!
-  \**************************************************************************/
+/* 576 */
+/*!**************************************************!*\
+  !*** ./~/radium/lib/plugins/keyframes-plugin.js ***!
+  \**************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53251,10 +53246,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 578 */
-/*!**********************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/merge-style-array-plugin.js ***!
-  \**********************************************************************************/
+/* 577 */
+/*!**********************************************************!*\
+  !*** ./~/radium/lib/plugins/merge-style-array-plugin.js ***!
+  \**********************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53278,10 +53273,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 579 */
-/*!***********************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/prefix-plugin.js ***!
-  \***********************************************************************/
+/* 578 */
+/*!***********************************************!*\
+  !*** ./~/radium/lib/plugins/prefix-plugin.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53291,7 +53286,7 @@
 	});
 	exports.default = prefixPlugin;
 	
-	var _prefixer = __webpack_require__(/*! ../prefixer */ 537);
+	var _prefixer = __webpack_require__(/*! ../prefixer */ 536);
 	
 	function prefixPlugin(_ref // eslint-disable-line no-shadow
 	) {
@@ -53304,10 +53299,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 580 */
-/*!*************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/remove-nested-styles-plugin.js ***!
-  \*************************************************************************************/
+/* 579 */
+/*!*************************************************************!*\
+  !*** ./~/radium/lib/plugins/remove-nested-styles-plugin.js ***!
+  \*************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53335,10 +53330,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 581 */
-/*!*******************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/resolve-interaction-styles-plugin.js ***!
-  \*******************************************************************************************/
+/* 580 */
+/*!*******************************************************************!*\
+  !*** ./~/radium/lib/plugins/resolve-interaction-styles-plugin.js ***!
+  \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53347,7 +53342,7 @@
 	  value: true
 	});
 	
-	var _mouseUpListener = __webpack_require__(/*! ./mouse-up-listener */ 582);
+	var _mouseUpListener = __webpack_require__(/*! ./mouse-up-listener */ 581);
 	
 	var _mouseUpListener2 = _interopRequireDefault(_mouseUpListener);
 	
@@ -53471,10 +53466,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 582 */
-/*!***************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/mouse-up-listener.js ***!
-  \***************************************************************************/
+/* 581 */
+/*!***************************************************!*\
+  !*** ./~/radium/lib/plugins/mouse-up-listener.js ***!
+  \***************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53523,10 +53518,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 583 */
-/*!**************************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/resolve-media-queries-plugin.js ***!
-  \**************************************************************************************/
+/* 582 */
+/*!**************************************************************!*\
+  !*** ./~/radium/lib/plugins/resolve-media-queries-plugin.js ***!
+  \**************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53707,10 +53702,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 584 */
-/*!************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/plugins/visited-plugin.js ***!
-  \************************************************************************/
+/* 583 */
+/*!************************************************!*\
+  !*** ./~/radium/lib/plugins/visited-plugin.js ***!
+  \************************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53755,10 +53750,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 585 */
-/*!***********************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/~/exenv/index.js ***!
-  \***********************************************************/
+/* 584 */
+/*!**************************!*\
+  !*** ./~/exenv/index.js ***!
+  \**************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -53766,7 +53761,6 @@
 	  Based on code that is Copyright 2013-2015, Facebook, Inc.
 	  All rights reserved.
 	*/
-	/* global define */
 	
 	(function () {
 		'use strict';
@@ -53804,10 +53798,10 @@
 
 
 /***/ },
-/* 586 */
-/*!******************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/components/style.js ***!
-  \******************************************************************/
+/* 585 */
+/*!******************************************!*\
+  !*** ./~/radium/lib/components/style.js ***!
+  \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53818,7 +53812,7 @@
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
-	var _cssRuleSetToString = __webpack_require__(/*! ../css-rule-set-to-string */ 535);
+	var _cssRuleSetToString = __webpack_require__(/*! ../css-rule-set-to-string */ 534);
 	
 	var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 	
@@ -53904,10 +53898,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 587 */
-/*!***********************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/components/style-root.js ***!
-  \***********************************************************************/
+/* 586 */
+/*!***********************************************!*\
+  !*** ./~/radium/lib/components/style-root.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53920,15 +53914,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _enhancer = __webpack_require__(/*! ../enhancer */ 529);
+	var _enhancer = __webpack_require__(/*! ../enhancer */ 528);
 	
 	var _enhancer2 = _interopRequireDefault(_enhancer);
 	
-	var _styleKeeper = __webpack_require__(/*! ../style-keeper */ 530);
+	var _styleKeeper = __webpack_require__(/*! ../style-keeper */ 529);
 	
 	var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 	
-	var _styleSheet = __webpack_require__(/*! ./style-sheet */ 588);
+	var _styleSheet = __webpack_require__(/*! ./style-sheet */ 587);
 	
 	var _styleSheet2 = _interopRequireDefault(_styleSheet);
 	
@@ -54002,10 +53996,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 588 */
-/*!************************************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/components/style-sheet.js ***!
-  \************************************************************************/
+/* 587 */
+/*!************************************************!*\
+  !*** ./~/radium/lib/components/style-sheet.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54021,7 +54015,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _styleKeeper = __webpack_require__(/*! ../style-keeper */ 530);
+	var _styleKeeper = __webpack_require__(/*! ../style-keeper */ 529);
 	
 	var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 	
@@ -54084,10 +54078,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 589 */
-/*!***********************************************************!*\
-  !*** ./~/react-modal-bootstrap/~/radium/lib/keyframes.js ***!
-  \***********************************************************/
+/* 588 */
+/*!***********************************!*\
+  !*** ./~/radium/lib/keyframes.js ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54097,15 +54091,15 @@
 	});
 	exports.default = keyframes;
 	
-	var _cssRuleSetToString = __webpack_require__(/*! ./css-rule-set-to-string */ 535);
+	var _cssRuleSetToString = __webpack_require__(/*! ./css-rule-set-to-string */ 534);
 	
 	var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 	
-	var _hash = __webpack_require__(/*! ./hash */ 573);
+	var _hash = __webpack_require__(/*! ./hash */ 572);
 	
 	var _hash2 = _interopRequireDefault(_hash);
 	
-	var _prefixer = __webpack_require__(/*! ./prefixer */ 537);
+	var _prefixer = __webpack_require__(/*! ./prefixer */ 536);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -54126,7 +54120,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 590 */
+/* 589 */
 /*!**********************************!*\
   !*** ./~/lodash.assign/index.js ***!
   \**********************************/
@@ -54772,7 +54766,7 @@
 
 
 /***/ },
-/* 591 */
+/* 590 */
 /*!****************************************************!*\
   !*** ./~/react-modal-bootstrap/lib/ModalHeader.js ***!
   \****************************************************/
@@ -54833,7 +54827,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 592 */
+/* 591 */
 /*!***************************************************!*\
   !*** ./~/react-modal-bootstrap/lib/ModalClose.js ***!
   \***************************************************/
@@ -54903,7 +54897,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 593 */
+/* 592 */
 /*!***************************************************!*\
   !*** ./~/react-modal-bootstrap/lib/ModalTitle.js ***!
   \***************************************************/
@@ -54964,7 +54958,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 594 */
+/* 593 */
 /*!**************************************************!*\
   !*** ./~/react-modal-bootstrap/lib/ModalBody.js ***!
   \**************************************************/
@@ -55025,7 +55019,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 595 */
+/* 594 */
 /*!****************************************************!*\
   !*** ./~/react-modal-bootstrap/lib/ModalFooter.js ***!
   \****************************************************/
@@ -55086,7 +55080,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 596 */
+/* 595 */
 /*!****************************************!*\
   !*** ./Content/React/modules/Tasks.js ***!
   \****************************************/
@@ -55098,6 +55092,8 @@
 	    value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -55107,6 +55103,10 @@
 	var _Table2 = _interopRequireDefault(_Table);
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 172);
+	
+	var _EditFormModal = __webpack_require__(/*! ./EditFormModal */ 274);
+	
+	var _EditFormModal2 = _interopRequireDefault(_EditFormModal);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -55124,10 +55124,28 @@
 	    render: function render() {
 	        var self = this;
 	
+	        var modalSettings = {
+	            title: "Edit Task",
+	
+	            modalButtonName: "Edit",
+	
+	            handleResult: this.props.updateTask,
+	
+	            //name must be equal property from data(task)            
+	            formFields: [{
+	                name: 'name',
+	                label: 'Task Name'
+	            }, {
+	                name: 'description',
+	                label: 'Description'
+	            }]
+	        };
+	
 	        var projectId = this.props.params.projectId;
 	        var tableData = this.props.tasks.filter(function (task) {
 	            return task.project.id == projectId;
 	        });
+	        var uniqIndex = Math.random() * 1234567 ^ 0;
 	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
 	            return _react2.default.createElement(
@@ -55155,11 +55173,7 @@
 	                            'Subtasks'
 	                        )
 	                    ),
-	                    _react2.default.createElement(
-	                        'button',
-	                        { className: 'btn btn-danger' },
-	                        'Edit'
-	                    ),
+	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, modalSettings, { key: uniqIndex })),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { className: 'btn btn-danger', onClick: self.props.removeTask.bind(null, element.id) },
@@ -55182,7 +55196,7 @@
 	exports.default = Tasks;
 
 /***/ },
-/* 597 */
+/* 596 */
 /*!*******************************************!*\
   !*** ./Content/React/modules/Subtasks.js ***!
   \*******************************************/
@@ -55194,6 +55208,8 @@
 	    value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -55201,6 +55217,10 @@
 	var _Table = __webpack_require__(/*! ./Table */ 273);
 	
 	var _Table2 = _interopRequireDefault(_Table);
+	
+	var _EditFormModal = __webpack_require__(/*! ./EditFormModal */ 274);
+	
+	var _EditFormModal2 = _interopRequireDefault(_EditFormModal);
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 172);
 	
@@ -55222,10 +55242,31 @@
 	    render: function render() {
 	        var self = this;
 	
+	        var modalSettings = {
+	            title: "Edit Project",
+	
+	            modalButtonName: "Edit",
+	
+	            handleResult: this.props.updateSubtask,
+	
+	            //name must be equal property from data(subtask)            
+	            formFields: [{
+	                name: 'name',
+	                label: 'Subtask Name'
+	            }, {
+	                name: 'description',
+	                label: 'Description'
+	            }, {
+	                name: 'duration',
+	                label: 'Duration'
+	            }]
+	        };
+	
 	        var taskId = this.props.params.taskId;
 	        var tableData = this.props.subtasks.filter(function (subtask) {
 	            return subtask.task.id == taskId;
 	        });
+	        var uniqIndex = Math.random() * 1234567 ^ 0;
 	
 	        var tableRowDataProcesser = function tableRowDataProcesser(element) {
 	            return _react2.default.createElement(
@@ -55249,11 +55290,7 @@
 	                _react2.default.createElement(
 	                    'td',
 	                    { width: '20%' },
-	                    _react2.default.createElement(
-	                        'button',
-	                        { className: 'btn btn-danger' },
-	                        'Edit'
-	                    ),
+	                    _react2.default.createElement(_EditFormModal2.default, _extends({ data: element }, modalSettings, { key: uniqIndex })),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { className: 'btn btn-danger', onClick: self.props.removeSubtask.bind(null, element.id) },
