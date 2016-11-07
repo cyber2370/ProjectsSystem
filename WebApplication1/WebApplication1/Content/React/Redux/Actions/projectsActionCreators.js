@@ -1,7 +1,15 @@
-﻿const ADD_PROJECT 	 = 'ADD_PROJECT',
+﻿const ADD_PROJECTS 	 = 'ADD_PROJECTS',
+	  ADD_PROJECT 	 = 'ADD_PROJECT',
 	  UPDATE_PROJECT = 'UPDATE_PROJECT',
 	  REMOVE_PROJECT = 'REMOVE_PROJECT';
 
+export function addProjects(projects) {
+	console.log(projects);
+	return {
+		type: ADD_PROJECTS,
+		projects
+	}
+}
 
 export function addProject(project) {
 	return {

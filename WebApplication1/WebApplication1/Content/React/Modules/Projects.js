@@ -2,10 +2,21 @@
 import Table from './Table';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
+import { getProjectsAsync, 
+         getProjectByIdAsync, 
+         addProjectAsync, 
+         updateProjectAsync,
+         deleteProjectAsync } from '../../Api/projectsApi';
 
 import EditFormModal from './EditFormModal';
 
 const Projects = React.createClass({
+    componentWillMount: function() {
+        let callback = this.props.addProjects;
+
+        getProjectsAsync(callback);         
+    },
+
     render: function () {
         let self = this;
 
@@ -30,7 +41,11 @@ const Projects = React.createClass({
 
             modalButtonName: "Edit",
 
-            handleResult: this.props.updateProject,
+            handleResult: function(project) {
+                let callback = self.props.updateProject;
+
+                updateProjectAsync(project, callback);
+            }, 
             
             //name must be equal property from data(project)            
             formFields
@@ -41,10 +56,22 @@ const Projects = React.createClass({
 
             modalButtonName: "Add",
 
-            handleResult: this.props.addProject,
+            handleResult: function(project) {
+                let callback = self.props.addProject;
+
+                addProjectAsync(project, callback);
+            }, 
             
             //name must be equal property from data(project)            
             formFields
+        };
+
+        let handleRemoveClick = function(projectId) {
+            let callback = self.props.removeProject;
+
+            console.log(callback, projectId);
+
+            deleteProjectAsync(projectId, callback);
         };
                 
         let tableRowDataProcesser = function(element) {
@@ -59,7 +86,7 @@ const Projects = React.createClass({
                             <button className="btn btn-info">Tasks</button>
                         </Link>
                         <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
-                        <button className="btn btn-danger" onClick={self.props.removeProject.bind(null, element.id)}>Remove</button>
+                        <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button>
                     </td>
                 </tr>
             );

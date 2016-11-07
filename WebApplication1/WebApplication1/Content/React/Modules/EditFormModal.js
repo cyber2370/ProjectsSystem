@@ -40,11 +40,6 @@ const EditFormModal = React.createClass({
 			data[propertyName] = $input[0].value;
 		}
 
-		//TODO: remove when API calls will be implemented
-		if(!(data.id)) {
-			data.id = (Math.random() * 1234567) ^ 0;
-		}
-
 		handleResult(data);
 
 		this.close();
