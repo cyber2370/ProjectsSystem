@@ -52,7 +52,6 @@ namespace WebApplication1.Controllers.Api
         }
 
         // PUT api/<controller>/5
-        [System.Web.Http.Route("api/projects/{id}/tasks")]
         public async Task<TaskModel> PutTask([FromBody]TaskModel task)
         {
             try

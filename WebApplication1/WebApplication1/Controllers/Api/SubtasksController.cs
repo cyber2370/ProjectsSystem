@@ -44,7 +44,7 @@ namespace WebApplication1.Controllers.Api
         }
 
         // PUT api/<controller>/5
-        public async Task PutSubtask(int id, [FromBody]Subtask subtask)
+        public async Task PutSubtask([FromBody]Subtask subtask)
         {
             await _subtasksManager.UpdateSubtaskAsync(subtask);
         }

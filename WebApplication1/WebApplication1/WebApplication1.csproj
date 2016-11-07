@@ -302,6 +302,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\ajaxRequests.js" />
+    <Content Include="Content\projectsApi.js" />
     <Content Include="Content\React\Modules\App.js" />
     <Content Include="Content\React\Modules\Main.js" />
     <Content Include="Content\React\Modules\Projects.js" />
@@ -319,6 +321,8 @@
     <Content Include="Content\React\Redux\Reducers\tasks.js" />
     <Content Include="Content\React\Redux\store.js" />
     <Content Include="Content\React\Styles\Sample.css" />
+    <Content Include="Content\React\subtasksApi.js" />
+    <Content Include="Content\React\tasksApi.js" />
     <Content Include="dist\bundle.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
