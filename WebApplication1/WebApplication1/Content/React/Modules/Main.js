@@ -10,16 +10,6 @@ var navBarItems = [{
             name: "Projects",
             link: "/projects",
             component: Projects
-        }, {
-            id: 2,
-            name: "Tasks",
-            link: "/tasks",
-            component: Tasks
-        }, {
-            id: 3,
-            name: "Subtasks",
-            link: "/subtasks",
-            component: Subtasks
         }
     ];
 

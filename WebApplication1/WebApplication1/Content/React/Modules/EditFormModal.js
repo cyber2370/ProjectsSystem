@@ -40,6 +40,8 @@ const EditFormModal = React.createClass({
 			let $input = $('#' + propertyName, $form);
 
 			data[propertyName] = $input[0].value;
+			
+			$input[0].value = "";
 		}
 
 		handleResult(data);

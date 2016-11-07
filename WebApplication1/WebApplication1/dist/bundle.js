@@ -29665,17 +29665,18 @@
 	    name: "Projects",
 	    link: "/projects",
 	    component: _Projects2.default
-	}, {
-	    id: 2,
-	    name: "Tasks",
-	    link: "/tasks",
-	    component: _Tasks2.default
-	}, {
-	    id: 3,
-	    name: "Subtasks",
-	    link: "/subtasks",
-	    component: _Subtasks2.default
-	}];
+	} /*, {
+	     id: 2,
+	     name: "Tasks",
+	     link: "/tasks",
+	     component: Tasks
+	  }, {
+	     id: 3,
+	     name: "Subtasks",
+	     link: "/subtasks",
+	     component: Subtasks
+	  }*/
+	];
 	
 	var Main = _react2.default.createClass({
 	    displayName: 'Main',
@@ -30146,6 +30147,8 @@
 				var $input = $('#' + propertyName, $form);
 	
 				data[propertyName] = $input[0].value;
+	
+				$input[0].value = "";
 			}
 	
 			handleResult(data);
