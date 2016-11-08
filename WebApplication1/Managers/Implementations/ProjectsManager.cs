@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Web.Mvc;
+using DatabaseStorage.Data;
 using DatabaseStorage.Entities;
 using Managers.Interfaces;
+using Repositories.Implementations;
 using Repositories.Interfaces;
 using Task = System.Threading.Tasks.Task;
 
@@ -15,6 +18,7 @@ namespace Managers.Implementations
         public ProjectsManager(IProjectsRepository projectsRepository)
         {
             _projectsRepository = projectsRepository;
+            //_projectsRepository = DependencyResolver.Current.GetService<IProjectsRepository>();
         }
 
         public Task<IEnumerable<Project>> GetProjectsAsync()

@@ -13,8 +13,7 @@ namespace Managers.Implementations
     {
         private readonly ISubtasksRepository _subtasksRepository;
 
-        public SubtasksManager(
-            ISubtasksRepository subtasksRepository)
+        public SubtasksManager(ISubtasksRepository subtasksRepository)
         {
             _subtasksRepository = subtasksRepository;
         }

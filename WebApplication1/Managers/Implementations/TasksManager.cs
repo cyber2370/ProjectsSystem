@@ -12,8 +12,7 @@ namespace Managers.Implementations
     {
         private readonly ITasksRepository _tasksRepository;
 
-        public TasksManager(
-            ITasksRepository tasksRepository)
+        public TasksManager(ITasksRepository tasksRepository)
         {
             _tasksRepository = tasksRepository;
         }

@@ -5,7 +5,7 @@
 	deleteAsync	
 } from './ajaxRequests';
 
-let baseUrl = "http://localhost:54243/api/"
+let baseUrl = "http://localhost:55555/api/"
 let baseTasksUrl = baseUrl + 'tasks/';
 
 let baseAjaxSettings = {

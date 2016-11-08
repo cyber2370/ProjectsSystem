@@ -5,7 +5,6 @@ using System.Web.Http;
 using System.Web.Mvc;
 using DatabaseStorage.Entities;
 using Managers.Interfaces;
-using Microsoft.Practices.ServiceLocation;
 using Task = System.Threading.Tasks.Task;
 
 namespace ProjectsSystemApi.Controllers
@@ -14,9 +13,9 @@ namespace ProjectsSystemApi.Controllers
     {
         private readonly IProjectsManager _projectsManager;
 
-        public ProjectsController()
+        public ProjectsController(IProjectsManager projectsManager)
         {
-            _projectsManager = DependencyResolver.Current.GetService<IProjectsManager>();
+            _projectsManager = projectsManager;
         }
 
         // GET api/<controller>
