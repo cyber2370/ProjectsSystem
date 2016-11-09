@@ -7,7 +7,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace ProjectsSystemApi.Controllers
 {
-    public class SubtasksController : ApiController
+    public class SubtasksController : ApiControllerBase
     {
         private readonly ISubtasksManager _subtasksManager;
 

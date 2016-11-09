@@ -7,7 +7,7 @@ using Managers.Models;
 
 namespace ProjectsSystemApi.Controllers
 {
-    public class TasksController : ApiController
+    public class TasksController : ApiControllerBase
     {
         private readonly ITasksManager _tasksManager;
 

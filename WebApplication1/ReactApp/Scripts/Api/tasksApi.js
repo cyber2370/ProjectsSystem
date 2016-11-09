@@ -5,61 +5,60 @@
 	deleteAsync	
 } from './ajaxRequests';
 
-let baseUrl = "http://localhost:55555/api/"
-let baseTasksUrl = baseUrl + 'tasks/';
-
-let baseAjaxSettings = {
-	error: console.log
-};
+let baseTasksUrl = 'tasks/';
 
 export function getTasksAsync(callback) {
 	let url = baseTasksUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url, {
+		success: callback
+	});
 }
 
 export function getTasksByProjectIdAsync(projectId, callback) {
-	let url = baseUrl + 'projects/' +  projectId + '/tasks/';
+	let url = 'projects/' +  projectId + '/tasks/';
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url, {
+		success: callback
+	});
 }
 
 export function getTaskByIdAsync(taskId, callback) {
 	let url = baseTasksUrl + taskId + '/';
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url, {
+		success: callback
+	});
 }
 
 export function addTaskAsync(projectId, task, callback) {
-	let url = baseUrl + 'projects/' +  projectId + '/tasks/';
+	let url = 'projects/' +  projectId + '/tasks/';
 
-	baseAjaxSettings.success = function(updatedTask){
+	let addTaskCallback = function(updatedTask){
 		 callback(updatedTask.projectId, updatedTask);
 	};
 
-	return postAsync(url, task, baseAjaxSettings);
+	return postAsync(url, task, {
+		success: addTaskCallback
+	});
 }
 
 export function updateTaskAsync(task, callback) {
 	let url = baseTasksUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return putAsync(url, task, baseAjaxSettings);
+	return putAsync(url, task, {
+		success: callback
+	});
 }
 
 export function deleteTaskAsync(taskId, callback) {
 	let url = baseTasksUrl + taskId + '/';
 
-	baseAjaxSettings.success = function() {
+	let removeTaskCallback = function() {
 		callback(taskId);
 	};
 
-	return deleteAsync(url, baseAjaxSettings);
+	return deleteAsync(url, {
+		success: removeTaskCallback
+	});
 }

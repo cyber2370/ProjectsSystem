@@ -8,7 +8,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace ProjectsSystemApi.Controllers
 {
-    public class ProjectsController : ApiController
+    public class ProjectsController : ApiControllerBase
     {
         private readonly IProjectsManager _projectsManager;
 

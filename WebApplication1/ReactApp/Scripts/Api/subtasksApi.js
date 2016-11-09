@@ -5,61 +5,60 @@
 	deleteAsync	
 } from './ajaxRequests';
 
-let baseUrl = "http://localhost:55555/api/"
-let baseSubtasksUrl = baseUrl + 'subtasks/';
-
-let baseAjaxSettings = {
-	error: console.log
-};
+let baseSubtasksUrl = 'subtasks/';
 
 export function getSubtasksAsync(callback) {
 	let url = baseSubtasksUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url, {
+		success: callback
+	});
 }
 
 export function getSubtasksByTaskIdAsync(taskId, callback) {
-	let url = baseUrl + 'tasks/' +  taskId + '/subtasks/';
+	let url = 'tasks/' +  taskId + '/subtasks/';
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url, {
+		success: callback
+	});
 }
 
 export function getSubtaskByIdAsync(id, callback) {
 	let url = baseSubtasksUrl + id + '/';
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url, {
+		success: callback
+	});
 }
 
 export function addSubtaskAsync(taskId, subtask, callback) {
-	let url = baseUrl + 'tasks/' +  taskId + '/subtasks/';
+	let url = 'tasks/' +  taskId + '/subtasks/';
 
-	baseAjaxSettings.success = function(updatedSubtask) {
+	let addSubtaskCallback = function(updatedSubtask) {
 		callback(updatedSubtask.taskId, updatedSubtask);
 	};
 
-	return postAsync(url, subtask, baseAjaxSettings);
+	return postAsync(url, subtask, {
+		success: addSubtaskCallback
+	});
 }
 
 export function updateSubtaskAsync(subtask, callback) {
 	let url = baseSubtasksUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return putAsync(url, subtask, baseAjaxSettings);
+	return putAsync(url, subtask, {
+		success: callback
+	});
 }
 
 export function deleteSubtaskAsync(subtaskId, callback) {
 	let url = baseSubtasksUrl + subtaskId + '/';
 
-	baseAjaxSettings.success = function() {
-		callback(subtaskId);
-	};
+	let removeCallback = function() {
+			callback(subtaskId);
+		};
 
-	return deleteAsync(url, baseAjaxSettings);
+	return deleteAsync(url, {
+		success: removeCallback
+	});
 }
