@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using FluentValidation;
 using Managers.Interfaces;
 using Managers.Models;
 using ProjectsSystemApi.Validators;
@@ -36,19 +39,27 @@ namespace ProjectsSystemApi.Controllers
         // GET api/<controller>/5
         public async Task<SubtaskModel> GetSubtask(int id)
         {
-            return await _subtasksManager.GetSubtaskAsync(id);
+            var subtask = await _subtasksManager.GetSubtaskAsync(id);
+
+            await ValidateSubtask(subtask);
+
+            return subtask;
         }
 
         // POST api/<controller>
         [System.Web.Http.Route("api/tasks/{id}/subtasks/")]
         public async Task<SubtaskModel> PostSubtask(int id, [FromBody]SubtaskModel subtask)
         {
+            await ValidateSubtask(subtask);
+
             return await _subtasksManager.AddSubtaskAsync(id, subtask);
         }
 
         // PUT api/<controller>/5
         public async Task<SubtaskModel> PutSubtask([FromBody]SubtaskModel subtask)
         {
+            await ValidateSubtask(subtask);
+
             return await _subtasksManager.UpdateSubtaskAsync(subtask);
         }
 
@@ -56,6 +67,32 @@ namespace ProjectsSystemApi.Controllers
         public async Task DeleteSubtask(int id)
         {
             await _subtasksManager.RemoveSubtaskAsync(id);
+        }
+
+        private async Task ValidateSubtask(SubtaskModel subtask)
+        {
+            string message;
+
+            if (subtask == null)
+            {
+                message = "Subtask not found";
+
+                throw new HttpResponseException(
+                    Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
+            }
+
+            var validationResults = await _subtaskModelValidator.ValidateAsync(subtask);
+
+            if (validationResults.IsValid)
+                return;
+
+            message = "Subtask is not valid";
+
+            throw new HttpResponseException(
+                Request.CreateErrorResponse(
+                    HttpStatusCode.BadRequest,
+                    message,
+                    new ValidationException(validationResults.Errors)));
         }
     }
 }

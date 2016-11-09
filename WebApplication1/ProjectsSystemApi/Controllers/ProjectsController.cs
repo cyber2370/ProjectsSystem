@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using FluentValidation;
 using Managers.Interfaces;
 using Managers.Models;
 using ProjectsSystemApi.Validators;
@@ -33,12 +34,7 @@ namespace ProjectsSystemApi.Controllers
         {
             var project = await _projectsManager.GetProjectAsync(id);
 
-            if (project == null)
-            {
-                var message = $"Project with id = {id} not found";
-                throw new HttpResponseException(
-                    Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
-            }
+            await ValidateProject(project);
 
             return project;
         }
@@ -46,17 +42,16 @@ namespace ProjectsSystemApi.Controllers
         // POST api/<controller>
         public async Task<ProjectModel> Post([FromBody]ProjectModel project)
         {
-            //todo: add verification 
+            await ValidateProject(project);
 
-            var addedProject = await _projectsManager.AddProjectAsync(project);
-
-            return addedProject;
-
+            return await _projectsManager.AddProjectAsync(project);
         }
 
         // PUT api/<controller>/5
         public async Task<ProjectModel> Put([FromBody]ProjectModel project)
         {
+            await ValidateProject(project);
+
             return await _projectsManager.UpdateProjectAsync(project);
         }
 
@@ -64,6 +59,32 @@ namespace ProjectsSystemApi.Controllers
         public async Task Delete(int id)
         {
             await _projectsManager.RemoveProjectAsync(id);
+        }
+
+        private async Task ValidateProject(ProjectModel project)
+        {
+            string message;
+
+            if (project == null)
+            {
+                message = "Project not found";
+
+                throw new HttpResponseException(
+                    Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
+            }
+
+            var validationResults = await _projectModelValidator.ValidateAsync(project);
+
+            if (validationResults.IsValid)
+                return;
+
+            message = "Project is not valid";
+
+            throw new HttpResponseException(
+                Request.CreateErrorResponse(
+                    HttpStatusCode.BadRequest, 
+                    message, 
+                    new ValidationException(validationResults.Errors)));
         }
     }
 }
