@@ -21,52 +21,44 @@ namespace Managers.Implementations
 
         public async Task<IEnumerable<SubtaskModel>> GetSubtasksAsync()
         {
-            return (await _subtasksRepository.GetItemsAsync())
-                .Select(subtask => subtask.ToSubtaskModel());
+            var subtasks = await _subtasksRepository.GetItemsAsync();
+
+            return subtasks?.Select(subtask => subtask.ToSubtaskModel());
         }
 
         public async Task<IEnumerable<SubtaskModel>> GetSubtasksByTaskIdAsync(int taskId)
         {
-            return (await _subtasksRepository.GetItemsAsync(item => item.Where(i => i.Task.Id == taskId)))
-                .Select(subtask => subtask.ToSubtaskModel());
+            var subtasks = await _subtasksRepository.GetItemsAsync(item => item.Where(i => i.Task.Id == taskId));
+
+            return subtasks?.Select(subtask => subtask.ToSubtaskModel());
         }
 
         public async Task<SubtaskModel> GetSubtaskAsync(int subtaskId)
         {
-            return (await _subtasksRepository.GetItemAsync(subtaskId))
-                .ToSubtaskModel();
+            var subtask = await _subtasksRepository.GetItemAsync(subtaskId);
+
+            return subtask?.ToSubtaskModel();
         }
 
         public async Task<SubtaskModel> AddSubtaskAsync(int taskId, SubtaskModel subtaskModel)
         {
-            CheckIsValid(subtaskModel);
-
             subtaskModel.TaskId = taskId;
 
-            return (await _subtasksRepository.AddItemAsync(subtaskModel.ToSubtask()))
-                .ToSubtaskModel();
+            var addedSubtask = await _subtasksRepository.AddItemAsync(subtaskModel.ToSubtask());
+
+            return addedSubtask?.ToSubtaskModel();
         }
 
         public async Task<SubtaskModel> UpdateSubtaskAsync(SubtaskModel subtaskModel)
         {
-            CheckIsValid(subtaskModel);
+            var subtask = await _subtasksRepository.UpdateItemAsync(subtaskModel.ToSubtask());
 
-            return (await _subtasksRepository.UpdateItemAsync(subtaskModel.ToSubtask()))
-                .ToSubtaskModel();
+            return subtask?.ToSubtaskModel();
         }
 
         public Task RemoveSubtaskAsync(int subtaskId)
         {
             return _subtasksRepository.RemoveItemAsync(subtaskId);
-        }
-
-        private void CheckIsValid(SubtaskModel subtaskModel)
-        {
-            if (string.IsNullOrEmpty(subtaskModel.Name)
-                || string.IsNullOrEmpty(subtaskModel.Description))
-            {
-                throw new Exception("invalid_data");
-            }
         }
     }
 }

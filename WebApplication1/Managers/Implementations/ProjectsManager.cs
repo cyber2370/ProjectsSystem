@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Mvc;
-using DatabaseStorage.Data;
-using DatabaseStorage.Entities;
 using Managers.Extensions;
 using Managers.Interfaces;
 using Managers.Models;
-using Repositories.Implementations;
 using Repositories.Interfaces;
-using Task = System.Threading.Tasks.Task;
 
 namespace Managers.Implementations
 {
@@ -25,40 +19,35 @@ namespace Managers.Implementations
 
         public async Task<IEnumerable<ProjectModel>> GetProjectsAsync()
         {
-            return (await _projectsRepository.GetItemsAsync()).Select(project => project.ToProjectModel());
+            var projects = await _projectsRepository.GetItemsAsync();
+
+            return projects.Select(project => project.ToProjectModel());
         }
 
         public async Task<ProjectModel> GetProjectAsync(int projectId)
         {
-            return (await _projectsRepository.GetItemAsync(projectId)).ToProjectModel();
+            var project = await _projectsRepository.GetItemAsync(projectId);
+
+            return project?.ToProjectModel();
         }
 
         public async Task<ProjectModel> AddProjectAsync(ProjectModel project)
         {
-            CheckIsValid(project);
+            var addedProject = await _projectsRepository.AddItemAsync(project.ToProject());
 
-            return (await _projectsRepository.AddItemAsync(project.ToProject())).ToProjectModel();
+            return addedProject?.ToProjectModel();
         }
 
         public async Task<ProjectModel> UpdateProjectAsync(ProjectModel project)
         {
-            CheckIsValid(project);
+            var updatedProject = await _projectsRepository.UpdateItemAsync(project.ToProject());
 
-            return (await _projectsRepository.UpdateItemAsync(project.ToProject())).ToProjectModel();
+            return updatedProject?.ToProjectModel();
         }
 
         public Task RemoveProjectAsync(int projectId)
         {
             return _projectsRepository.RemoveItemAsync(projectId);
-        }
-
-        private void CheckIsValid(ProjectModel projectModel)
-        {
-            if (string.IsNullOrEmpty(projectModel.Name)
-                || string.IsNullOrEmpty(projectModel.Owner))
-            {
-                throw new Exception("invalid_data");
-            }
         }
     }
 }

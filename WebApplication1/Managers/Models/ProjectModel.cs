@@ -12,7 +12,7 @@ namespace Managers.Models
             Name = project.Name;
             Owner = project.Owner;
         }
-
+        
         public int Id { get; set; }
 
         public string Name { get; set; }

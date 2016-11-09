@@ -20,52 +20,44 @@ namespace Managers.Implementations
 
         public async Task<IEnumerable<TaskModel>> GetTasksAsync()
         {
-            return (await _tasksRepository.GetItemsAsync())
-                .Select(task => task.ToTaskModel());
+            var tasks = await _tasksRepository.GetItemsAsync();
+
+            return tasks?.Select(t => t.ToTaskModel());
         }
 
         public async Task<IEnumerable<TaskModel>> GetTasksByProjectIdAsync(int projectId)
         {
-            return (await _tasksRepository.GetItemsAsync(item => item.Where(i => i.Project.Id == projectId)))
-                .Select(task => task.ToTaskModel());
+            var tasks = await _tasksRepository.GetItemsAsync(item => item.Where(i => i.Project.Id == projectId));
+
+            return tasks?.Select(task => task.ToTaskModel());
         }
 
         public async Task<TaskModel> GetTaskAsync(int taskId)
         {
-            return (await _tasksRepository.GetItemAsync(taskId))
-                .ToTaskModel();
+            var task = await _tasksRepository.GetItemAsync(taskId);
+
+            return task?.ToTaskModel();
         }
 
         public async Task<TaskModel> AddTaskAsync(int projectId, TaskModel taskModel)
         {
-            CheckIsValid(taskModel);
-
             taskModel.ProjectId = projectId;
 
-            return (await _tasksRepository.AddItemAsync(taskModel.ToTask()))
-                .ToTaskModel();
+            var addedTask = await _tasksRepository.AddItemAsync(taskModel.ToTask());
+
+            return addedTask?.ToTaskModel();
         }
 
         public async Task<TaskModel> UpdateTaskAsync(TaskModel taskModel)
         {
-            CheckIsValid(taskModel);
+            var updatedTask = await _tasksRepository.UpdateItemAsync(taskModel.ToTask());
 
-            return (await _tasksRepository.UpdateItemAsync(taskModel.ToTask()))
-                .ToTaskModel();
+            return updatedTask?.ToTaskModel();
         }
 
         public Task RemoveTaskAsync(int taskId)
         {
             return _tasksRepository.RemoveItemAsync(taskId);
-        }
-
-        private void CheckIsValid(TaskModel task)
-        {
-            if (string.IsNullOrEmpty(task.Name)
-                || string.IsNullOrEmpty(task.Description))
-            {
-                throw new Exception("invalid_data");
-            }
         }
     }
 }

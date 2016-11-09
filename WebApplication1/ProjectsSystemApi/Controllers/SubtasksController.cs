@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Managers.Interfaces;
 using Managers.Models;
-using Task = System.Threading.Tasks.Task;
 
 namespace ProjectsSystemApi.Controllers
 {

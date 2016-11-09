@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Managers.Interfaces;
 using Managers.Models;
-using Task = System.Threading.Tasks.Task;
 
 namespace ProjectsSystemApi.Controllers
 {
@@ -26,35 +26,33 @@ namespace ProjectsSystemApi.Controllers
         // GET api/<controller>/5
         public async Task<ProjectModel> Get(int id)
         {
-            return await _projectsManager.GetProjectAsync(id);
+            var project = await _projectsManager.GetProjectAsync(id);
+
+            if (project == null)
+            {
+                var message = $"Project with id = {id} not found";
+                throw new HttpResponseException(
+                    Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
+            }
+
+            return project;
         }
 
         // POST api/<controller>
         public async Task<ProjectModel> Post([FromBody]ProjectModel project)
         {
-            try
-            {
-                return await _projectsManager.AddProjectAsync(project);
-            }
-            catch (Exception ex)
-            {
-                //TODO: return 'json' data exception
-                return null;
-            }
+            //todo: add verification 
+
+            var addedProject = await _projectsManager.AddProjectAsync(project);
+
+            return addedProject;
+
         }
 
         // PUT api/<controller>/5
         public async Task<ProjectModel> Put([FromBody]ProjectModel project)
         {
-            try
-            {
-                return await _projectsManager.UpdateProjectAsync(project);
-            }
-            catch (Exception ex)
-            {
-                //TODO: return 'json' data exception
-                return null;
-            }
+            return await _projectsManager.UpdateProjectAsync(project);
         }
 
         // DELETE api/<controller>/5
