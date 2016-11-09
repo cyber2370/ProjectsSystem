@@ -1,19 +1,19 @@
 ﻿using DatabaseStorage.Data;
-using Ninject.Modules;
+using Ninject;
 using Repositories.Implementations;
 using Repositories.Interfaces;
 
 namespace Repositories
 {
-    internal class NinjectInitializer : NinjectModule
+    public class NinjectInitializer
     {
-        public override void Load()
+        public static void RegisterServices(IKernel kernel)
         {
-            this.Bind<ApplicationDbContext>().ToSelf();
+            kernel.Bind<ApplicationDbContext>().ToSelf();
 
-            Bind<IProjectsRepository>().To<ProjectsRepository>();
-            Bind<ITasksRepository>().To<TasksRepository>();
-            Bind<ISubtasksRepository>().To<SubtasksRepository>();
+            kernel.Bind<IProjectsRepository>().To<ProjectsRepository>();
+            kernel.Bind<ITasksRepository>().To<TasksRepository>();
+            kernel.Bind<ISubtasksRepository>().To<SubtasksRepository>();
         }
     }
 }

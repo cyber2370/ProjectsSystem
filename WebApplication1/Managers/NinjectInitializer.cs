@@ -1,22 +1,18 @@
 ﻿using Managers.Implementations;
 using Managers.Interfaces;
-using Ninject.Modules;
-using Repositories.Implementations;
-using Repositories.Interfaces;
+using Ninject;
 
-namespace Repositories
+namespace Managers
 {
-    internal class NinjectInitializer : NinjectModule
+    public class NinjectInitializer
     {
-        public override void Load()
+        public static void RegisterServices(IKernel kernel)
         {
-            Bind<IProjectsRepository>().To<ProjectsRepository>();
-            Bind<ITasksRepository>().To<TasksRepository>();
-            Bind<ISubtasksRepository>().To<SubtasksRepository>();
+            Repositories.NinjectInitializer.RegisterServices(kernel);
 
-            Bind<IProjectsManager>().To<ProjectsManager>();
-            Bind<ITasksManager>().To<TasksManager>();
-            Bind<ISubtasksManager>().To<SubtasksManager>();
+            kernel.Bind<IProjectsManager>().To<ProjectsManager>();
+            kernel.Bind<ITasksManager>().To<TasksManager>();
+            kernel.Bind<ISubtasksManager>().To<SubtasksManager>();
         }
     }
 }

@@ -70,11 +70,11 @@ namespace ProjectsSystemApi.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IProjectsManager>().To<ProjectsManager>().InRequestScope();
-            kernel.Bind<ITasksManager>().To<TasksManager>().InRequestScope();
-            kernel.Bind<ISubtasksManager>().To<SubtasksManager>().InRequestScope();
+            Managers.NinjectInitializer.RegisterServices(kernel);
 
             kernel.Bind<ProjectsController>().ToSelf();
+            kernel.Bind<TasksController>().ToSelf();
+            kernel.Bind<SubtasksController>().ToSelf();
         }        
     }
 }
