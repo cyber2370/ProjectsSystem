@@ -2,6 +2,7 @@ using System.Web.Http;
 using Managers.Implementations;
 using Ninject.Web.WebApi;
 using ProjectsSystemApi.Controllers;
+using ProjectsSystemApi.Validators;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ProjectsSystemApi.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(ProjectsSystemApi.App_Start.NinjectWebCommon), "Stop")]
@@ -72,9 +73,9 @@ namespace ProjectsSystemApi.App_Start
         {
             Managers.NinjectInitializer.RegisterServices(kernel);
 
-            kernel.Bind<ProjectsController>().ToSelf();
-            kernel.Bind<TasksController>().ToSelf();
-            kernel.Bind<SubtasksController>().ToSelf();
+            kernel.Bind<ProjectModelValidator>().ToSelf();
+            kernel.Bind<TaskModelValidator>().ToSelf();
+            kernel.Bind<SubtaskModelValidator>().ToSelf();
         }        
     }
 }

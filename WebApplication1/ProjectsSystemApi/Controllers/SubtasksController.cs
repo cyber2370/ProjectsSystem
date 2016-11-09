@@ -3,16 +3,21 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Managers.Interfaces;
 using Managers.Models;
+using ProjectsSystemApi.Validators;
 
 namespace ProjectsSystemApi.Controllers
 {
     public class SubtasksController : ApiControllerBase
     {
         private readonly ISubtasksManager _subtasksManager;
+        private readonly SubtaskModelValidator _subtaskModelValidator;
 
-        public SubtasksController(ISubtasksManager subtasksManager)
+        public SubtasksController(
+            ISubtasksManager subtasksManager,
+            SubtaskModelValidator subtaskModelValidator)
         {
             _subtasksManager = subtasksManager;
+            _subtaskModelValidator = subtaskModelValidator;
         }
 
         // GET api/<controller>

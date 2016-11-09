@@ -4,16 +4,21 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Managers.Interfaces;
 using Managers.Models;
+using ProjectsSystemApi.Validators;
 
 namespace ProjectsSystemApi.Controllers
 {
     public class TasksController : ApiControllerBase
     {
         private readonly ITasksManager _tasksManager;
+        private readonly TaskModelValidator _taskModelValidator;
 
-        public TasksController(ITasksManager tasksManager)
+        public TasksController(
+            ITasksManager tasksManager,
+            TaskModelValidator taskModelValidator)
         {
             _tasksManager = tasksManager;
+            _taskModelValidator = taskModelValidator;
         }
 
         // GET api/<controller>

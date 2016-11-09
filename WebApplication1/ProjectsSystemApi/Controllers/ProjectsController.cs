@@ -5,16 +5,21 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Managers.Interfaces;
 using Managers.Models;
+using ProjectsSystemApi.Validators;
 
 namespace ProjectsSystemApi.Controllers
 {
     public class ProjectsController : ApiControllerBase
     {
         private readonly IProjectsManager _projectsManager;
+        private readonly ProjectModelValidator _projectModelValidator;
 
-        public ProjectsController(IProjectsManager projectsManager)
+        public ProjectsController(
+            IProjectsManager projectsManager,
+            ProjectModelValidator projectModelValidator)
         {
             _projectsManager = projectsManager;
+            _projectModelValidator = projectModelValidator;
         }
 
         // GET api/<controller>
