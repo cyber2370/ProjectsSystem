@@ -1,48 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using DatabaseStorage.Data;
 using DatabaseStorage.Entities;
+using Managers.Extensions;
 using Managers.Interfaces;
+using Managers.Models;
 using Repositories.Implementations;
 using Repositories.Interfaces;
 using Task = System.Threading.Tasks.Task;
 
 namespace Managers.Implementations
 {
-    public class ProjectsManager : IProjectsManager
+    internal class ProjectsManager : IProjectsManager
     {
         private readonly IProjectsRepository _projectsRepository;
 
         public ProjectsManager(IProjectsRepository projectsRepository)
         {
             _projectsRepository = projectsRepository;
-            //_projectsRepository = DependencyResolver.Current.GetService<IProjectsRepository>();
         }
 
-        public Task<IEnumerable<Project>> GetProjectsAsync()
+        public async Task<IEnumerable<ProjectModel>> GetProjectsAsync()
         {
-            return _projectsRepository.GetItemsAsync();
+            return (await _projectsRepository.GetItemsAsync()).Select(project => project.ToProjectModel());
         }
 
-        public Task<Project> GetProjectAsync(int projectId)
+        public async Task<ProjectModel> GetProjectAsync(int projectId)
         {
-            return _projectsRepository.GetItemAsync(projectId);
+            return (await _projectsRepository.GetItemAsync(projectId)).ToProjectModel();
         }
 
-        public Task<Project> AddProjectAsync(Project project)
-        {
-            CheckIsValid(project);
-
-            return _projectsRepository.AddItemAsync(project);
-        }
-
-        public Task<Project> UpdateProjectAsync(Project project)
+        public async Task<ProjectModel> AddProjectAsync(ProjectModel project)
         {
             CheckIsValid(project);
 
-            return _projectsRepository.UpdateItemAsync(project);
+            return (await _projectsRepository.AddItemAsync(project.ToProject())).ToProjectModel();
+        }
+
+        public async Task<ProjectModel> UpdateProjectAsync(ProjectModel project)
+        {
+            CheckIsValid(project);
+
+            return (await _projectsRepository.UpdateItemAsync(project.ToProject())).ToProjectModel();
         }
 
         public Task RemoveProjectAsync(int projectId)
@@ -50,10 +52,10 @@ namespace Managers.Implementations
             return _projectsRepository.RemoveItemAsync(projectId);
         }
 
-        private void CheckIsValid(Project project)
+        private void CheckIsValid(ProjectModel projectModel)
         {
-            if (string.IsNullOrEmpty(project.Name)
-                || string.IsNullOrEmpty(project.Owner))
+            if (string.IsNullOrEmpty(projectModel.Name)
+                || string.IsNullOrEmpty(projectModel.Owner))
             {
                 throw new Exception("invalid_data");
             }

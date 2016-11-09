@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using TaskModel = DatabaseStorage.Entities.Task;
+using Managers.Models;
 
 namespace Managers.Interfaces
 {

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Managers.Extensions;
 using Managers.Interfaces;
+using Managers.Models;
 using Repositories.Interfaces;
-using TaskModel = DatabaseStorage.Entities.Task;
 
 namespace Managers.Implementations
 {
-    public class TasksManager : ITasksManager
+    internal class TasksManager : ITasksManager
     {
         private readonly ITasksRepository _tasksRepository;
 
@@ -17,35 +18,40 @@ namespace Managers.Implementations
             _tasksRepository = tasksRepository;
         }
 
-        public Task<IEnumerable<TaskModel>> GetTasksAsync()
+        public async Task<IEnumerable<TaskModel>> GetTasksAsync()
         {
-            return _tasksRepository.GetItemsAsync();
+            return (await _tasksRepository.GetItemsAsync())
+                .Select(task => task.ToTaskModel());
         }
 
-        public Task<IEnumerable<TaskModel>> GetTasksByProjectIdAsync(int projectId)
+        public async Task<IEnumerable<TaskModel>> GetTasksByProjectIdAsync(int projectId)
         {
-            return _tasksRepository.GetItemsAsync(item => item.Where(i => i.Project.Id == projectId));
+            return (await _tasksRepository.GetItemsAsync(item => item.Where(i => i.Project.Id == projectId)))
+                .Select(task => task.ToTaskModel());
         }
 
-        public Task<TaskModel> GetTaskAsync(int taskId)
+        public async Task<TaskModel> GetTaskAsync(int taskId)
         {
-            return _tasksRepository.GetItemAsync(taskId);
+            return (await _tasksRepository.GetItemAsync(taskId))
+                .ToTaskModel();
         }
 
-        public async Task<TaskModel> AddTaskAsync(int projectId, TaskModel task)
+        public async Task<TaskModel> AddTaskAsync(int projectId, TaskModel taskModel)
         {
-            CheckIsValid(task);
+            CheckIsValid(taskModel);
 
-            task.ProjectId = projectId;
+            taskModel.ProjectId = projectId;
 
-            return await _tasksRepository.AddItemAsync(task);
+            return (await _tasksRepository.AddItemAsync(taskModel.ToTask()))
+                .ToTaskModel();
         }
 
-        public Task<TaskModel> UpdateTaskAsync(TaskModel task)
+        public async Task<TaskModel> UpdateTaskAsync(TaskModel taskModel)
         {
-            CheckIsValid(task);
+            CheckIsValid(taskModel);
 
-            return _tasksRepository.UpdateItemAsync(task);
+            return (await _tasksRepository.UpdateItemAsync(taskModel.ToTask()))
+                .ToTaskModel();
         }
 
         public Task RemoveTaskAsync(int taskId)

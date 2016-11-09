@@ -1,21 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DatabaseStorage.Entities;
+using Managers.Models;
 using Task = System.Threading.Tasks.Task;
 
 namespace Managers.Interfaces
 {
     public interface ISubtasksManager
     {
-        Task<IEnumerable<Subtask>> GetSubtasksAsync();
+        Task<IEnumerable<SubtaskModel>> GetSubtasksAsync();
 
-        Task<IEnumerable<Subtask>> GetSubtasksByTaskIdAsync(int taskId);
+        Task<IEnumerable<SubtaskModel>> GetSubtasksByTaskIdAsync(int taskId);
 
-        Task<Subtask> GetSubtaskAsync(int subtaskId);
+        Task<SubtaskModel> GetSubtaskAsync(int subtaskId);
 
-        Task<Subtask> AddSubtaskAsync(int taskId, Subtask subtask);
+        Task<SubtaskModel> AddSubtaskAsync(int taskId, SubtaskModel subtask);
 
-        Task<Subtask> UpdateSubtaskAsync(Subtask subtask);
+        Task<SubtaskModel> UpdateSubtaskAsync(SubtaskModel subtask);
 
         Task RemoveSubtaskAsync(int subtaskId);
     }

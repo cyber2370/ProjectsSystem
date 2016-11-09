@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Mvc;
 using Managers.Interfaces;
-using TaskModel = DatabaseStorage.Entities.Task;
+using Managers.Models;
 
 namespace ProjectsSystemApi.Controllers
 {

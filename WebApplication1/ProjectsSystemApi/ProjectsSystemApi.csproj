@@ -199,10 +199,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseStorage\DatabaseStorage.csproj">
-      <Project>{f064e36f-7d93-4d78-a922-322d977f785b}</Project>
-      <Name>DatabaseStorage</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Managers\Managers.csproj">
       <Project>{47fab585-786c-41d1-980d-fc7ddb395400}</Project>
       <Name>Managers</Name>

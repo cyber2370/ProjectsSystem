@@ -82,12 +82,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\TypesExtensions.cs" />
     <Compile Include="Implementations\ProjectsManager.cs" />
     <Compile Include="Implementations\SubtasksManager.cs" />
     <Compile Include="Implementations\TasksManager.cs" />
     <Compile Include="Interfaces\IProjectsManager.cs" />
     <Compile Include="Interfaces\ISubtasksManager.cs" />
     <Compile Include="Interfaces\ITasksManager.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\SubtaskModel.cs" />
+    <Compile Include="Models\TaskModel.cs" />
     <Compile Include="NinjectInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +112,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

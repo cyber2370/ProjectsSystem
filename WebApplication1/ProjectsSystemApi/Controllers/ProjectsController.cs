@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Mvc;
-using DatabaseStorage.Entities;
 using Managers.Interfaces;
+using Managers.Models;
 using Task = System.Threading.Tasks.Task;
 
 namespace ProjectsSystemApi.Controllers
@@ -19,19 +18,19 @@ namespace ProjectsSystemApi.Controllers
         }
 
         // GET api/<controller>
-        public async Task<IEnumerable<Project>> Get()
+        public async Task<IEnumerable<ProjectModel>> Get()
         {
             return await _projectsManager.GetProjectsAsync();
         }
 
         // GET api/<controller>/5
-        public async Task<Project> Get(int id)
+        public async Task<ProjectModel> Get(int id)
         {
             return await _projectsManager.GetProjectAsync(id);
         }
 
         // POST api/<controller>
-        public async Task<Project> Post([FromBody]Project project)
+        public async Task<ProjectModel> Post([FromBody]ProjectModel project)
         {
             try
             {
@@ -45,7 +44,7 @@ namespace ProjectsSystemApi.Controllers
         }
 
         // PUT api/<controller>/5
-        public async Task<Project> Put([FromBody]Project project)
+        public async Task<ProjectModel> Put([FromBody]ProjectModel project)
         {
             try
             {
