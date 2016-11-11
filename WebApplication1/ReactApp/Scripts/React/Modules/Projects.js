@@ -80,11 +80,19 @@ const Projects = React.createClass({
                     <td>{element.name}</td>
                     <td>{element.owner}</td>
                     <td width="20%">
-                        <Link to={'/projects/' + element.id}>
-                            <button className="btn btn-info">Tasks</button>
-                        </Link>
-                        <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
-                        <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button>
+                        <ul className="list-inline">
+                            <li>
+                                <Link to={'/projects/' + element.id}>
+                                    <button className="btn btn-info">Tasks</button>
+                                </Link>
+                            </li>
+                            <li>
+                                <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
+                            </li>
+                            <li>
+                                <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             );

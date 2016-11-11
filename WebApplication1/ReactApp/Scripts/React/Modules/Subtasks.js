@@ -91,8 +91,14 @@ const Subtasks = React.createClass({
 					<td>{element.description}</td>
                     <td>{element.duration}</td>
                     <td width="20%">
-                        <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
-                        <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button>
+                        <ul className="list-inline">
+                            <li>
+                                <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
+                            </li>
+                            <liы>
+                                <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button> 
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             );
