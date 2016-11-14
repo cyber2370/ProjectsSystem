@@ -7,58 +7,45 @@
 
 let baseTasksUrl = 'tasks/';
 
-export function getTasksAsync(callback) {
+export function getTasksAsync() {
 	let url = baseTasksUrl;
 
-	return getAsync(url, {
-		success: callback
-	});
+	return getAsync(url);
 }
 
-export function getTasksByProjectIdAsync(projectId, callback) {
+export function getTasksByProjectIdAsync(data) {
+	let { projectId } = data; 
 	let url = 'projects/' +  projectId + '/tasks/';
 
-	return getAsync(url, {
-		success: callback
-	});
+	console.log("getTasksByProjectIdAsync", projectId, data);
+
+	return getAsync(url);
 }
 
-export function getTaskByIdAsync(taskId, callback) {
+export function getTaskByIdAsync(data) {
+	let { taskId } = data; 
 	let url = baseTasksUrl + taskId + '/';
 
-	return getAsync(url, {
-		success: callback
-	});
+	return getAsync(url);
 }
 
-export function addTaskAsync(projectId, task, callback) {
+export function addTaskAsync(data) {
+	let { projectId, task } = data; 
 	let url = 'projects/' +  projectId + '/tasks/';
 
-	let addTaskCallback = function(updatedTask){
-		 callback(updatedTask.projectId, updatedTask);
-	};
-
-	return postAsync(url, task, {
-		success: addTaskCallback
-	});
+	return postAsync(url, task);
 }
 
-export function updateTaskAsync(task, callback) {
+export function updateTaskAsync(data) {
+	let { task } = data; 
 	let url = baseTasksUrl;
 
-	return putAsync(url, task, {
-		success: callback
-	});
+	return putAsync(url, task);
 }
 
-export function deleteTaskAsync(taskId, callback) {
+export function deleteTaskAsync(data) {
+	let { taskId } = data; 
 	let url = baseTasksUrl + taskId + '/';
 
-	let removeTaskCallback = function() {
-		callback(taskId);
-	};
-
-	return deleteAsync(url, {
-		success: removeTaskCallback
-	});
+	return deleteAsync(url);
 }

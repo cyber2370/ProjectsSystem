@@ -7,46 +7,40 @@
 
 let baseProjectsUrl = 'projects/';
 
-export function getProjectsAsync(callback) {
+export function getProjectsAsync() {
 	let url = baseProjectsUrl;
 
-	return getAsync(url, {
-		success: callback
-	});
+	return getAsync(url);
 }
 
-export function getProjectByIdAsync(projectId, callback) {
+export function getProjectByIdAsync(data) {
+	let { projectId } = data; 
 	let url = baseProjectsUrl + projectId + '/';
 
-	return getAsync(url, {
-		success: callback
-	});	
+	return getAsync(url);	
 }
 
-export function addProjectAsync(project, callback) {
+export function addProjectAsync(data) {
+	let { project } = data; 
 	let url = baseProjectsUrl;
 
-	return postAsync(url, project, {
-		success: callback
-	});
+	return postAsync(url, project);
 }
 
-export function updateProjectAsync(project, callback) {
+export function updateProjectAsync(data) {
+	let { project } = data; 
 	let url = baseProjectsUrl;
 
-	return putAsync(url, project, {
-		success: callback
-	});
+	return putAsync(url, project);
 }
 
-export function deleteProjectAsync(projectId, callback) {
+export function deleteProjectAsync(data) {
+	let { projectId } = data; 
 	let url = baseProjectsUrl + projectId + '/';
 
-	let deleteProjectCallback = function() {
+	/*let deleteProjectCallback = function() {
 		callback(projectId);
-	};
+	};*/
 
-	return deleteAsync(url, {
-		success: deleteProjectCallback
-	});
+	return deleteAsync(url);
 }

@@ -26,6 +26,8 @@ module.exports = {
             }
         ]
     },
+
+    watch: true,
     
     plugins: [
         new WebpackNotifierPlugin()

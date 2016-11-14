@@ -1,30 +1,52 @@
 ﻿function projects(state = [], action) {
 	switch (action.type) {
-		case 'ADD_PROJECTS':
-			return action.projects;
-		case 'ADD_PROJECT':
+		case 'PROJECTS_LOADED': {
+			let recievedProjects = action.data;
+
+			return recievedProjects;
+		}
+
+		case 'PROJECT_LOADED': {
+			let recievedProject = action.data;
 			return [
 				...state,
-				action.project
+				recievedProject
 			];
-		case 'UPDATE_PROJECT':
-			var projects = state.slice();
-			
-			var indexToUpdate = projects.findIndex(element => element.id == action.project.id);
+		}
 
-			projects[indexToUpdate].name = action.project.name;
-			projects[indexToUpdate].owner = action.project.owner;
+		case 'PROJECT_UPLOADED': {
+			return [
+				...state,
+				action.data
+			];
+		}
+
+		case 'PROJECT_UPDATED': {
+			let projects = state.slice();
+
+			let updatedProject = action.data;
+			
+			let indexToUpdate = projects.findIndex(element => element.id == updatedProject.id);
+
+			projects[indexToUpdate] = updatedProject;
 
 			return projects;
-		case 'REMOVE_PROJECT':
-			var projects = state.slice();
+		}
+
+		case 'PROJECT_REMOVED': {
+			let projects = state.slice();
+
+			let id = action.data.projectId;
 			
-			var indexToRemove = projects.findIndex((element, index, array) => element.id == action.id);
+			let indexToRemove = projects.findIndex((element, index, array) => element.id == id);
     		projects.splice(indexToRemove, 1);
 
 			return projects;
+		}
+
 		default:
 			return state;
+
 	}
 }
 

@@ -1,32 +1,49 @@
 ﻿function subtasks(state = [], action) {
 	switch (action.type) {
-		case 'ADD_SUBTASKS':
-			return action.subtasks;
-		case 'ADD_SUBTASK':
-			action.subtask.task = {};
-			action.subtask.task.id = action.taskId;
+		case 'SUBTASKS_LOADED': {
+			return action.data;
+		}
+
+		case 'SUBTASK_LOADED': {
+			let subtask = action.subtask;
+
+			subtask.task = {
+				id: action.taskId 
+			};
 
 			return [
 				...state,
-				action.subtask
+				subtask
 			];
-		case 'UPDATE_SUBTASK':
-			var subtasks = state.slice();
-			
-			var indexToUpdate = subtasks.findIndex(element => element.id == action.subtask.id);
+		}
 
-			subtasks[indexToUpdate].name = action.subtask.name;
-			subtasks[indexToUpdate].description = action.subtask.description;
-			subtasks[indexToUpdate].duration = action.subtask.duration;
+
+		case 'SUBTASK_UPLOADED': {
+			return [
+				...state,
+				action.data
+			];
+		}
+
+		case 'SUBTASK_UPDATED': {
+			let subtasks = state.slice();
+			let subtask = action.data;
+			
+			let indexToUpdate = subtasks.findIndex(element => element.id == subtask.id);
 
 			return subtasks;
-		case 'REMOVE_SUBTASK':
-			var subtasks = state.slice();
+		}
+
+		case 'SUBTASK_REMOVED': {
+			let subtasks = state.slice();
+			let id = action.data.subtaskId;
 			
-			var indexToRemove = subtasks.findIndex(element => element.id == action.id);
+			let indexToRemove = subtasks.findIndex(element => element.id == id);
     		subtasks.splice(indexToRemove, 1);
 
 			return subtasks;
+		}
+
 		default:
 			return state;
 	}
