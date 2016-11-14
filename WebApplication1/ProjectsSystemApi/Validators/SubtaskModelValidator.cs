@@ -10,8 +10,6 @@ namespace ProjectsSystemApi.Validators
             RuleFor(subtask => subtask.Name).NotEmpty();
 
             RuleFor(subtask => subtask.Description).NotEmpty();
-
-            RuleFor(subtask => subtask.Duration).NotNull();
         }
     }
 }

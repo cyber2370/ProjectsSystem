@@ -95,7 +95,7 @@ const Subtasks = React.createClass({
                             <li>
                                 <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
                             </li>
-                            <liы>
+                            <li>
                                 <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button> 
                             </li>
                         </ul>

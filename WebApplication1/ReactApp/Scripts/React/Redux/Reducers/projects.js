@@ -10,7 +10,7 @@
 		case 'UPDATE_PROJECT':
 			var projects = state.slice();
 			
-			var indexToUpdate = projects.findIndex((element) => element.id == action.project.id);
+			var indexToUpdate = projects.findIndex(element => element.id == action.project.id);
 
 			projects[indexToUpdate].name = action.project.name;
 			projects[indexToUpdate].owner = action.project.owner;
