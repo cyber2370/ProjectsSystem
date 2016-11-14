@@ -159,6 +159,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\Api\ajaxRequests.js" />
+    <Content Include="Scripts\Api\projectsApi.js" />
+    <Content Include="Scripts\Api\subtasksApi.js" />
+    <Content Include="Scripts\Api\tasksApi.js" />
     <Content Include="Scripts\React\Index.js" />
     <Content Include="Scripts\React\Modules\App.js" />
     <Content Include="Scripts\React\Modules\EditFormModal.js" />
