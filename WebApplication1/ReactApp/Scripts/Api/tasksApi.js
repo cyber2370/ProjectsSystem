@@ -3,7 +3,7 @@
 	postAsync,
 	putAsync,
 	deleteAsync	
-} from './ajaxRequests';
+} from './fetchRequests';
 
 let baseTasksUrl = 'tasks/';
 
@@ -16,8 +16,6 @@ export function getTasksAsync() {
 export function getTasksByProjectIdAsync(data) {
 	let { projectId } = data; 
 	let url = 'projects/' +  projectId + '/tasks/';
-
-	console.log("getTasksByProjectIdAsync", projectId, data);
 
 	return getAsync(url);
 }

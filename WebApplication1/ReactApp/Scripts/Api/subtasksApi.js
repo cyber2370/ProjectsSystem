@@ -3,7 +3,7 @@
 	postAsync,
 	putAsync,
 	deleteAsync	
-} from './ajaxRequests';
+} from './fetchRequests';
 
 let baseSubtasksUrl = 'subtasks/';
 
