@@ -2,65 +2,62 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Managers.Extensions;
 using Managers.Interfaces;
+using Managers.Models;
 using Repositories.Interfaces;
-using TaskModel = DatabaseStorage.Entities.Task;
 
 namespace Managers.Implementations
 {
-    public class TasksManager : ITasksManager
+    internal class TasksManager : ITasksManager
     {
         private readonly ITasksRepository _tasksRepository;
 
-        public TasksManager(
-            ITasksRepository tasksRepository)
+        public TasksManager(ITasksRepository tasksRepository)
         {
             _tasksRepository = tasksRepository;
         }
 
-        public Task<IEnumerable<TaskModel>> GetTasksAsync()
+        public async Task<IEnumerable<TaskModel>> GetTasksAsync()
         {
-            return _tasksRepository.GetItemsAsync();
+            var tasks = await _tasksRepository.GetItemsAsync();
+
+            return tasks?.Select(t => t.ToTaskModel());
         }
 
-        public Task<IEnumerable<TaskModel>> GetTasksByProjectIdAsync(int projectId)
+        public async Task<IEnumerable<TaskModel>> GetTasksByProjectIdAsync(int projectId)
         {
-            return _tasksRepository.GetItemsAsync(item => item.Where(i => i.Project.Id == projectId));
+            var tasks = await _tasksRepository.GetItemsAsync(item => item.Where(i => i.Project.Id == projectId));
+
+            return tasks?.Select(task => task.ToTaskModel());
         }
 
-        public Task<TaskModel> GetTaskAsync(int taskId)
+        public async Task<TaskModel> GetTaskAsync(int taskId)
         {
-            return _tasksRepository.GetItemAsync(taskId);
+            var task = await _tasksRepository.GetItemAsync(taskId);
+
+            return task?.ToTaskModel();
         }
 
-        public async Task<TaskModel> AddTaskAsync(int projectId, TaskModel task)
+        public async Task<TaskModel> AddTaskAsync(int projectId, TaskModel taskModel)
         {
-            CheckIsValid(task);
+            taskModel.ProjectId = projectId;
 
-            task.ProjectId = projectId;
+            var addedTask = await _tasksRepository.AddItemAsync(taskModel.ToTask());
 
-            return await _tasksRepository.AddItemAsync(task);
+            return addedTask?.ToTaskModel();
         }
 
-        public Task<TaskModel> UpdateTaskAsync(TaskModel task)
+        public async Task<TaskModel> UpdateTaskAsync(TaskModel taskModel)
         {
-            CheckIsValid(task);
+            var updatedTask = await _tasksRepository.UpdateItemAsync(taskModel.ToTask());
 
-            return _tasksRepository.UpdateItemAsync(task);
+            return updatedTask?.ToTaskModel();
         }
 
         public Task RemoveTaskAsync(int taskId)
         {
             return _tasksRepository.RemoveItemAsync(taskId);
-        }
-
-        private void CheckIsValid(TaskModel task)
-        {
-            if (string.IsNullOrEmpty(task.Name)
-                || string.IsNullOrEmpty(task.Description))
-            {
-                throw new Exception("invalid_data");
-            }
         }
     }
 }

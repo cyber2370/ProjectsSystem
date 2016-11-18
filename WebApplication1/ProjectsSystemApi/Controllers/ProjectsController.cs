@@ -1,68 +1,90 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Mvc;
-using DatabaseStorage.Entities;
+using FluentValidation;
 using Managers.Interfaces;
-using Microsoft.Practices.ServiceLocation;
-using Task = System.Threading.Tasks.Task;
+using Managers.Models;
+using ProjectsSystemApi.Validators;
 
 namespace ProjectsSystemApi.Controllers
 {
-    public class ProjectsController : ApiController
+    public class ProjectsController : ApiControllerBase
     {
         private readonly IProjectsManager _projectsManager;
+        private readonly ProjectModelValidator _projectModelValidator;
 
-        public ProjectsController()
+        public ProjectsController(
+            IProjectsManager projectsManager,
+            ProjectModelValidator projectModelValidator)
         {
-            _projectsManager = DependencyResolver.Current.GetService<IProjectsManager>();
+            _projectsManager = projectsManager;
+            _projectModelValidator = projectModelValidator;
         }
 
         // GET api/<controller>
-        public async Task<IEnumerable<Project>> Get()
+        public async Task<IEnumerable<ProjectModel>> Get()
         {
             return await _projectsManager.GetProjectsAsync();
         }
 
         // GET api/<controller>/5
-        public async Task<Project> Get(int id)
+        public async Task<ProjectModel> Get(int id)
         {
-            return await _projectsManager.GetProjectAsync(id);
+            var project = await _projectsManager.GetProjectAsync(id);
+
+            await ValidateProject(project);
+
+            return project;
         }
 
         // POST api/<controller>
-        public async Task<Project> Post([FromBody]Project project)
+        public async Task<ProjectModel> Post([FromBody]ProjectModel project)
         {
-            try
-            {
-                return await _projectsManager.AddProjectAsync(project);
-            }
-            catch (Exception ex)
-            {
-                //TODO: return 'json' data exception
-                return null;
-            }
+            await ValidateProject(project);
+
+            return await _projectsManager.AddProjectAsync(project);
         }
 
         // PUT api/<controller>/5
-        public async Task<Project> Put([FromBody]Project project)
+        public async Task<ProjectModel> Put([FromBody]ProjectModel project)
         {
-            try
-            {
-                return await _projectsManager.UpdateProjectAsync(project);
-            }
-            catch (Exception ex)
-            {
-                //TODO: return 'json' data exception
-                return null;
-            }
+            await ValidateProject(project);
+
+            return await _projectsManager.UpdateProjectAsync(project);
         }
 
         // DELETE api/<controller>/5
         public async Task Delete(int id)
         {
             await _projectsManager.RemoveProjectAsync(id);
+        }
+
+        private async Task ValidateProject(ProjectModel project)
+        {
+            string message;
+
+            if (project == null)
+            {
+                message = "Project not found";
+
+                throw new HttpResponseException(
+                    Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
+            }
+
+            var validationResults = await _projectModelValidator.ValidateAsync(project);
+
+            if (validationResults.IsValid)
+                return;
+
+            message = "Project is not valid";
+
+            throw new HttpResponseException(
+                Request.CreateErrorResponse(
+                    HttpStatusCode.BadRequest, 
+                    message, 
+                    new ValidationException(validationResults.Errors)));
         }
     }
 }

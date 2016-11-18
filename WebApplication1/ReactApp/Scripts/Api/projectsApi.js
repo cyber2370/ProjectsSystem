@@ -5,51 +5,42 @@
 	deleteAsync	
 } from './ajaxRequests';
 
-let baseUrl = "http://localhost:42549/api/"
-let baseProjectsUrl = baseUrl + 'projects/';
+let baseProjectsUrl = 'projects/';
 
-let baseAjaxSettings = {
-	error: console.log
-};
-
-export function getProjectsAsync(callback) {
+export function getProjectsAsync() {
 	let url = baseProjectsUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url);
 }
 
-export function getProjectByIdAsync(projectId, callback) {
+export function getProjectByIdAsync(data) {
+	let { projectId } = data; 
 	let url = baseProjectsUrl + projectId + '/';
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);	
+	return getAsync(url);	
 }
 
-export function addProjectAsync(project, callback) {
+export function addProjectAsync(data) {
+	let { project } = data; 
 	let url = baseProjectsUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return postAsync(url, project, baseAjaxSettings);
+	return postAsync(url, project);
 }
 
-export function updateProjectAsync(project, callback) {
+export function updateProjectAsync(data) {
+	let { project } = data; 
 	let url = baseProjectsUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return putAsync(url, project, baseAjaxSettings);
+	return putAsync(url, project);
 }
 
-export function deleteProjectAsync(projectId, callback) {
+export function deleteProjectAsync(data) {
+	let { projectId } = data; 
 	let url = baseProjectsUrl + projectId + '/';
 
-	baseAjaxSettings.success = function() {
+	/*let deleteProjectCallback = function() {
 		callback(projectId);
-	};
+	};*/
 
-	return deleteAsync(url, baseAjaxSettings);
+	return deleteAsync(url);
 }

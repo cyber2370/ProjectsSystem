@@ -5,61 +5,47 @@
 	deleteAsync	
 } from './ajaxRequests';
 
-let baseUrl = "http://localhost:54243/api/"
-let baseTasksUrl = baseUrl + 'tasks/';
+let baseTasksUrl = 'tasks/';
 
-let baseAjaxSettings = {
-	error: console.log
-};
-
-export function getTasksAsync(callback) {
+export function getTasksAsync() {
 	let url = baseTasksUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url);
 }
 
-export function getTasksByProjectIdAsync(projectId, callback) {
-	let url = baseUrl + 'projects/' +  projectId + '/tasks/';
+export function getTasksByProjectIdAsync(data) {
+	let { projectId } = data; 
+	let url = 'projects/' +  projectId + '/tasks/';
 
-	baseAjaxSettings.success = callback;
+	console.log("getTasksByProjectIdAsync", projectId, data);
 
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url);
 }
 
-export function getTaskByIdAsync(taskId, callback) {
+export function getTaskByIdAsync(data) {
+	let { taskId } = data; 
 	let url = baseTasksUrl + taskId + '/';
 
-	baseAjaxSettings.success = callback;
-
-	return getAsync(url, baseAjaxSettings);
+	return getAsync(url);
 }
 
-export function addTaskAsync(projectId, task, callback) {
-	let url = baseUrl + 'projects/' +  projectId + '/tasks/';
+export function addTaskAsync(data) {
+	let { projectId, task } = data; 
+	let url = 'projects/' +  projectId + '/tasks/';
 
-	baseAjaxSettings.success = function(updatedTask){
-		 callback(updatedTask.projectId, updatedTask);
-	};
-
-	return postAsync(url, task, baseAjaxSettings);
+	return postAsync(url, task);
 }
 
-export function updateTaskAsync(task, callback) {
+export function updateTaskAsync(data) {
+	let { task } = data; 
 	let url = baseTasksUrl;
 
-	baseAjaxSettings.success = callback;
-
-	return putAsync(url, task, baseAjaxSettings);
+	return putAsync(url, task);
 }
 
-export function deleteTaskAsync(taskId, callback) {
+export function deleteTaskAsync(data) {
+	let { taskId } = data; 
 	let url = baseTasksUrl + taskId + '/';
 
-	baseAjaxSettings.success = function() {
-		callback(taskId);
-	};
-
-	return deleteAsync(url, baseAjaxSettings);
+	return deleteAsync(url);
 }

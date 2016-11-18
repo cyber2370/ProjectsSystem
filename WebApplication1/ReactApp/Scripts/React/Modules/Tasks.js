@@ -1,14 +1,10 @@
 ﻿import React from 'react';
 import Table from './Table';
 import EditFormModal from './EditFormModal';
-import { getTasksAsync, 
-         getTasksByProjectIdAsync, 
-         getTaskByIdAsync, 
-         addTaskAsync,
-         updateTaskAsync,
-         deleteTaskAsync } from '../../Api/tasksApi';
-
 import { Link } from 'react-router';
+import * as tasksApi from '../redux/middlewares/tasks'; 
+import store from '../redux/store';
+
 
 var cols = [{
     name: "Task Name"
@@ -19,11 +15,10 @@ var cols = [{
 }];
 
 const Tasks = React.createClass({
-    componentWillMount: function() {
+    componentDidMount: function() {
         var projectId = this.props.params.projectId;
-        let callback = this.props.addTasks;
 
-        getTasksByProjectIdAsync(projectId, callback);         
+        store.dispatch(tasksApi.loadTasksByProjectId(projectId));        
     },
 
     render: function () {
@@ -46,11 +41,7 @@ const Tasks = React.createClass({
 
             modalButtonName: "Edit",
 
-            handleResult: function(task) {
-                let callback = self.props.updateTask;
-
-                updateTaskAsync(task, callback);
-            }, 
+            handleResult: task => store.dispatch(tasksApi.updateTask(task)),
             
             //name must be equal property from data(task)            
             formFields 
@@ -61,35 +52,33 @@ const Tasks = React.createClass({
 
             modalButtonName: "Add",
 
-            handleResult: function(task) {
-                let callback = self.props.addTask;
-
-                console.log("handleResult ADD_TASK ", projectId, task, callback);
-
-                addTaskAsync(projectId, task, callback);
-            },
+            handleResult: task => store.dispatch(tasksApi.uploadTask(task, projectId)),
 
             //name must be equal property from data(task)            
             formFields 
         };
 
-        let handleRemoveClick = function(taskId) {
-            let callback = self.props.removeTask;
-
-            deleteTaskAsync(taskId, callback);
-        };
+        let handleRemoveClick = id => store.dispatch(tasksApi.removeTask(id));
 
         var tableRowDataProcesser = function(element) {
             return (
                 <tr key={element.id}>
                     <td>{element.name}</td>
                     <td>{element.description}</td>
-                    <td width="30%">
-                        <Link to={'/tasks/' + element.id}>
-                            <button className="btn btn-info">Subtasks</button>
-                        </Link>
-                        <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
-                        <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button>
+                    <td width="20%">
+                        <ul  className="list-inline">
+                            <li>
+                                <Link to={'/tasks/' + element.id}>
+                                    <button className="btn btn-info">Subtasks</button>
+                                </Link>
+                            </li>
+                            <li>
+                                <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
+                            </li>
+                            <li>
+                                <button className="btn btn-danger" onClick={() => handleRemoveClick(element.id)}>Remove</button>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             );

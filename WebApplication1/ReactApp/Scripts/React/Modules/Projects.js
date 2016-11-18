@@ -2,19 +2,16 @@
 import Table from './Table';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
-import { getProjectsAsync, 
-         getProjectByIdAsync, 
-         addProjectAsync, 
-         updateProjectAsync,
-         deleteProjectAsync } from '../../Api/projectsApi';
+import * as projectsApi from '../redux/middlewares/projects'; 
+import store from '../redux/store';
 
 import EditFormModal from './EditFormModal';
 
-const Projects = React.createClass({
-    componentWillMount: function() {
-        let callback = this.props.addProjects;
+console.log(projectsApi);
 
-        getProjectsAsync(callback);         
+const Projects = React.createClass({
+    componentDidMount: function() {
+        store.dispatch(projectsApi.loadProjects());
     },
 
     render: function () {
@@ -41,11 +38,7 @@ const Projects = React.createClass({
 
             modalButtonName: "Edit",
 
-            handleResult: function(project) {
-                let callback = self.props.updateProject;
-
-                updateProjectAsync(project, callback);
-            }, 
+            handleResult: project => store.dispatch(projectsApi.updateProject(project)),
             
             //name must be equal property from data(project)            
             formFields
@@ -56,22 +49,14 @@ const Projects = React.createClass({
 
             modalButtonName: "Add",
 
-            handleResult: function(project) {
-                let callback = self.props.addProject;
-
-                addProjectAsync(project, callback);
-            }, 
+            handleResult: project => store.dispatch(projectsApi.uploadProject(project)),
             
             //name must be equal property from data(project)            
             formFields
         };
 
-        let handleRemoveClick = function(projectId) {
-            let callback = self.props.removeProject;
-            
-            deleteProjectAsync(projectId, callback);
-        };
-                
+        let handleRemoveClick = id => store.dispatch(projectsApi.removeProject(id));
+
         let tableRowDataProcesser = function(element) {
             let uniqIndex = (Math.random() * 1234567) ^ 0;
 
@@ -80,11 +65,19 @@ const Projects = React.createClass({
                     <td>{element.name}</td>
                     <td>{element.owner}</td>
                     <td width="20%">
-                        <Link to={'/projects/' + element.id}>
-                            <button className="btn btn-info">Tasks</button>
-                        </Link>
-                        <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
-                        <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button>
+                        <ul className="list-inline">
+                            <li>
+                                <Link to={'/projects/' + element.id}>
+                                    <button className="btn btn-info">Tasks</button>
+                                </Link>
+                            </li>
+                            <li>
+                                <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
+                            </li>
+                            <li>
+                                <button className="btn btn-danger" onClick={() => handleRemoveClick(element.id)}>Remove</button>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             );

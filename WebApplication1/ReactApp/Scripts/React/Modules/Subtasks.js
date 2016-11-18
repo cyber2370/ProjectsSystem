@@ -1,12 +1,8 @@
 ﻿import React from 'react';
 import Table from './Table';
 import EditFormModal from './EditFormModal';
-import { getSubtasksAsync, 
-         getSubtasksByTaskIdAsync, 
-         getSubtaskByIdAsync, 
-         addSubtaskAsync,
-         updateSubtaskAsync,
-         deleteSubtaskAsync } from '../../Api/subtasksApi';
+import * as subtasksApi from '../redux/middlewares/subtasks'; 
+import store from '../redux/store';
 
 import { Link } from 'react-router';
 
@@ -21,11 +17,10 @@ var cols = [{
 }];
 
 const Subtasks = React.createClass({
-    componentWillMount: function() {
+    componentDidMount: function() {
         var taskId = this.props.params.taskId;
-        let callback = this.props.addSubtasks;
 
-        getSubtasksByTaskIdAsync(taskId, callback);         
+        store.dispatch(subtasksApi.loadSubtasksByTaskIdAsync(taskId));      
     },
 
     render: function () {
@@ -51,11 +46,7 @@ const Subtasks = React.createClass({
 
             modalButtonName: "Edit",
 
-            handleResult: function(subtask) {
-                let callback = self.props.updateSubtask;
-
-                updateSubtaskAsync(subtask, callback);
-            }, 
+            handleResult: subtask => store.dispatch(subtasksApi.updateSubtask(subtask)),
 
             //name must be equal property from data(subtask)            
             formFields
@@ -66,23 +57,14 @@ const Subtasks = React.createClass({
 
             modalButtonName: "Add",
 
-            handleResult: function(subtask) {
-                let callback = self.props.addSubtask;
-
-                addSubtaskAsync(taskId, subtask, callback);
-            },
-
+            handleResult: subtask => store.dispatch(subtasksApi.uploadSubtask(subtask, taskId)),
             
             //name must be equal property from data(task)            
             formFields 
         };
 
 
-        let handleRemoveClick = function(subtaskId) {
-            let callback = self.props.removeSubtask;
-            
-            deleteSubtaskAsync(subtaskId, callback);
-        };
+        let handleRemoveClick = id => store.dispatch(subtasksApi.removeSubtask(id));
         
         let tableRowDataProcesser = function(element) {
             return (
@@ -91,8 +73,14 @@ const Subtasks = React.createClass({
 					<td>{element.description}</td>
                     <td>{element.duration}</td>
                     <td width="20%">
-                        <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
-                        <button className="btn btn-danger" onClick={handleRemoveClick.bind(null, element.id)}>Remove</button>
+                        <ul className="list-inline">
+                            <li>
+                                <EditFormModal data={element} {...editModalSettings} key={uniqIndex}/>
+                            </li>
+                            <li>
+                                <button className="btn btn-danger" onClick={() => handleRemoveClick(element.id)}>Remove</button> 
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             );

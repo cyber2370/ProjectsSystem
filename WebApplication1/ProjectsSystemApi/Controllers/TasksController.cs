@@ -1,20 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Mvc;
+using FluentValidation;
 using Managers.Interfaces;
-using TaskModel = DatabaseStorage.Entities.Task;
+using Managers.Models;
+using ProjectsSystemApi.Validators;
 
 namespace ProjectsSystemApi.Controllers
 {
-    public class TasksController : ApiController
+    public class TasksController : ApiControllerBase
     {
         private readonly ITasksManager _tasksManager;
+        private readonly TaskModelValidator _taskModelValidator;
 
-        public TasksController(ITasksManager tasksManager)
+        public TasksController(
+            ITasksManager tasksManager,
+            TaskModelValidator taskModelValidator)
         {
             _tasksManager = tasksManager;
+            _taskModelValidator = taskModelValidator;
         }
 
         // GET api/<controller>
@@ -24,7 +31,7 @@ namespace ProjectsSystemApi.Controllers
         }
 
         // GET api/tasks/project/{id}
-        [System.Web.Http.Route("api/projects/{id}/tasks")]
+        [Route("api/projects/{id}/tasks")]
         public async Task<IEnumerable<TaskModel>> GetTasksByProjectId(int id)
         {
             return await _tasksManager.GetTasksByProjectIdAsync(id);
@@ -33,42 +40,60 @@ namespace ProjectsSystemApi.Controllers
         // GET api/<controller>/5
         public async Task<TaskModel> GetTask(int id)
         {
-            return await _tasksManager.GetTaskAsync(id);
+            var task = await _tasksManager.GetTaskAsync(id);
+
+            await ValidateTask(task);
+
+            return task;
         }
 
         // POST api/<controller>
         [System.Web.Http.Route("api/projects/{id}/tasks")]
         public async Task<TaskModel> PostTask(int id, [FromBody]TaskModel task)
         {
-            try
-            {
-                return await _tasksManager.AddTaskAsync(id, task);
-            }
-            catch (Exception ex)
-            {
-                //TODO: return exception
-                return null;
-            }
+            await ValidateTask(task);
+
+            return await _tasksManager.AddTaskAsync(id, task);
         }
 
         // PUT api/<controller>/5
         public async Task<TaskModel> PutTask([FromBody]TaskModel task)
         {
-            try
-            {
-                return await _tasksManager.UpdateTaskAsync(task);
-            }
-            catch (Exception ex)
-            {
-                //TODO: return exception
-                return null;
-            }
+            await ValidateTask(task);
+
+            return await _tasksManager.UpdateTaskAsync(task);
         }
 
         // DELETE api/<controller>/5
         public async Task DeleteTask(int id)
         {
             await _tasksManager.RemoveTaskAsync(id);
+        }
+
+        private async Task ValidateTask(TaskModel task)
+        {
+            string message;
+
+            if (task == null)
+            {
+                message = "Task not found";
+
+                throw new HttpResponseException(
+                    Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
+            }
+
+            var validationResults = await _taskModelValidator.ValidateAsync(task);
+
+            if (validationResults.IsValid)
+                return;
+
+            message = "Task is not valid";
+
+            throw new HttpResponseException(
+                Request.CreateErrorResponse(
+                    HttpStatusCode.BadRequest,
+                    message,
+                    new ValidationException(validationResults.Errors)));
         }
     }
 }

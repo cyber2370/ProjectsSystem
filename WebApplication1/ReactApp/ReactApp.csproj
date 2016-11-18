@@ -159,7 +159,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\Api\ajaxRequests.js" />
+    <Content Include="Scripts\Api\fetchRequests.js" />
     <Content Include="Scripts\Api\projectsApi.js" />
     <Content Include="Scripts\Api\subtasksApi.js" />
     <Content Include="Scripts\Api\tasksApi.js" />
@@ -172,10 +172,10 @@
     <Content Include="Scripts\React\Modules\Table.js" />
     <Content Include="Scripts\React\Modules\Tasks.js" />
     <Content Include="Scripts\React\Modules\TopNavBar.js" />
-    <Content Include="Scripts\React\Redux\Actions\actionCreators.js" />
-    <Content Include="Scripts\React\Redux\Actions\projectsActionCreators.js" />
-    <Content Include="Scripts\React\Redux\Actions\subtasksActionCreators.js" />
-    <Content Include="Scripts\React\Redux\Actions\tasksActionCreators.js" />
+    <Content Include="Scripts\React\Redux\Middlewares\projects.js" />
+    <Content Include="Scripts\React\Redux\Middlewares\promises-middleware.js" />
+    <Content Include="Scripts\React\Redux\Middlewares\subtasks.js" />
+    <Content Include="Scripts\React\Redux\Middlewares\tasks.js" />
     <Content Include="Scripts\React\Redux\Reducers\index.js" />
     <Content Include="Scripts\React\Redux\Reducers\projects.js" />
     <Content Include="Scripts\React\Redux\Reducers\subtasks.js" />
@@ -213,7 +213,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>42725</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

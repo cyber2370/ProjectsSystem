@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DatabaseStorage.Entities;
+using Managers.Models;
 using Task = System.Threading.Tasks.Task;
 
 namespace Managers.Interfaces
 {
     public interface IProjectsManager
     {
-        Task<IEnumerable<Project>> GetProjectsAsync();
+        Task<IEnumerable<ProjectModel>> GetProjectsAsync();
 
-        Task<Project> GetProjectAsync(int projectId);
+        Task<ProjectModel> GetProjectAsync(int projectId);
 
-        Task<Project> AddProjectAsync(Project project);
+        Task<ProjectModel> AddProjectAsync(ProjectModel project);
 
-        Task<Project> UpdateProjectAsync(Project project);
+        Task<ProjectModel> UpdateProjectAsync(ProjectModel project);
 
         Task RemoveProjectAsync(int projectId);
     }

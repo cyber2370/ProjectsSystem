@@ -2,66 +2,63 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DatabaseStorage.Entities;
+using Managers.Extensions;
 using Managers.Interfaces;
+using Managers.Models;
 using Repositories.Interfaces;
 using Task = System.Threading.Tasks.Task;
 
 namespace Managers.Implementations
 {
-    public class SubtasksManager : ISubtasksManager
+    internal class SubtasksManager : ISubtasksManager
     {
         private readonly ISubtasksRepository _subtasksRepository;
 
-        public SubtasksManager(
-            ISubtasksRepository subtasksRepository)
+        public SubtasksManager(ISubtasksRepository subtasksRepository)
         {
             _subtasksRepository = subtasksRepository;
         }
 
-        public Task<IEnumerable<Subtask>> GetSubtasksAsync()
+        public async Task<IEnumerable<SubtaskModel>> GetSubtasksAsync()
         {
-            return _subtasksRepository.GetItemsAsync();
+            var subtasks = await _subtasksRepository.GetItemsAsync();
+
+            return subtasks?.Select(subtask => subtask.ToSubtaskModel());
         }
 
-        public Task<IEnumerable<Subtask>> GetSubtasksByTaskIdAsync(int taskId)
+        public async Task<IEnumerable<SubtaskModel>> GetSubtasksByTaskIdAsync(int taskId)
         {
-            return _subtasksRepository.GetItemsAsync(item => item.Where(i => i.Task.Id == taskId));
+            var subtasks = await _subtasksRepository.GetItemsAsync(item => item.Where(i => i.Task.Id == taskId));
+
+            return subtasks?.Select(subtask => subtask.ToSubtaskModel());
         }
 
-        public Task<Subtask> GetSubtaskAsync(int subtaskId)
+        public async Task<SubtaskModel> GetSubtaskAsync(int subtaskId)
         {
-            return _subtasksRepository.GetItemAsync(subtaskId);
+            var subtask = await _subtasksRepository.GetItemAsync(subtaskId);
+
+            return subtask?.ToSubtaskModel();
         }
 
-        public async Task<Subtask> AddSubtaskAsync(int taskId, Subtask subtask)
+        public async Task<SubtaskModel> AddSubtaskAsync(int taskId, SubtaskModel subtaskModel)
         {
-            CheckIsValid(subtask);
+            subtaskModel.TaskId = taskId;
 
-            subtask.TaskId = taskId;
+            var addedSubtask = await _subtasksRepository.AddItemAsync(subtaskModel.ToSubtask());
 
-            return await _subtasksRepository.AddItemAsync(subtask);
+            return addedSubtask?.ToSubtaskModel();
         }
 
-        public Task<Subtask> UpdateSubtaskAsync(Subtask subtask)
+        public async Task<SubtaskModel> UpdateSubtaskAsync(SubtaskModel subtaskModel)
         {
-            CheckIsValid(subtask);
+            var subtask = await _subtasksRepository.UpdateItemAsync(subtaskModel.ToSubtask());
 
-            return _subtasksRepository.UpdateItemAsync(subtask);
+            return subtask?.ToSubtaskModel();
         }
 
         public Task RemoveSubtaskAsync(int subtaskId)
         {
             return _subtasksRepository.RemoveItemAsync(subtaskId);
-        }
-
-        private void CheckIsValid(Subtask subtask)
-        {
-            if (string.IsNullOrEmpty(subtask.Name)
-                || string.IsNullOrEmpty(subtask.Description))
-            {
-                throw new Exception("invalid_data");
-            }
         }
     }
 }

@@ -1,13 +1,14 @@
-﻿const queryTypes = {
+﻿import fetch from 'isomorphic-fetch';
+
+const queryTypes = {
 	GET: "GET",
 	POST: "POST",
 	PUT: "PUT",
 	DELETE: "DELETE"
 };
 
-let baseAjaxSettings = {
-	error: console.log,
-    crossDomain: true
+let baseFetchSettings = {
+	mode: 'cors'
 };
 
 let baseUrl = "http://localhost:55555/api/"
@@ -16,38 +17,50 @@ export function getAsync(specifyingUrl, specifyingSettings = {}) {
 	let url = baseUrl + specifyingUrl;
 
 	let settings = Object.assign({}, specifyingSettings, baseAjaxSettings);
-	settings.type = queryTypes.GET;
+	settings.method = queryTypes.GET;
 
 	console.log(specifyingSettings, baseAjaxSettings, settings);
 
-	return $.ajax(url, settings);
+	return fetch(url, settings)
+		.then(
+			response => response.json()
+		);
 }
 
 export function postAsync(specifyingUrl, data, specifyingSettings = {}) {
 	let url = baseUrl + specifyingUrl;
 
 	let settings = Object.assign({}, specifyingSettings, baseAjaxSettings);
-	settings.type = queryTypes.POST;
-	settings.data = data;
+	settings.method = queryTypes.POST;
+	settings.body = data;
 
-	return $.ajax(url, settings);
+	return fetch(url, settings)
+		.then(
+			response => response.json()
+		);;
 }
 
 export function putAsync(specifyingUrl, data, specifyingSettings = {}) {
 	let url = baseUrl + specifyingUrl;
 
 	let settings = Object.assign({}, specifyingSettings, baseAjaxSettings);
-	settings.type = queryTypes.PUT;
-	settings.data = data;
+	settings.method = queryTypes.PUT;
+	settings.body = data;
 
-	return $.ajax(url, settings);
+	return fetch(url, settings)
+		.then(
+			response => response.json()
+		);;
 }
 
 export function deleteAsync(specifyingUrl, specifyingSettings = {}) {
 	let url = baseUrl + specifyingUrl;
 
 	let settings = Object.assign({}, specifyingSettings, baseAjaxSettings);
-	settings.type = queryTypes.DELETE;
+	settings.method = queryTypes.DELETE;
 
-	return $.ajax(url, settings);
+	return fetch(url, settings)
+		.then(
+			response => response.json()
+		);;
 }
