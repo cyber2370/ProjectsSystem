@@ -34,7 +34,8 @@ namespace ProjectsSystemApi.Controllers
         {
             var project = await _projectsManager.GetProjectAsync(id);
 
-            await ValidateProject(project);
+            if (project == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
 
             return project;
         }
