@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Managers.Models;
+using ProjectsSystemApi.Models;
 
 namespace ProjectsSystemApi.Validators
 {
@@ -8,7 +8,6 @@ namespace ProjectsSystemApi.Validators
         public ProjectModelValidator()
         {
             RuleFor(project => project.Name).NotEmpty();
-
             RuleFor(project => project.Owner).NotEmpty();
         }
     }

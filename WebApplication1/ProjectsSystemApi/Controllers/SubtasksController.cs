@@ -1,98 +1,79 @@
 ﻿using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using FluentValidation;
+using AutoMapper;
 using Managers.Interfaces;
-using Managers.Models;
-using ProjectsSystemApi.Validators;
+using SubtaskModel = ProjectsSystemApi.Models.SubtaskModel;
+using ManagerSubtaskModel = Managers.Models.SubtaskModel;
+using System.Net;
 
 namespace ProjectsSystemApi.Controllers
 {
     public class SubtasksController : ApiControllerBase
     {
         private readonly ISubtasksManager _subtasksManager;
-        private readonly SubtaskModelValidator _subtaskModelValidator;
 
-        public SubtasksController(
-            ISubtasksManager subtasksManager,
-            SubtaskModelValidator subtaskModelValidator)
+        public SubtasksController(ISubtasksManager subtasksManager)
         {
             _subtasksManager = subtasksManager;
-            _subtaskModelValidator = subtaskModelValidator;
         }
 
         // GET api/<controller>
         public async Task<IEnumerable<SubtaskModel>> GetSubtasks()
         {
-            return await _subtasksManager.GetSubtasksAsync();
+            return Mapper.Map<IEnumerable<ManagerSubtaskModel>, IEnumerable<SubtaskModel>>(await _subtasksManager.GetSubtasksAsync());
         }
 
         // GET api/tasks/project/{id}
-        [System.Web.Http.Route("api/tasks/{id}/subtasks/")]
+        [Route("api/tasks/{id}/subtasks/")]
         public async Task<IEnumerable<SubtaskModel>> GetSubtasksByTaskId(int id)
         {
-            return await _subtasksManager.GetSubtasksByTaskIdAsync(id);
+            return Mapper.Map<IEnumerable<ManagerSubtaskModel>, IEnumerable<SubtaskModel>>(await _subtasksManager.GetSubtasksByTaskIdAsync(id));
         }
 
         // GET api/<controller>/5
         public async Task<SubtaskModel> GetSubtask(int id)
         {
-            var subtask = await _subtasksManager.GetSubtaskAsync(id);
+            ManagerSubtaskModel subtaskModel = await _subtasksManager.GetSubtaskAsync(id);
 
-            await ValidateSubtask(subtask);
+            if (subtaskModel == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return subtask;
+            return Mapper.Map<ManagerSubtaskModel, SubtaskModel>(subtaskModel);
         }
 
         // POST api/<controller>
-        [System.Web.Http.Route("api/tasks/{id}/subtasks/")]
+        [Route("api/tasks/{id}/subtasks/")]
         public async Task<SubtaskModel> PostSubtask(int id, [FromBody]SubtaskModel subtask)
         {
-            await ValidateSubtask(subtask);
+            if (!ModelState.IsValid)
+            {
+                throw new HttpRequestException("Invalid model");
+            }
 
-            return await _subtasksManager.AddSubtaskAsync(id, subtask);
+            ManagerSubtaskModel subtaskModel = Mapper.Map<SubtaskModel, ManagerSubtaskModel>(subtask);
+
+            return Mapper.Map<ManagerSubtaskModel, SubtaskModel>(await _subtasksManager.AddSubtaskAsync(id, subtaskModel));
         }
 
         // PUT api/<controller>/5
         public async Task<SubtaskModel> PutSubtask([FromBody]SubtaskModel subtask)
         {
-            await ValidateSubtask(subtask);
+            if (!ModelState.IsValid)
+            {
+                throw new HttpRequestException("Invalid model");
+            }
 
-            return await _subtasksManager.UpdateSubtaskAsync(subtask);
+            ManagerSubtaskModel subtaskModel = Mapper.Map<SubtaskModel, ManagerSubtaskModel>(subtask);
+
+            return Mapper.Map<ManagerSubtaskModel, SubtaskModel>(await _subtasksManager.UpdateSubtaskAsync(subtaskModel));
         }
 
         // DELETE api/<controller>/5
         public async Task DeleteSubtask(int id)
         {
             await _subtasksManager.RemoveSubtaskAsync(id);
-        }
-
-        private async Task ValidateSubtask(SubtaskModel subtask)
-        {
-            string message;
-
-            if (subtask == null)
-            {
-                message = "Subtask not found";
-
-                throw new HttpResponseException(
-                    Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
-            }
-
-            var validationResults = await _subtaskModelValidator.ValidateAsync(subtask);
-
-            if (validationResults.IsValid)
-                return;
-
-            message = "Subtask is not valid";
-
-            throw new HttpResponseException(
-                Request.CreateErrorResponse(
-                    HttpStatusCode.BadRequest,
-                    message,
-                    new ValidationException(validationResults.Errors)));
         }
     }
 }
